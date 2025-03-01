@@ -23,3 +23,10 @@ git commit -m 'Initial commit'
 git remote add origin git@github.com:ouroakley/main.git
 git push -u origin main
 ```
+
+Add the theme, commit and push (git operations no longer shown)
+
+```
+git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+echo "theme = 'ananke'" >> hugo.toml
+```
