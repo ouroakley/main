@@ -6,6 +6,7 @@ venues:
 - Peter Houseman Recreation Ground
 organisers:
 - OCA
+eventStart: 2025-05-05
 ---
 
 Details to follow.

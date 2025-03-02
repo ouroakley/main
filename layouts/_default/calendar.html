@@ -104,8 +104,9 @@
     {{ $events := where $.Site.RegularPages "Type" "events" }}
     {{ $eventsByDay := dict }}
     {{ range $event := $events }}
-      {{ if $event.Date }}
-        {{ $day := $event.Date.Format "2006-01-02" }}
+      {{ if $event.Params.eventStart }}
+        {{ $eventDate := time $event.Params.eventStart }}
+        {{ $day := $eventDate.Format "2006-01-02" }}
         {{ $existingEvents := index $eventsByDay $day | default (slice) }}
         {{ $existingEvents = append $existingEvents (slice $event) }}
         {{ $eventsByDay = merge $eventsByDay (dict $day $existingEvents) }}

@@ -6,6 +6,7 @@ venues:
 - Oakley
 organisers:
 - OCA
+eventStart: 2025-06-21
 ---
 
 Running across the village. Details to follow.

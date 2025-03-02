@@ -6,6 +6,7 @@ venues:
 - Newfound Recreation Ground
 organisers:
 - OCA
+eventStart: 2025-11-02
 ---
 
 Details to follow.
