@@ -1,14 +1,28 @@
 {{ define "main" }}
 <style>
+/* Base calendar styles */
+.calendar,
+.calendar-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
 .calendar {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  margin-top: 1rem;
+}
+
+.calendar-header {
+  font-weight: bold;
+  text-align: center;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.calendar-header div {
+  padding: 10px;
 }
 
 .calendar-day {
-  flex: 1 0 14.28%; /* 7 days in a week */
-  box-sizing: border-box;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -17,12 +31,16 @@
 }
 
 .calendar-day.has-date {
-  background-color: #FFFFFF; /* White background for numbered days */
+  background-color: #FFFFFF;
   border: 1px solid #ddd;
 }
 
+.calendar-day.has-events {
+  background-color: #f8f9fa;
+}
+
 .calendar-day.empty {
-  border: none; /* No border for empty days */
+  border: none;
 }
 
 .calendar-day .date {
@@ -30,6 +48,7 @@
   margin-bottom: 5px;
 }
 
+/* Event styles */
 .events {
   list-style-type: none;
   padding: 0;
@@ -49,130 +68,176 @@
   text-decoration: underline;
 }
 
-.calendar-header {
-  display: flex;
-  width: 100%;
-  font-weight: bold;
-  text-align: center;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
-}
-
-.calendar-header div {
-  flex: 1 0 14.28%;
-  padding: 10px;
-}
-
+/* Mobile styles */
 @media (max-width: 600px) {
-  .calendar-day {
-    flex: 1 0 100%;
-    display: none;
-  }
-  .calendar-day.has-events {
+  .calendar {
     display: block;
   }
+
   .calendar-header {
-    display: none; /* Hide day header on small screens */
+    display: none;
+  }
+
+  .calendar-day {
+    display: none;
+    padding: 0;
+    min-height: 0;
+    justify-content: flex-start;
+  }
+
+  .calendar-day.has-date {
+    background-color: transparent;
+    border: none;
+  }
+
+  .calendar-day.has-date.has-events {
+    display: block;
+    margin-bottom: 0.75rem;
+  }
+
+  .calendar-day .date {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .calendar-day .date::after {
+    content: " - " attr(data-day);
+    font-weight: normal;
+  }
+
+  .calendar-day .events {
+    margin-top: 0;
+  }
+
+  .calendar-day .events li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .calendar-day .events a {
+    display: block;
+    padding: 0.5rem 0;
+    line-height: 1.2;
+  }
+
+  section.ph4.mb4 {
+    margin-bottom: 1rem;
+  }
+
+  section.ph4.mb4 h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
   }
 }
 </style>
+
 <div class="calendar-container mw8 center">
-  <section class="ph4">
-    
-  <h1>Events Calendar</h1>
+  {{/* Store original context */}}
+  {{ $ctx := . }}
 
-  {{ $months := seq 1 12 }}
-  {{ range $monthNum := $months }}
-    {{ $currentTime := now }}
-    {{ $startOfMonth := time (printf "%d-%02d-01" $currentTime.Year $monthNum) }}
-    
-    {{/* Calculate days in month */}}
-    {{ $daysInMonth := 0 }}
-    {{ if eq $monthNum 2 }}
-      {{ if modBool $currentTime.Year 4 }}
-        {{ $daysInMonth = 29 }}
+  {{/* Always start from current date */}}
+  {{ $currentDate := now }}
+
+  {{/* Loop through 12 months */}}
+  {{ range $monthIndex := seq 0 12 }}
+    {{/* Check if month has any events */}}
+    {{ $hasEvents := false }}
+    {{ $year := $currentDate.Year }}
+    {{ $month := $currentDate.Month }}
+
+    {{/* Check for events in this month */}}
+    {{ range $page := $ctx.Site.RegularPages }}
+      {{ with $page.Params.eventStart }}
+        {{ $eventDate := time . }}
+        {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) }}
+          {{ $hasEvents = true }}
+        {{ end }}
+      {{ end }}
+    {{ end }}
+
+    <section class="ph4 mb4">
+      {{/* Format month name */}}
+      <h1 class="mb2">{{ $currentDate.Format "January 2006" }}</h1>
+      {{ if not $hasEvents }}
+        <p class="mv3 gray i">No events scheduled</p>
       {{ else }}
-        {{ $daysInMonth = 28 }}
-      {{ end }}
-    {{ else if in (slice 4 6 9 11) $monthNum }}
-      {{ $daysInMonth = 30 }}
-    {{ else }}
-      {{ $daysInMonth = 31 }}
-    {{ end }}
+        {{/* Set up calendar variables */}}
+        {{ $dateStr := printf "%04d-%02d-01" $year (int $month) }}
+        {{ $firstDay := time $dateStr }}
+        {{ $weekday := $firstDay.Weekday }}
+        
+        {{/* Calculate days in month */}}
+        {{ $nextMonth := $firstDay.AddDate 0 1 0 }}
+        {{ $lastDay := $nextMonth.AddDate 0 0 -1 }}
+        {{ $daysInMonth := $lastDay.Day }}
 
-    {{/* Fetch and group events */}}
-    {{ $events := where $.Site.RegularPages "Type" "events" }}
-    {{ $eventsByDay := dict }}
-    {{ range $event := $events }}
-      {{ if $event.Params.eventStart }}
-        {{ $eventDate := time $event.Params.eventStart }}
-        {{ $day := $eventDate.Format "2006-01-02" }}
-        {{ $existingEvents := index $eventsByDay $day | default (slice) }}
-        {{ $existingEvents = append $existingEvents (slice $event) }}
-        {{ $eventsByDay = merge $eventsByDay (dict $day $existingEvents) }}
-      {{ end }}
-    {{ end }}
+        <div class="calendar-header">
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+          <div>Sun</div>
+        </div>
 
-    {{/* Check if there are events in the current month */}}
-    {{ $hasEventsInMonth := false }}
-    {{ range $dayNum := seq 1 $daysInMonth }}
-      {{ $currentDate := printf "%d-%02d-%02d" $currentTime.Year $monthNum $dayNum }}
-      {{ if index $eventsByDay $currentDate }}
-        {{ $hasEventsInMonth = true }}
-        {{ break }}
-      {{ end }}
-    {{ end }}
-
-    <h2>{{ $startOfMonth.Format "January" }}</h2>
-    {{ if $hasEventsInMonth }}
-      <div class="calendar-header">
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
-        <div>Sun</div>
-      </div>
-      <div class="calendar">
-        {{ $startDay := int $startOfMonth.Weekday }}
-        {{ if eq $startDay 0 }}
-          {{ $startDay = 7 }}  {{/* Convert Sunday (0) to 7 to handle Monday-first calendar */}}
-        {{ end }}
-        {{ $startDay = sub $startDay 1 }}  {{/* Adjust to Monday = 0 system */}}
-
-        {{/* Fill in the empty days at the start of the month */}}
-        {{ range $emptyDay := seq 0 (sub $startDay 1) }}
-          <div class="calendar-day empty"></div>
-        {{ end }}
-
-        {{ range $dayNum := seq 1 $daysInMonth }}
-          {{ $currentDate := printf "%d-%02d-%02d" $currentTime.Year $monthNum $dayNum }}
-          <div class="calendar-day has-date{{ if index $eventsByDay $currentDate }} has-events{{ end }}">
-            <div class="date">{{ $dayNum }}</div>
-            {{ with index $eventsByDay $currentDate }}
-              <ul class="events">
-                {{ range $event := . }}
-                  <li><a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a></li>
-                {{ end }}
-              </ul>
-            {{ end }}
-          </div>
-        {{ end }}
-
-        {{/* Fill in the empty days at the end of the month */}}
-        {{ $totalDays := add $startDay $daysInMonth }}
-        {{ $endDay := mod $totalDays 7 }}
-        {{ if ne $endDay 0 }}
-          {{ range $emptyDay := seq $endDay 6 }}
-            <div class="calendar-day empty"></div>
+        <div class="calendar">
+          {{/* Calculate empty cells needed */}}
+          {{ $startEmptyCells := 0 }}
+          {{ if eq $weekday 0 }}
+            {{ $startEmptyCells = 6 }}
+          {{ else }}
+            {{ $startEmptyCells = sub (int $weekday) 1 }}
           {{ end }}
-        {{ end }}
-      </div>
-    {{ else }}
-      <p>Nothing scheduled yet</p>
-    {{ end }}
+
+          {{/* Fill in empty cells */}}
+          {{ if gt $startEmptyCells 0 }}
+            {{ range $emptyDay := seq 1 $startEmptyCells }}
+              <div class="calendar-day empty"></div>
+            {{ end }}
+          {{ end }}
+
+          {{/* Fill in the days */}}
+          {{ range $dayNum := seq 1 $daysInMonth }}
+            {{ $dayDate := printf "%04d-%02d-%02d" $year (int $month) $dayNum }}
+            {{ $thisDay := time $dayDate }}
+            {{ $thisWeekday := $thisDay.Weekday }}
+            {{ $displayPosition := 0 }}
+            {{ if eq $thisWeekday 0 }}
+              {{ $displayPosition = 6 }}
+            {{ else }}
+              {{ $displayPosition = sub (int $thisWeekday) 1 }}
+            {{ end }}
+            {{ $gridColumn := add $displayPosition 1 }}
+
+            {{/* Check for events on this specific day */}}
+            {{ $eventsToday := slice }}
+            {{ range $page := $ctx.Site.RegularPages }}
+              {{ with $page.Params.eventStart }}
+                {{ $eventDate := time . }}
+                {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) (eq $eventDate.Day $dayNum) }}
+                  {{ $eventsToday = $eventsToday | append $page }}
+                {{ end }}
+              {{ end }}
+            {{ end }}
+
+            <div class="calendar-day has-date{{ if $eventsToday }} has-events{{ end }}" style="grid-column: {{ $gridColumn }}">
+              <div class="date" data-day="{{ $thisDay.Format "Monday" }}">{{ $dayNum }}</div>
+              {{ if $eventsToday }}
+                <ul class="events">
+                  {{ range $event := $eventsToday }}
+                    <li><a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a></li>
+                  {{ end }}
+                </ul>
+              {{ end }}
+            </div>
+          {{ end }}
+        </div>
+      {{ end }}
+    </section>
+
+    {{/* Advance to next month */}}
+    {{ $currentDate = $currentDate.AddDate 0 1 0 }}
   {{ end }}
-  </section>
 </div>
 {{ end }} 
