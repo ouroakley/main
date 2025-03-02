@@ -2,3 +2,21 @@ baseURL: 'https://www.ouroakley.uk'
 languageCode: 'en'
 title: 'Our Oakley'
 theme: 'ananke'
+
+menus:
+  main:
+    - name: Home
+      url: /
+      weight: 1
+    - name: Events
+      url: /events/
+      weight: 2
+    - name: Organisers
+      url: /organisers/
+      weight: 3
+    - name: Venues
+      url: /venues/
+      weight: 4
+    - name: Calendar
+      url: /calendar/
+      weight: 5
