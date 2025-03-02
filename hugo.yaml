@@ -3,6 +3,10 @@ languageCode: 'en'
 title: 'Our Oakley'
 theme: 'ananke'
 
+taxonomies:
+  venue: venues
+  organiser: organisers
+
 menus:
   main:
     - name: Home
