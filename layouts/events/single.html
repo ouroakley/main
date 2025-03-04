@@ -24,9 +24,26 @@
           {{ with .Params.eventStart }}
           <div class="mb3">
             <span class="b">When:</span> 
-            {{ dateFormat "Saturday, Jan 2, 2025 3:04 PM" . }}
+            {{ $startDate := . }}
+            {{ if eq (dateFormat "15:04" .) "00:00" }}
+              {{ dateFormat "Monday, January 2, 2006" . }}
+            {{ else }}
+              {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
+            {{ end }}
             {{ with $.Params.eventEnd }}
-            - {{ dateFormat "3:04 PM" . }}
+              {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
+                {{ if eq (dateFormat "15:04" .) "00:00" }}
+                  {{/* Same day, no end time - don't show anything */}}
+                {{ else }}
+                  - {{ dateFormat "3:04 PM" . }}
+                {{ end }}
+              {{ else }}
+                - {{ if eq (dateFormat "15:04" .) "00:00" }}
+                  {{ dateFormat "Monday, January 2, 2006" . }}
+                {{ else }}
+                  {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
+                {{ end }}
+              {{ end }}
             {{ end }}
           </div>
           {{ end }}
