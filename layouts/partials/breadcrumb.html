@@ -1,0 +1,13 @@
+{{ $url := replace .RelPermalink "/index.html" "" }}
+{{ $urlParts := split (trim $url "/") "/" }}
+<nav class="f6 pb3 mt4">
+  <a href="/" class="link blue hover-dark-blue">Home</a>
+  {{ range $index, $element := $urlParts }}
+    {{ $currentPath := delimit (first (add $index 1) $urlParts) "/" }}
+    {{ $currentPage := $.Site.GetPage $currentPath }}
+    {{ if $currentPage }}
+    <span class="ph1">/</span>
+    <a href="/{{ $currentPath }}/" class="link blue hover-dark-blue">{{ $currentPage.Title }}</a>
+    {{ end }}
+  {{ end }}
+</nav> 
