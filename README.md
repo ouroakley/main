@@ -30,3 +30,12 @@ Add the theme, commit and push (git operations no longer shown)
 git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
 echo "theme = 'ananke'" >> hugo.toml
 ```
+
+## Cloudflare Setup
+
+1. Go to Compute (Workers)
+1. Create a new application
+1. Go to pages tab
+1. Connect to git
+1. Select repository
+1. Set build options command: hugo, buildoutput: public
