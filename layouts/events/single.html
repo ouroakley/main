@@ -1,0 +1,69 @@
+{{ define "header" }}
+   {{/* We can override any block in the baseof file be defining it in the template */}}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+  {{ $page := . }}
+  {{ $section := .Site.GetPage "section" .Section }}
+  <article class="mw8 center ph3">
+    <header class="mb4">
+      <p class="b helvetica tracked ttu mb0">
+        {{ .CurrentSection.Title }}
+      </p>
+      {{- partialCached "social/share.html" . . -}}
+      <h1 class="f2 fw6 mt2 mb4">
+        {{- .Title -}}
+      </h1>
+
+      {{/* Event Details Section */}}
+      <div class="mb4">
+        {{/* Event Time */}}
+        {{ with .Params.eventStart }}
+        <div class="mb3">
+          <span class="b">When:</span> 
+          {{ dateFormat "Saturday, Jan 2, 2025 3:04 PM" . }}
+          {{ with $.Params.eventEnd }}
+          - {{ dateFormat "3:04 PM" . }}
+          {{ end }}
+        </div>
+        {{ end }}
+
+        {{/* Venue(s) */}}
+        <div class="mb3">
+          <span class="b">{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}:</span>
+          {{ range $index, $venue := .Params.venues }}
+            {{ if $index }}, {{ end }}
+            <a href="{{ "/venues/" | relLangURL }}{{ . | urlize }}" class="link blue hover-dark-blue">{{ . }}</a>
+          {{ end }}
+        </div>
+
+        {{/* Organiser(s) */}}
+        <div class="mb3">
+          <span class="b">{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}:</span>
+          {{ range $index, $organiser := .Params.organisers }}
+            {{ if $index }}, {{ end }}
+            <a href="{{ "/organisers/" | relLangURL }}{{ . | urlize }}" class="link blue hover-dark-blue">{{ . }}</a>
+          {{ end }}
+        </div>
+
+        {{/* Posted Date - only if needed */}}
+        {{ if not .Date.IsZero }}
+        <div class="f6 gray mt4">
+          Posted: {{- .Date | time.Format "January 2, 2006" -}}
+        </div>
+        {{ end }}
+      </div>
+    </header>
+
+    <div class="lh-copy">
+      {{- .Content -}}
+      {{- partial "tags.html" . -}}
+    </div>
+
+    <aside class="w-30-l mt6-l">
+      {{- partial "menu-contextual.html" . -}}
+    </aside>
+
+  </article>
+{{ end }} 
