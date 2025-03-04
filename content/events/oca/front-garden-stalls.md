@@ -3,9 +3,9 @@ date: 2025-03-03
 draft: false
 title: Front Garden Stalls
 venues:
-- Oakley
+  - Across Oakley
 organisers:
-- OCA
+  - OCA
 eventStart: 2025-06-21
 ---
 

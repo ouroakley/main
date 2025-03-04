@@ -3,9 +3,9 @@ date: 2025-03-03
 draft: false
 title: Oakley Village Show
 venues:
-- Oakley Infant School
+  - Oakley Infant School
 organisers:
-- OCA
+  - OCA
 eventStart: 2025-08-09
 ---
 
