@@ -1,5 +1,5 @@
 ---
-date: 2025-11-02
+date: 2025-03-03
 draft: false
 title: Oakley and Deane Fireworks
 venues:

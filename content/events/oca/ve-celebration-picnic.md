@@ -1,5 +1,5 @@
 ---
-date: 2025-05-05T21:31:21Z
+date: 2025-03-03
 draft: false
 title: VE Celebration Picnic
 venues:

@@ -1,5 +1,5 @@
 ---
-date: 2025-08-09
+date: 2025-03-03
 draft: false
 title: Oakley Village Show
 venues:

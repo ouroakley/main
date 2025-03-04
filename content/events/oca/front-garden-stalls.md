@@ -1,5 +1,5 @@
 ---
-date: 2025-06-21
+date: 2025-03-03
 draft: false
 title: Front Garden Stalls
 venues:
