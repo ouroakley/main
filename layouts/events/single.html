@@ -50,20 +50,20 @@
 
           {{/* Venue(s) */}}
           <div class="mb3">
-            <span class="b">{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}:</span>
-            {{ range $index, $venue := .Params.venues }}
-              {{ if $index }}, {{ end }}
-              <a href="{{ "/venues/" | relLangURL }}{{ . | urlize }}" class="link blue hover-dark-blue">{{ . }}</a>
-            {{ end }}
+            <span class="b">{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}: </span>
+            {{- range $index, $venue := .Params.venues -}}
+              {{- if $index }}, {{ end -}}
+              <a href="{{ "/venues/" | relLangURL }}{{ . | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ . | strings.TrimSpace }}</a>
+            {{- end -}}
           </div>
 
           {{/* Organiser(s) */}}
           <div class="mb3">
-            <span class="b">{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}:</span>
-            {{ range $index, $organiser := .Params.organisers }}
-              {{ if $index }}, {{ end }}
-              <a href="{{ "/organisers/" | relLangURL }}{{ . | urlize }}" class="link blue hover-dark-blue">{{ . }}</a>
-            {{ end }}
+            <span class="b">{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}: </span>
+            {{- range $index, $organiser := .Params.organisers -}}
+              {{- if $index }}, {{ end -}}
+              <a href="{{ "/organisers/" | relLangURL }}{{ . | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ . | strings.TrimSpace }}</a>
+            {{- end -}}
           </div>
 
           {{/* Posted Date - only if needed */}}
