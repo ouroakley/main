@@ -7,6 +7,12 @@ taxonomies:
   venue: venues
   organiser: organisers
 
+frontmatter:
+  date: ["eventStart", ":default", ":filename"]
+
+permalinks:
+  events: /events/:year/:month/:slug/
+
 menus:
   main:
     - name: Home
