@@ -9,43 +9,48 @@
 
 .calendar {
   margin-top: 1rem;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.25rem;
+  overflow: hidden;
 }
 
 .calendar-header {
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
-  background-color: #f4f4f4;
-  border-bottom: 1px solid #ddd;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .calendar-header div {
-  padding: 10px;
+  padding: 0.75rem;
+  font-size: 0.875rem;
 }
 
 .calendar-day {
-  padding: 10px;
+  padding: 0.75rem;
+  min-height: 120px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  min-height: 100px;
+  justify-content: flex-start;
+  background-color: white;
+  border-right: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
 }
 
-.calendar-day.has-date {
-  background-color: #FFFFFF;
-  border: 1px solid #ddd;
-}
-
-.calendar-day.has-events {
-  background-color: #f8f9fa;
+.calendar-day:nth-child(7n) {
+  border-right: none;
 }
 
 .calendar-day.empty {
+  background-color: #f8f9fa;
   border: none;
 }
 
 .calendar-day .date {
-  font-weight: bold;
-  margin-bottom: 5px;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.875rem;
+  color: #333;
 }
 
 /* Event styles */
@@ -53,25 +58,28 @@
   list-style-type: none;
   padding: 0;
   margin: 0;
+  font-size: 0.875rem;
 }
 
 .events li {
-  margin: 5px 0;
+  margin: 0.25rem 0;
 }
 
 .events a {
   text-decoration: none;
-  color: #007bff;
+  color: #357edd;
+  transition: color 0.15s ease-in;
 }
 
 .events a:hover {
-  text-decoration: underline;
+  color: #00449e;
 }
 
 /* Mobile styles */
 @media (max-width: 600px) {
   .calendar {
     display: block;
+    border: none;
   }
 
   .calendar-header {
@@ -82,90 +90,95 @@
     display: none;
     padding: 0;
     min-height: 0;
-    justify-content: flex-start;
+    border: none;
   }
 
   .calendar-day.has-date {
     background-color: transparent;
-    border: none;
   }
 
   .calendar-day.has-date.has-events {
     display: block;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   .calendar-day .date {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
   }
 
   .calendar-day .date::after {
     content: " - " attr(data-day);
     font-weight: normal;
+    color: #666;
   }
 
   .calendar-day .events {
-    margin-top: 0;
+    margin-top: 0.5rem;
   }
 
   .calendar-day .events li {
-    margin: 0;
-    padding: 0;
+    margin: 0.5rem 0;
   }
 
   .calendar-day .events a {
     display: block;
     padding: 0.5rem 0;
-    line-height: 1.2;
-  }
-
-  section.ph4.mb4 {
-    margin-bottom: 1rem;
-  }
-
-  section.ph4.mb4 h1 {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    line-height: 1.4;
   }
 }
 </style>
 
-<div class="calendar-container mw8 center">
-  {{/* Store original context */}}
-  {{ $ctx := . }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+      <p class="f4 mb4">View upcoming events in our community calendar</p>
+    </header>
 
-  {{/* Always start from current date */}}
-  {{ $currentDate := now }}
+    {{/* Store original context */}}
+    {{ $ctx := . }}
 
-  {{/* Loop through 12 months */}}
-  {{ range $monthIndex := seq 0 12 }}
-    {{/* Check if month has any events */}}
-    {{ $hasEvents := false }}
-    {{ $year := $currentDate.Year }}
-    {{ $month := $currentDate.Month }}
+    {{/* Always start from current date */}}
+    {{ $currentDate := now }}
 
-    {{/* Check for events in this month */}}
-    {{ range $page := $ctx.Site.RegularPages }}
-      {{ with $page.Params.eventStart }}
-        {{ $eventDate := time . }}
-        {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) }}
-          {{ $hasEvents = true }}
+    {{/* Loop through 12 months */}}
+    {{ range $monthIndex := seq 0 12 }}
+      {{/* Check if month has any events */}}
+      {{ $hasEvents := false }}
+      {{ $year := $currentDate.Year }}
+      {{ $month := $currentDate.Month }}
+
+      {{/* Check for events in this month */}}
+      {{ range $page := $ctx.Site.RegularPages }}
+        {{ with $page.Params.eventStart }}
+          {{ $eventDate := time . }}
+          {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) }}
+            {{ $hasEvents = true }}
+          {{ end }}
         {{ end }}
       {{ end }}
-    {{ end }}
 
-    <section class="ph4 mb4">
-      {{/* Format month name */}}
-      <h1 class="mb2">{{ $currentDate.Format "January 2006" }}</h1>
-      {{ if not $hasEvents }}
-        <p class="mv3 gray i">No events scheduled</p>
-      {{ else }}
+      <section class="mb5">
+        {{/* Format month name */}}
+        <h2 class="f3 fw6 mb4">
+          <span class="mr2">📅</span>{{ $currentDate.Format "January 2006" }}
+        </h2>
+
+        {{ if not $hasEvents }}
+          <p class="mv3 gray i">No events scheduled</p>
+        {{ end }}
+
         {{/* Set up calendar variables */}}
         {{ $dateStr := printf "%04d-%02d-01" $year (int $month) }}
         {{ $firstDay := time $dateStr }}
         {{ $weekday := $firstDay.Weekday }}
-        
+
         {{/* Calculate days in month */}}
         {{ $nextMonth := $firstDay.AddDate 0 1 0 }}
         {{ $lastDay := $nextMonth.AddDate 0 0 -1 }}
@@ -226,18 +239,27 @@
               {{ if $eventsToday }}
                 <ul class="events">
                   {{ range $event := $eventsToday }}
-                    <li><a href="{{ $event.RelPermalink }}">{{ $event.Title }}</a></li>
+                    <li>
+                      <a href="{{ $event.RelPermalink }}" class="hover-dark-blue">
+                        {{ $event.Title }}
+                        {{ with $event.Params.eventStart }}
+                          {{ if ne (dateFormat "15:04" .) "00:00" }}
+                            <span class="f7 gray">{{ dateFormat "3:04 PM" . }}</span>
+                          {{ end }}
+                        {{ end }}
+                      </a>
+                    </li>
                   {{ end }}
                 </ul>
               {{ end }}
             </div>
           {{ end }}
         </div>
-      {{ end }}
-    </section>
+      </section>
 
-    {{/* Advance to next month */}}
-    {{ $currentDate = $currentDate.AddDate 0 1 0 }}
-  {{ end }}
+      {{/* Advance to next month */}}
+      {{ $currentDate = $currentDate.AddDate 0 1 0 }}
+    {{ end }}
+  </article>
 </div>
-{{ end }} 
+{{ end }}
