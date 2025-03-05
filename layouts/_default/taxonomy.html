@@ -1,0 +1,46 @@
+{{ define "main" }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+      {{ with .Description }}<p class="f4 mb4">{{ . }}</p>{{ end }}
+      {{ with .Content }}<div class="mb4">{{ . }}</div>{{ end }}
+    </header>
+
+    <div class="lh-copy">
+      <!-- Debug info -->
+      <div class="mb4 pa3 bg-light-gray">
+        <h3>Debug Information:</h3>
+        <p><strong>Page Kind:</strong> {{ .Kind }}</p>
+        <p><strong>Page Type:</strong> {{ .Type }}</p>
+        <p><strong>Section:</strong> {{ .Section }}</p>
+        <p><strong>Terms:</strong></p>
+        <ul>
+        {{ range .Data.Terms.Alphabetical }}
+          <li>{{ .Page.Title }} ({{ .Count }} events)</li>
+        {{ end }}
+        </ul>
+      </div>
+
+      {{ with .Data.Terms }}
+        <div class="flex flex-wrap">
+        {{ range $key, $value := . }}
+          {{ with $.Site.GetPage (printf "/%s/%s" $.Data.Plural $key) }}
+          <div class="w-100 w-third-ns pr4-ns mb4">
+            <h2 class="f3 fw6 mb2">{{ .Title }}</h2>
+            {{ with .Description }}<p class="mb2">{{ . }}</p>{{ end }}
+            {{ with .Params.address }}<div class="mb2"><span class="b">Address:</span> {{ . }}</div>{{ end }}
+            <div class="f6 gray mb2">{{ len $value }} {{ if eq (len $value) 1 }}event{{ else }}events{{ end }}</div>
+            <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">View details →</a>
+          </div>
+          {{ end }}
+        {{ end }}
+        </div>
+      {{ else }}
+        <p>No items found.</p>
+      {{ end }}
+    </div>
+  </article>
+</div>
+{{ end }} 

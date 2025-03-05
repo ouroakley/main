@@ -1,0 +1,50 @@
+{{ define "main" }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+      TEST VENUES LIST
+      {{ with .Description }}<p class="f4 mb4">{{ . }}</p>{{ end }}
+      {{ with .Content }}<div class="mb4">{{ . }}</div>{{ end }}
+    </header>
+
+    <div class="lh-copy">
+      <!-- Debug output -->
+      <div class="mb4 pa3 bg-light-gray">
+        <p class="mb2"><strong>Available taxonomies:</strong></p>
+        {{ range $taxonomyName, $taxonomy := .Site.Taxonomies }}
+          <p>{{ $taxonomyName }}:</p>
+          <ul>
+          {{ range $key, $value := $taxonomy }}
+            <li>{{ $key }} ({{ len $value }} events)</li>
+          {{ end }}
+          </ul>
+        {{ end }}
+      </div>
+
+      {{ with .Site.Taxonomies.venue }}
+        <div class="flex flex-wrap">
+        {{ range $key, $pages := . }}
+          {{ with $.Site.GetPage (printf "/venues/%s" $key) }}
+          <div class="w-100 w-third-ns pr4-ns mb4">
+            <h2 class="f3 fw6 mb2">{{ .Title }}</h2>
+            {{ with .Description }}<p class="mb2">{{ . }}</p>{{ end }}
+            {{ with .Params.address }}<div class="mb2"><span class="b">Address:</span> {{ . }}</div>{{ end }}
+            <div class="f6 gray mb2">{{ len $pages }} {{ if eq (len $pages) 1 }}event{{ else }}events{{ end }}</div>
+            <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">View details →</a>
+          </div>
+          {{ end }}
+        {{ end }}
+        </div>
+      {{ else }}
+        <p>No venues found.</p>
+        <!-- Debug info -->
+        <div class="mt3 pa3 bg-light-gray">
+          <p><strong>Debug:</strong> Could not find taxonomy section at /venues</p>
+        </div>
+      {{ end }}
+    </div>
+  </article>
+</div>
+{{ end }} 

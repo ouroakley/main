@@ -1,0 +1,38 @@
+{{ define "main" }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+      <p class="f4 mb4">Places around Oakley where community events are held</p>
+    </header>
+
+    <div class="lh-copy">
+      {{ if .Data.Terms }}
+        <div class="flex flex-wrap nl3 nr3">
+          {{ range .Data.Terms.Alphabetical }}
+            <div class="w-100 w-50-m w-third-l ph3 mb4">
+              <a href="{{ .Page.RelPermalink }}" class="link near-black hover-blue">
+                <div class="pa3 bg-white br2 shadow-4 h-100">
+                  <h2 class="f4 fw6 mt0 mb2">{{ .Page.Title }}</h2>
+                  {{ with .Page.Description }}
+                    <p class="f6 gray mt0 mb3">{{ . }}</p>
+                  {{ end }}
+                  {{ with .Page.Params.address }}
+                    <p class="f6 gray mt0 mb3">{{ . }}</p>
+                  {{ end }}
+                  <p class="f6 blue mb0">
+                    {{ .Count }} {{ if eq .Count 1 }}event{{ else }}events{{ end }} →
+                  </p>
+                </div>
+              </a>
+            </div>
+          {{ end }}
+        </div>
+      {{ else }}
+        <p class="i gray">No venues found.</p>
+      {{ end }}
+    </div>
+  </article>
+</div>
+{{ end }} 

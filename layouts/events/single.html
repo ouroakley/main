@@ -8,62 +8,88 @@
   {{ $section := .Site.GetPage "section" .Section }}
   <div class="mw8 center ph3">
     {{ partial "breadcrumb.html" . }}
-    <article>
+    <article class="pb6">
       <header class="mb4">
-        <p class="b helvetica tracked ttu mb0">
-          {{ .CurrentSection.Title }}
-        </p>
-        {{- partialCached "social/share.html" . . -}}
-        <h1 class="f2 fw6 mt2 mb4">
-          {{- .Title -}}
-        </h1>
+        <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+        {{ with .Description }}<p class="f4 mb4">{{ . }}</p>{{ end }}
+      </header>
 
-        {{/* Event Details Section */}}
-        <div class="mb4">
-          {{/* Event Time */}}
-          {{ with .Params.eventStart }}
-          <div class="mb3">
-            <span class="b">When:</span> 
-            {{ $startDate := . }}
-            {{ if eq (dateFormat "15:04" .) "00:00" }}
-              {{ dateFormat "Monday, January 2, 2006" . }}
-            {{ else }}
-              {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
-            {{ end }}
-            {{ with $.Params.eventEnd }}
-              {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
+      <div class="flex flex-wrap">
+        <div class="w-100 w-60-ns pr4-ns mb4">
+          {{/* Event Details Section */}}
+          <div class="pa4 bg-light-gray br3 mb4">
+            {{/* Event Time */}}
+            {{ with .Params.eventStart }}
+            <div class="mb3">
+              <h2 class="f4 fw6 mt0 mb2">
+                <span class="mr2">📅</span>When
+              </h2>
+              {{ $startDate := . }}
+              <p class="mt0 mb3">
                 {{ if eq (dateFormat "15:04" .) "00:00" }}
-                  {{/* Same day, no end time - don't show anything */}}
-                {{ else }}
-                  - {{ dateFormat "3:04 PM" . }}
-                {{ end }}
-              {{ else }}
-                - {{ if eq (dateFormat "15:04" .) "00:00" }}
                   {{ dateFormat "Monday, January 2, 2006" . }}
                 {{ else }}
                   {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
                 {{ end }}
-              {{ end }}
+                {{ with $.Params.eventEnd }}
+                  {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
+                    {{ if eq (dateFormat "15:04" .) "00:00" }}
+                      {{/* Same day, no end time - don't show anything */}}
+                    {{ else }}
+                      - {{ dateFormat "3:04 PM" . }}
+                    {{ end }}
+                  {{ else }}
+                    - {{ if eq (dateFormat "15:04" .) "00:00" }}
+                      {{ dateFormat "Monday, January 2, 2006" . }}
+                    {{ else }}
+                      {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+              </p>
+            </div>
             {{ end }}
-          </div>
-          {{ end }}
 
-          {{/* Venue(s) */}}
-          <div class="mb3">
-            <span class="b">{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}: </span>
-            {{- range $index, $venue := .Params.venues -}}
-              {{- if $index }}, {{ end -}}
-              <a href="{{ "/venues/" | relLangURL }}{{ . | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ . | strings.TrimSpace }}</a>
-            {{- end -}}
+            {{/* Venue(s) */}}
+            <div class="mb3">
+              <h2 class="f4 fw6 mt0 mb2">
+                <span class="mr2">📍</span>{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}
+              </h2>
+              <p class="mt0 mb3">
+                {{- range $index, $venue := .Params.venues -}}
+                  {{- if $index }}, {{ end -}}
+                  {{- with $.Site.GetPage (printf "/venues/%s" ($venue | urlize)) -}}
+                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
+                  {{- else -}}
+                    {{/* Fallback to raw value if page not found */}}
+                    <a href="{{ "/venues/" | relLangURL }}{{ $venue | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $venue | strings.TrimSpace }}</a>
+                  {{- end -}}
+                {{- end -}}
+              </p>
+            </div>
+
+            {{/* Organiser(s) */}}
+            <div class="mb3">
+              <h2 class="f4 fw6 mt0 mb2">
+                <span class="mr2">👥</span>{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}
+              </h2>
+              <p class="mt0 mb0">
+                {{- range $index, $organiser := .Params.organisers -}}
+                  {{- if $index }}, {{ end -}}
+                  {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
+                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
+                  {{- else -}}
+                    {{/* Fallback to raw value if page not found */}}
+                    <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
+                  {{- end -}}
+                {{- end -}}
+              </p>
+            </div>
           </div>
 
-          {{/* Organiser(s) */}}
-          <div class="mb3">
-            <span class="b">{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}: </span>
-            {{- range $index, $organiser := .Params.organisers -}}
-              {{- if $index }}, {{ end -}}
-              <a href="{{ "/organisers/" | relLangURL }}{{ . | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ . | strings.TrimSpace }}</a>
-            {{- end -}}
+          {{/* Event Content */}}
+          <div class="lh-copy">
+            {{- .Content -}}
           </div>
 
           {{/* Posted Date - only if needed */}}
@@ -72,18 +98,37 @@
             Posted: {{- .Date | time.Format "January 2, 2006" -}}
           </div>
           {{ end }}
+
+          {{- partial "tags.html" . -}}
         </div>
-      </header>
 
-      <div class="lh-copy">
-        {{- .Content -}}
-        {{- partial "tags.html" . -}}
+        <div class="w-100 w-40-ns pl4-ns mb4">
+          {{/* Related Events */}}
+          {{ $related := .Site.RegularPages.Related . | first 3 }}
+          {{ with $related }}
+          <h2 class="f4 fw6">Related Events</h2>
+          <ul class="list pl0">
+            {{ range . }}
+            <li class="mb3">
+              <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
+                <span class="db f5">{{ .Title }}</span>
+                <span class="db f6 gray">
+                  {{ with .Params.eventStart }}
+                    {{ dateFormat "Monday, January 2, 2006" . }}
+                    {{ with time.Format ":04 PM" . }}
+                      at {{ . }}
+                    {{ end }}
+                  {{ end }}
+                </span>
+              </a>
+            </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+
+          {{- partial "menu-contextual.html" . -}}
+        </div>
       </div>
-
-      <aside class="w-30-l mt6-l">
-        {{- partial "menu-contextual.html" . -}}
-      </aside>
-
     </article>
   </div>
 {{ end }} 

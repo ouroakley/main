@@ -1,0 +1,179 @@
+{{ define "main" }}
+<div class="mw8 center ph3">
+  <article class="pb6">
+    {{/* Hero Section */}}
+    <header class="tc mb5 pb4">
+      <h1 class="f2 f1-ns fw6 mt4 mb3">Welcome to Our Oakley</h1>
+      <p class="f4 f3-ns measure center lh-copy mb4">Discover local events and connect with your community in Oakley</p>
+      <div class="flex justify-center">
+        <a href="/events/" class="f5 link dim br2 ph4 pv3 dib white bg-blue mr3">Browse Events</a>
+        <a href="/calendar/" class="f5 link dim br2 ph4 pv3 dib white bg-dark-blue">View Calendar</a>
+      </div>
+    </header>
+
+    <div class="flex flex-wrap">
+      <div class="w-100 w-60-ns pr4-ns">
+        {{/* Featured Upcoming Events */}}
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">
+            <span class="mr2">📅</span>Upcoming Events
+          </h2>
+          {{ $upcomingEvents := where .Site.RegularPages "Type" "events" }}
+          {{ $upcomingEvents = where $upcomingEvents "Params.eventStart" "ge" now }}
+          {{ $sortedEvents := first 3 (sort $upcomingEvents "Params.eventStart" "asc") }}
+          
+          {{ if $sortedEvents }}
+            <div class="flex flex-wrap nl3 nr3">
+              {{ range $sortedEvents }}
+                <div class="w-100 w-third-ns ph3 mb4">
+                  <div class="pa3 bg-white br2 shadow-4 h-100">
+                    <h3 class="f4 fw6 mt0 mb2">{{ .Title }}</h3>
+                    
+                    {{/* Event Time */}}
+                    {{ with .Params.eventStart }}
+                    <p class="f6 mb2">
+                      <span class="mr2">📅</span>
+                      {{ $startDate := . }}
+                      {{ if eq (dateFormat "15:04" .) "00:00" }}
+                        {{ dateFormat "Monday, January 2, 2006" . }}
+                      {{ else }}
+                        {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
+                      {{ end }}
+                      {{ with $.Params.eventEnd }}
+                        {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
+                          {{ if ne (dateFormat "15:04" .) "00:00" }}
+                            - {{ dateFormat "3:04 PM" . }}
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}
+                    </p>
+                    {{ end }}
+
+                    {{/* Venue */}}
+                    {{ with index .Params.venues 0 }}
+                    <p class="f6 mb2">
+                      <span class="mr2">📍</span>{{ . }}
+                    </p>
+                    {{ end }}
+
+                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue f6">
+                      View details →
+                    </a>
+                  </div>
+                </div>
+              {{ end }}
+            </div>
+            <div class="tc mt3">
+              <a href="/events/" class="f5 link blue hover-dark-blue">
+                View all events →
+              </a>
+            </div>
+          {{ else }}
+            <p class="i gray">No upcoming events scheduled</p>
+          {{ end }}
+        </section>
+
+        {{/* Quick Links */}}
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">Quick Links</h2>
+          <div class="flex flex-wrap nl3 nr3">
+            <div class="w-100 w-50-ns ph3 mb4">
+              <div class="pa3 bg-light-gray br2">
+                <h3 class="f4 fw6 mt0 mb3">
+                  <span class="mr2">📍</span>Venues
+                </h3>
+                <p class="f6 mb3">Discover places where community events are held</p>
+                <a href="/venues/" class="link blue hover-dark-blue f6">
+                  Browse venues →
+                </a>
+              </div>
+            </div>
+            <div class="w-100 w-50-ns ph3 mb4">
+              <div class="pa3 bg-light-gray br2">
+                <h3 class="f4 fw6 mt0 mb3">
+                  <span class="mr2">👥</span>Organisers
+                </h3>
+                <p class="f6 mb3">Meet the groups and people behind our events</p>
+                <a href="/organisers/" class="link blue hover-dark-blue f6">
+                  Meet organisers →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="w-100 w-40-ns pl4-ns">
+        {{/* This Month's Calendar */}}
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">
+            <span class="mr2">📅</span>This Month
+          </h2>
+          {{ $thisMonth := now.Format "January 2006" }}
+          {{ $eventsThisMonth := where .Site.RegularPages "Type" "events" }}
+          {{ $eventsThisMonth = where $eventsThisMonth "Params.eventStart" "ge" now }}
+          {{ $eventsThisMonth = where $eventsThisMonth "Params.eventStart" "le" (now.AddDate 0 1 0) }}
+          {{ $sortedMonthEvents := sort $eventsThisMonth "Params.eventStart" "asc" }}
+
+          {{ if $sortedMonthEvents }}
+            <div class="pa3 bg-light-gray br2">
+              <h3 class="f4 fw6 mt0 mb3">{{ $thisMonth }}</h3>
+              <ul class="list pl0">
+                {{ range $sortedMonthEvents }}
+                  <li class="mb3">
+                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
+                      <span class="db f5">{{ .Title }}</span>
+                      <span class="db f6 gray">
+                        {{ with .Params.eventStart }}
+                          {{ dateFormat "Monday, January 2" . }}
+                          {{ if ne (dateFormat "15:04" .) "00:00" }}
+                            at {{ dateFormat "3:04 PM" . }}
+                          {{ end }}
+                        {{ end }}
+                      </span>
+                    </a>
+                  </li>
+                {{ end }}
+              </ul>
+              <div class="mt3">
+                <a href="/calendar/" class="link blue hover-dark-blue f6">
+                  View full calendar →
+                </a>
+              </div>
+            </div>
+          {{ else }}
+            <p class="i gray">No events scheduled this month</p>
+          {{ end }}
+        </section>
+
+        {{/* Community Updates */}}
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">
+            <span class="mr2">📢</span>Community Updates
+          </h2>
+          <div class="pa3 bg-light-gray br2">
+            <p class="f6 mt0 mb3">Stay connected with our community:</p>
+            <ul class="list pl0">
+              <li class="mb2">
+                <a href="/about/" class="link blue hover-dark-blue">
+                  <span class="mr2">ℹ️</span>About Our Oakley
+                </a>
+              </li>
+              <li class="mb2">
+                <a href="/contact/" class="link blue hover-dark-blue">
+                  <span class="mr2">✉️</span>Contact Us
+                </a>
+              </li>
+              <li class="mb2">
+                <a href="/contribute/" class="link blue hover-dark-blue">
+                  <span class="mr2">🤝</span>Get Involved
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </div>
+  </article>
+</div>
+{{ end }} 

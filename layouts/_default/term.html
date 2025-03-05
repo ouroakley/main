@@ -1,0 +1,144 @@
+{{ define "main" }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
+      {{ with .Description }}<p class="f4 mb4">{{ . }}</p>{{ end }}
+    </header>
+
+    <div class="lh-copy">
+      <!-- Debug info -->
+      <div class="mb4 pa3 bg-light-gray">
+        <h3>Debug Information:</h3>
+        <p><strong>Page Kind:</strong> {{ .Kind }}</p>
+        <p><strong>Page Type:</strong> {{ .Type }}</p>
+        <p><strong>Section:</strong> {{ .Section }}</p>
+        <p><strong>Term:</strong> {{ .Data.Term }}</p>
+        <p><strong>Taxonomy:</strong> {{ .Data.Singular }} / {{ .Data.Plural }}</p>
+        <p><strong>Events:</strong></p>
+        {{ $events := where (where .Site.RegularPages "Type" "events") .Data.Plural "intersect" (slice .Data.Term) }}
+        <ul>
+        {{ range $events }}
+          <li>{{ .Title }} ({{ .RelPermalink }})</li>
+        {{ end }}
+        </ul>
+      </div>
+
+      <div class="flex flex-wrap">
+        <div class="w-100 w-60-ns pr4-ns mb4">
+          {{ .Content }}
+          
+          {{/* Details */}}
+          <div class="mt4">
+            {{ if eq .Data.Singular "venue" }}
+              {{/* Venue-specific details */}}
+              {{ with .Params.address }}
+              <div class="mb4">
+                <h2 class="f4 fw6">Address</h2>
+                <p>{{ . }}</p>
+                <a href="https://www.google.com/maps/search/?api=1&query={{ . | urlquery }}"
+                   class="link blue hover-dark-blue" 
+                   target="_blank" 
+                   rel="noopener noreferrer">View on Google Maps →</a>
+              </div>
+              {{ end }}
+            {{ else if eq .Data.Singular "organiser" }}
+              {{/* Organiser-specific details */}}
+              {{ with .Params.fullName }}
+              <div class="mb4">
+                <h2 class="f4 fw6">Full Name</h2>
+                <p>{{ . }}</p>
+              </div>
+              {{ end }}
+              {{ with .Params.contact }}
+              <div class="mb4">
+                <h2 class="f4 fw6">Contact</h2>
+                <p><a href="mailto:{{ . }}" class="link blue hover-dark-blue">{{ . }}</a></p>
+              </div>
+              {{ end }}
+              {{ with .Params.website }}
+              <div class="mb4">
+                <h2 class="f4 fw6">Website</h2>
+                <p><a href="{{ . }}" class="link blue hover-dark-blue" target="_blank" rel="noopener noreferrer">{{ . }}</a></p>
+              </div>
+              {{ end }}
+            {{ end }}
+
+            {{/* Other parameters */}}
+            {{ range $key, $value := .Params }}
+              {{ if and (ne $key "title") (ne $key "description") (ne $key "address") (ne $key "fullName") (ne $key "contact") (ne $key "website") }}
+                <div class="mb4">
+                  <h2 class="f4 fw6">{{ $key | title }}</h2>
+                  {{ if reflect.IsSlice $value }}
+                    <ul class="list pl0">
+                      {{ range $value }}
+                      <li class="mb2">
+                        <span class="mr2">•</span>{{ . }}
+                      </li>
+                      {{ end }}
+                    </ul>
+                  {{ else }}
+                    <p>{{ $value }}</p>
+                  {{ end }}
+                </div>
+              {{ end }}
+            {{ end }}
+          </div>
+        </div>
+
+        <div class="w-100 w-40-ns pl4-ns mb4">
+          {{/* Events Section */}}
+          <h2 class="f4 fw6">Upcoming Events</h2>
+          {{ $events := where (where .Site.RegularPages "Type" "events") .Data.Plural "intersect" (slice .Data.Term) }}
+          {{ $upcomingEvents := where $events "Date" "ge" now }}
+          {{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
+          
+          {{ if $sortedEvents }}
+            <ul class="list pl0">
+              {{ range $sortedEvents }}
+                <li class="mb3">
+                  <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
+                    <span class="db f5">{{ .Title }}</span>
+                    <span class="db f6 gray">
+                      {{ with .Params.eventStart }}
+                        {{ dateFormat "Monday, January 2, 2006" . }}
+                        {{ with time.Format ":04 PM" . }}
+                          at {{ . }}
+                        {{ end }}
+                      {{ end }}
+                    </span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ else }}
+            <p class="i gray">No upcoming events</p>
+          {{ end }}
+
+          {{/* Past Events Section */}}
+          {{ $pastEvents := where $events "Date" "lt" now }}
+          {{ $recentPastEvents := first 3 (sort $pastEvents "Params.eventStart" "desc") }}
+          {{ if $recentPastEvents }}
+            <h2 class="f4 fw6 mt5">Recent Events</h2>
+            <ul class="list pl0">
+              {{ range $recentPastEvents }}
+                <li class="mb3">
+                  <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
+                    <span class="db f5">{{ .Title }}</span>
+                    <span class="db f6 gray">
+                      {{ with .Params.eventStart }}
+                        {{ dateFormat "Monday, January 2, 2006" . }}
+                      {{ end }}
+                    </span>
+                  </a>
+                </li>
+              {{ end }}
+            </ul>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </article>
+</div>
+{{ end }} 
