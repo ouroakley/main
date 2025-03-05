@@ -11,7 +11,7 @@
       <div class="flex flex-wrap">
         <div class="w-100 w-60-ns pr4-ns mb4">
           {{ .Content }}
-          
+
           {{/* Organiser Details */}}
           <div class="mt4">
             {{ with .Params.fullName }}
@@ -63,7 +63,7 @@
           {{ $events := where (where .Site.RegularPages "Type" "events") "Params.organisers" "intersect" (slice .Data.Term) }}
           {{ $upcomingEvents := where $events "Date" "ge" now }}
           {{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
-          
+
           {{ if $sortedEvents }}
             <ul class="list pl0">
               {{ range $sortedEvents }}
@@ -111,4 +111,4 @@
     </div>
   </article>
 </div>
-{{ end }} 
+{{ end }}

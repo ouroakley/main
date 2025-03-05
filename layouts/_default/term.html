@@ -28,7 +28,7 @@
       <div class="flex flex-wrap">
         <div class="w-100 w-60-ns pr4-ns mb4">
           {{ .Content }}
-          
+
           {{/* Details */}}
           <div class="mt4">
             {{ if eq .Data.Singular "venue" }}
@@ -38,8 +38,8 @@
                 <h2 class="f4 fw6">Address</h2>
                 <p>{{ . }}</p>
                 <a href="https://www.google.com/maps/search/?api=1&query={{ . | urlquery }}"
-                   class="link blue hover-dark-blue" 
-                   target="_blank" 
+                   class="link blue hover-dark-blue"
+                   target="_blank"
                    rel="noopener noreferrer">View on Google Maps →</a>
               </div>
               {{ end }}
@@ -93,7 +93,7 @@
           {{ $events := where (where .Site.RegularPages "Type" "events") .Data.Plural "intersect" (slice .Data.Term) }}
           {{ $upcomingEvents := where $events "Date" "ge" now }}
           {{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
-          
+
           {{ if $sortedEvents }}
             <ul class="list pl0">
               {{ range $sortedEvents }}
@@ -141,4 +141,4 @@
     </div>
   </article>
 </div>
-{{ end }} 
+{{ end }}

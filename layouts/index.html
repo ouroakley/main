@@ -21,14 +21,14 @@
           {{ $upcomingEvents := where .Site.RegularPages "Type" "events" }}
           {{ $upcomingEvents = where $upcomingEvents "Params.eventStart" "ge" now }}
           {{ $sortedEvents := first 3 (sort $upcomingEvents "Params.eventStart" "asc") }}
-          
+
           {{ if $sortedEvents }}
             <div class="flex flex-wrap nl3 nr3">
               {{ range $sortedEvents }}
                 <div class="w-100 w-third-ns ph3 mb4">
                   <div class="pa3 bg-white br2 shadow-4 h-100">
                     <h3 class="f4 fw6 mt0 mb2">{{ .Title }}</h3>
-                    
+
                     {{/* Event Time */}}
                     {{ with .Params.eventStart }}
                     <p class="f6 mb2">
@@ -176,4 +176,4 @@
     </div>
   </article>
 </div>
-{{ end }} 
+{{ end }}
