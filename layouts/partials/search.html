@@ -1,0 +1,58 @@
+{{/* Search Component */}}
+<div class="search-container mb4">
+  <div class="relative">
+    <input
+      type="text"
+      id="search-input"
+      class="w-100 pa3 pr5 br2 ba b--light-gray"
+      placeholder="Search events, venues, or organisers..."
+      autocomplete="off"
+    >
+    <button
+      id="search-clear"
+      class="absolute right-1 top-0 bottom-0 bn bg-transparent pointer dn"
+      aria-label="Clear search"
+    >
+      <span class="f6 gray">✕</span>
+    </button>
+  </div>
+
+  {{/* Search Results */}}
+  <div id="search-results" class="dn mt3">
+    <div class="results-info mb3">
+      <span id="results-count" class="f6 gray"></span>
+    </div>
+    <div id="results-container" class="flex flex-wrap nl3 nr3"></div>
+  </div>
+
+  {{/* No Results Message */}}
+  <div id="no-results" class="dn mt3">
+    <p class="f6 gray i">No events found. Try adjusting your search terms.</p>
+  </div>
+
+  {{/* Loading State */}}
+  <div id="search-loading" class="dn mt3">
+    <p class="f6 gray i">Searching...</p>
+  </div>
+</div>
+
+{{/* Result Template */}}
+<template id="search-result-template">
+  <div class="w-100 w-third-ns ph3 mb4">
+    <div class="pa3 bg-white br2 shadow-4 h-100">
+      <h3 class="f4 fw6 mt0 mb2"></h3>
+      <p class="f6 gray mt0 mb3 event-date"></p>
+      <p class="f6 mb2 venue">
+        <span class="mr2">📍</span>
+        <span class="venue-name"></span>
+      </p>
+      <p class="f6 mb3 organiser">
+        <span class="mr2">👥</span>
+        <span class="organiser-name"></span>
+      </p>
+      <a class="link blue hover-dark-blue f6">
+        View details →
+      </a>
+    </div>
+  </div>
+</template>

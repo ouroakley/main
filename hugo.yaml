@@ -30,3 +30,8 @@ menus:
     - name: Calendar
       url: /calendar/
       weight: 5
+
+outputs:
+  home:
+    - HTML
+    - JSON

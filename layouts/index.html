@@ -5,6 +5,10 @@
     <header class="tc mb5 pb4">
       <h1 class="f2 f1-ns fw6 mt4 mb3">Welcome to Our Oakley</h1>
       <p class="f4 f3-ns measure center lh-copy mb4">Discover local events and connect with your community in Oakley</p>
+
+      {{/* Search Section */}}
+      {{ partial "search.html" . }}
+
       <div class="flex justify-center">
         <a href="/events/" class="f5 link dim br2 ph4 pv3 dib white bg-blue mr3">Browse Events</a>
         <a href="/calendar/" class="f5 link dim br2 ph4 pv3 dib white bg-dark-blue">View Calendar</a>
@@ -176,4 +180,8 @@
     </div>
   </article>
 </div>
+
+{{/* Add Fuse.js and search script */}}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="/js/search.js"></script>
 {{ end }}

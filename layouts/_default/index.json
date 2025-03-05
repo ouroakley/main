@@ -1,0 +1,19 @@
+{
+    "events": [
+        {{- $events := where .Site.RegularPages "Type" "events" -}}
+        {{- range $index, $event := $events -}}
+        {{- if $index }}, {{ end }}
+        {
+            "title": {{ .Title | jsonify }},
+            "permalink": {{ .RelPermalink | jsonify }},
+            "description": {{ .Description | jsonify }},
+            "content": {{ .Plain | jsonify }},
+            "date": {{ .Date.Format "2006-01-02" | jsonify }},
+            "eventStart": {{ .Params.eventStart | jsonify }},
+            "eventEnd": {{ .Params.eventEnd | jsonify }},
+            "venues": {{ .Params.venues | jsonify }},
+            "organisers": {{ .Params.organisers | jsonify }}
+        }
+        {{- end -}}
+    ]
+}
