@@ -8,6 +8,7 @@ facilities:
   - School hall
   - Outdoor playground
 website: https://www.oakley-inf.hants.sch.uk/
+draft: true
 ---
 
 Oakley Infant School serves as a venue for various community events, including the annual Oakley Village Show.

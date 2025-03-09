@@ -1,6 +1,6 @@
 ---
 date: 2025-03-03
-draft: false
+draft: true
 title: Oakley and Deane Fireworks
 venues:
   - Newfound Recreation Ground

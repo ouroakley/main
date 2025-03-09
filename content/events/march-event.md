@@ -1,6 +1,6 @@
 ---
 date: 2025-03-05
-draft: false
+draft: true
 title: Fake Event
 eventStart: 2025-03-31
 venues:
