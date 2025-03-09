@@ -40,5 +40,5 @@ echo "theme = 'ananke'" >> hugo.toml
 1. Select repository
 1. Set build options command: hugo, buildoutput: public
 
-1. Add page rules for bare domain to www
-1. Setup www as custom domain for pages worker
+1. Add redirect rule for bare domain to www
+1. Setup bar domain and www as custom domain for pages worker
