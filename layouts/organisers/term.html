@@ -37,7 +37,7 @@
 
             {{/* Other parameters */}}
             {{ range $key, $value := .Params }}
-              {{ if and (ne $key "title") (ne $key "description") (ne $key "fullName") (ne $key "contact") (ne $key "website") }}
+              {{ if and (ne $key "title") (ne $key "description") (ne $key "fullName") (ne $key "contact") (ne $key "website") (ne $key "draft") (ne $key "iscjklanguage") }}
                 <div class="mb4">
                   <h2 class="f4 fw6">{{ $key | title }}</h2>
                   {{ if reflect.IsSlice $value }}
