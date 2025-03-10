@@ -170,9 +170,10 @@
           <span class="mr2">📅</span>{{ $currentDate.Format "January 2006" }}
         </h2>
 
+        {{/* Do not display Calendar if does not have events */}}
         {{ if not $hasEvents }}
           <p class="mv3 gray i">No events scheduled</p>
-        {{ end }}
+        {{ else }}
 
         {{/* Set up calendar variables */}}
         {{ $dateStr := printf "%04d-%02d-01" $year (int $month) }}
@@ -255,6 +256,7 @@
             </div>
           {{ end }}
         </div>
+      {{ end }}
       </section>
 
       {{/* Advance to next month */}}
