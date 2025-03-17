@@ -5,7 +5,8 @@ backend:
   site_domain: https://www.ouroakley.uk
   base_url: https://www.ouroakley.uk
   auth_endpoint: /api/auth
-publish_mode: editorial_workflow
+
+publish_mode: simple
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
