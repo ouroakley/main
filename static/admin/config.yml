@@ -9,34 +9,34 @@ publish_mode: editorial_workflow
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
-# collections:
-#   - name: "events"
-#     label: "Events"
-#     folder: "content/events"
-#     create: true
-#     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-#     fields:
-#       - {label: "Title", name: "title", widget: "string"}
-#       - {label: "Description", name: "description", widget: "text", required: false}
-#       - {label: "Event Start", name: "eventStart", widget: "datetime"}
-#       - {label: "Event End", name: "eventEnd", widget: "datetime", required: false}
-#       - label: "Venues"
-#         name: "venues"
-#         widget: "relation"
-#         collection: "venues"
-#         search_fields: ["title", "address"]
-#         value_field: "{{slug}}"
-#         display_fields: ["title"]
-#         multiple: true
-#       - label: "Organisers"
-#         name: "organisers"
-#         widget: "relation"
-#         collection: "organisers"
-#         search_fields: ["title", "fullName"]
-#         value_field: "{{slug}}"
-#         display_fields: ["title"]
-#         multiple: true
-#       - {label: "Content", name: "body", widget: "markdown"}
+collections:
+  - name: "events"
+    label: "Events"
+    folder: "content/events"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Event Start", name: "eventStart", widget: "datetime"}
+      - {label: "Event End", name: "eventEnd", widget: "datetime", required: false}
+      - label: "Venues"
+        name: "venues"
+        widget: "relation"
+        collection: "venues"
+        search_fields: ["title", "address"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+      - label: "Organisers"
+        name: "organisers"
+        widget: "relation"
+        collection: "organisers"
+        search_fields: ["title", "fullName"]
+        value_field: "{{slug}}"
+        display_fields: ["title"]
+        multiple: true
+      - {label: "Content", name: "body", widget: "markdown"}
 
 #   - name: "venues"
 #     label: "Venues"
