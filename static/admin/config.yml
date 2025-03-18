@@ -19,6 +19,16 @@ collections:
     nested:
       depth: 100
       summary: '{{title}}'
+    view_filters:
+      - label: "By Venue"
+        field: venues
+      - label: "By Organiser"
+        field: organisers
+    view_groups:
+      - label: "Venue"
+        field: venues
+      - label: "Organiser"
+        field: organisers
     meta:
       path:
         widget: string
