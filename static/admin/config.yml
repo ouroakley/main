@@ -16,7 +16,9 @@ collections:
     label_singular: "Event"
     folder: "content/events"
     create: true
-    summary: '{{title}} - {{eventStart}}'
+    nested:
+      depth: 5
+      summary: '{{title}} - {{eventStart | date('YYYY-MM-DD')}} '
     view_groups:
       - label: "Venue"
         field: venues
