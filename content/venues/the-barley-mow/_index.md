@@ -1,5 +1,5 @@
 ---
-title: Barley Mow
+title: The Barley Mow
 description: A traditional pub in the heart of Oakley
 address: 19 Oakley Ln, Oakley, Basingstoke RG23 7JZ
 ---
