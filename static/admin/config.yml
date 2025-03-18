@@ -19,7 +19,7 @@ collections:
     nested:
       depth: 5
       summary: '{{title}} - {{eventStart | date("YYYY-MM-DD")}}'
-      subfolders: true
+      subfolders: false
     view_groups:
       - label: "Venue"
         field: venues
