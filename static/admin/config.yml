@@ -5,6 +5,7 @@ backend:
   site_domain: https://www.ouroakley.uk
   base_url: https://www.ouroakley.uk
   auth_endpoint: /api/auth
+  squash_merges: true
 
 editor:
   preview: false
