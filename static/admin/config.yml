@@ -55,7 +55,7 @@ collections:
         value_field: "{{title}}"
         display_fields: ["title"]
         multiple: true
-      - {label: "Content", name: "body", widget: "markdown"}
+      - {label: "Content", name: "body", widget: "markdown", required: false}
 
   - name: "venues"
     label: "Venues"
