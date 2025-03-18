@@ -34,7 +34,7 @@ collections:
         widget: "relation"
         collection: "venues"
         search_fields: ["title", "address"]
-        value_field: "{{slug}}"
+        value_field: "{{title}}"
         display_fields: ["title"]
         multiple: true
       - label: "Organisers"
@@ -42,7 +42,7 @@ collections:
         widget: "relation"
         collection: "organisers"
         search_fields: ["title", "fullName"]
-        value_field: "{{slug}}"
+        value_field: "{{title}}"
         display_fields: ["title"]
         multiple: true
       - {label: "Content", name: "body", widget: "markdown"}
