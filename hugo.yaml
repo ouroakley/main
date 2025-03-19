@@ -32,3 +32,19 @@ outputs:
   home:
     - HTML
     - JSON
+
+module:
+  mounts:
+    - source: content
+      target: content
+  imports:
+    - path: github.com/ouroakley/example-group
+      mounts:
+        - source: content/events
+          target: content/events/example-group
+        - source: content/venues
+          target: content/venues
+        - source: content/organisers
+          target: content/organisers
+        - source: static/admin
+          target: static/admin/example-group
