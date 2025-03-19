@@ -20,7 +20,7 @@ collections:
     label_singular: "Event"
     folder: "content/events"
     create: true
-    summary: '{{title}} - {{eventStart | date("DD MMM YYYY")}}'
+    summary: "{{title}} - {{eventStart | date('DD MMM YYYY')}}"
     nested:
       depth: 5
       summary: '{{dirname}}'
