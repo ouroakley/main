@@ -29,7 +29,7 @@ menus:
       weight: 4
 
 outputs:
-  home:
+  taxonomy:
     - HTML
     - JSON
 

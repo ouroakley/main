@@ -1,0 +1,12 @@
+{
+    "venues": [
+        {{- range $index, $venue := .Pages }}
+        {{- if $index }}, {{ end }}
+        {
+            "value": "{{ .File.ContentBaseName }}",
+            "label": "{{ .Title }}",
+            "address": "{{ .Params.address }}"
+        }
+        {{- end }}
+    ]
+}
