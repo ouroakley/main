@@ -1,13 +1,10 @@
-{
-    "organisers": [
-        {{- range $index, $organiser := .Pages }}
-        {{- if $index }}, {{ end }}
-        {
-            "value": "{{ .File.ContentBaseName }}",
-            "label": "{{ .Title }}",
-            "fullName": "{{ .Params.fullName }}",
-            "contact": "{{ .Params.contact }}"
-        }
-        {{- end }}
-    ]
-}
+[
+    {{- range $index, $organiser := .Pages }}
+    {{- if $index }}, {{ end }}
+    {
+        "title": "{{ .Title }}",
+        "fullName": "{{ .Params.fullName }}",
+        "contact": "{{ .Params.contact }}"
+    }
+    {{- end }}
+]
