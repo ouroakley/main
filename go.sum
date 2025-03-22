@@ -1,2 +1,6 @@
 github.com/ouroakley/example-group v0.0.0-20250319213712-baa2cb2d0dee h1:Z76fK4cS6hf4Nwkhvp6LWu6UEF/TLZAvFrs4v7y0vEs=
 github.com/ouroakley/example-group v0.0.0-20250319213712-baa2cb2d0dee/go.mod h1:ymPqJylJH9sRgR4zenLfE0nhMLAhpQKXXMzd6+HjBwI=
+github.com/ouroakley/example-group v0.0.0-20250319222425-69ea1880e0f3 h1:1YmakgCGYa7LkDC//EUmLePYwQmf04VULX3JxmLTE+g=
+github.com/ouroakley/example-group v0.0.0-20250319222425-69ea1880e0f3/go.mod h1:ymPqJylJH9sRgR4zenLfE0nhMLAhpQKXXMzd6+HjBwI=
+github.com/ouroakley/example-group v0.0.0-20250319234346-6e0a2652ddff h1:QwXzVWp6c30mfX+6nuiDKwUZP+9mcvJUDmt7X7qNYFg=
+github.com/ouroakley/example-group v0.0.0-20250319234346-6e0a2652ddff/go.mod h1:ymPqJylJH9sRgR4zenLfE0nhMLAhpQKXXMzd6+HjBwI=

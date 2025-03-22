@@ -12,6 +12,14 @@
         <div class="w-100 w-60-ns pr4-ns mb4">
           {{ .Content }}
 
+          {{ $additionalInfo := where .Site.Pages "Params.venue" .Title }}
+          {{ range $additionalInfo }}
+          <div class="mt5 pt3 bt b--black-10">
+            <h2 class="f4 fw6">Additional Information</h2>
+            {{ .Content }}
+          </div>
+          {{ end }}
+
           {{/* Venue Details */}}
           {{ with .Params.address }}
           <div class="mt4 pa4 bg-light-gray br3">
