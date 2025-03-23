@@ -1,3 +1,8 @@
+{{ define "header" }}
+   {{/* We can override any block in the baseof file be defining it in the template */}}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
 {{ define "main" }}
 <style>
 /* Base calendar styles */
@@ -137,7 +142,6 @@
   {{ partial "breadcrumb.html" . }}
   <article class="pb6">
     <header class="mb4">
-      <h1 class="f2 fw6 mt2 mb4">{{ .Title }}</h1>
       <p class="f4 mb4">View upcoming events in our community calendar</p>
     </header>
 
