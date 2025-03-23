@@ -1,0 +1,68 @@
+{{/* Debug Information Partial */}}
+{{ if getenv "HUGO_DEBUG" }}
+<div class="pa3 mb4 bg-light-gray br2 overflow-auto">
+  <h3 class="mt0">🔍 Debug Information</h3>
+
+  <h4 class="mb2">Current Page:</h4>
+  <pre class="f6">Title: {{ .Title }}
+Type: {{ .Type }}
+Kind: {{ .Kind }}
+Section: {{ .Section }}
+Data.Term: {{ .Data.Term }}
+RelPermalink: {{ .RelPermalink }}</pre>
+
+  <h4 class="mb2">All Site Pages:</h4>
+  <pre class="f6">{{ range .Site.Pages }}
+- {{ .RelPermalink }} ({{ .Kind }}) [Section: {{ .Section }}]{{ end }}</pre>
+
+  {{ if eq .Type "events" }}
+    <h4 class="mb2">Event Details:</h4>
+    <pre class="f6">Event Start: {{ .Params.eventStart }}
+Event End: {{ .Params.eventEnd }}
+Venues: {{ .Params.venues }}
+Organisers: {{ .Params.organisers }}</pre>
+  {{ else }}
+    <h4 class="mb2">Content Directories:</h4>
+    <pre class="f6">Pages in {{ .Section }}-info:
+{{ range where .Site.Pages "Section" (printf "%s-info" .Section) }}
+- {{ .RelPermalink }} ({{ .Kind }}){{ end }}</pre>
+
+    <h4 class="mb2">Additional Info Query:</h4>
+    {{ $additionalInfo := where (where .Site.Pages "Section" (printf "%s-info" .Section)) "Params." .Section .Title }}
+    <pre class="f6">Query: where (where .Site.Pages "Section" "{{ printf "%s-info" .Section }}") "Params.{{ .Section }}" "{{ .Title }}"
+Found Pages: {{ len $additionalInfo }}
+
+All Site Pages in {{ .Section }}-info:
+{{ range where .Site.Pages "Section" (printf "%s-info" .Section) }}
+- Title: {{ .Title }}
+  RelPermalink: {{ .RelPermalink }}
+  Type: {{ .Type }}
+  Section: {{ .Section }}
+  Params: {{ .Params }}
+{{ end }}
+
+Raw Site Pages:
+{{ range .Site.Pages }}
+{{ if eq .Section (printf "%s-info" $.Section) }}
+- Title: {{ .Title }}
+  RelPermalink: {{ .RelPermalink }}
+  Type: {{ .Type }}
+  Section: {{ .Section }}
+  Raw Params: {{ printf "%#v" .Params }}
+{{ end }}
+{{ end }}</pre>
+
+    {{ if $additionalInfo }}
+    <h4 class="mb2">Found Additional Info Pages:</h4>
+    {{ range $additionalInfo }}
+    <pre class="f6">- Title: {{ .Title }}
+  RelPermalink: {{ .RelPermalink }}
+  Type: {{ .Type }}
+  Section: {{ .Section }}
+  Params: {{ .Params }}
+  Content Length: {{ len .Content }} bytes</pre>
+    {{ end }}
+    {{ end }}
+  {{ end }}
+</div>
+{{ end }}
