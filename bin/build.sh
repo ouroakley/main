@@ -19,6 +19,7 @@ fi
 # Run Hugo to build the site
 echo "Running Hugo..."
 
+hugo mod graph
 hugo mod get -u
 hugo
 
