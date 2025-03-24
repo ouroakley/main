@@ -23,5 +23,7 @@ hugo mod graph
 hugo mod get -u
 hugo
 
+ls -rla $PUBLIC_DIR
+
 # Print a success message
 echo "Build process completed successfully."
