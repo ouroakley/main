@@ -51,8 +51,8 @@ module:
         - source: content/events
           target: content/events/example-group
         - source: content/organisers-info
-          target: content/organisers-info
+          target: content/organisers-info/example-group
         - source: content/venues-info
-          target: content/venues-info
+          target: content/venues-info/example-group
         - source: static/admin
           target: static/admin/example-group

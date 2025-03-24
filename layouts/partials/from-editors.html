@@ -1,0 +1,18 @@
+{{/* Get the current page's allowed editors */}}
+{{ with .Params.allowed_editors }}
+  {{/* Loop through each allowed editor */}}
+  {{ range . }}
+    {{ $editor := . }}
+    {{/* Create the info directory name based on the current type */}}
+    {{ $infoType := printf "%s-info" $.Type }}
+
+    {{/* Look for content in the editor's info directory */}}
+    {{ $editorInfoPath := printf "/%s/%s/%s" $infoType $editor $.Title }}
+    {{ with $.Site.GetPage $editorInfoPath }}
+      <div class="mt5 pt3 bt b--black-10">
+        <h2 class="f4 fw6">Additional Information from {{ $editor | title }}</h2>
+        {{ .Content }}
+      </div>
+    {{ end }}
+  {{ end }}
+{{ end }}

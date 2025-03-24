@@ -14,13 +14,8 @@
         <div class="w-100 w-60-ns pr4-ns mb4">
           {{ .Content }}
 
-          {{ $additionalInfo := where .Site.Pages "Params.organiser" .Title }}
-          {{ range $additionalInfo }}
-          <div class="mt5 pt3 bt b--black-10">
-            <h2 class="f4 fw6">Additional Information</h2>
-            {{ .Content }}
-          </div>
-          {{ end }}
+          {{/* Additional information from allowed editors */}}
+          {{ partial "from-editors.html" . }}
 
           {{/* Organiser Details */}}
           <div class="mt4">
@@ -47,7 +42,7 @@
 
             {{/* Other parameters */}}
             {{ range $key, $value := .Params }}
-              {{ if and (ne $key "title") (ne $key "description") (ne $key "fullName") (ne $key "contact") (ne $key "website") (ne $key "draft") (ne $key "iscjklanguage") }}
+              {{ if and (ne $key "title") (ne $key "description") (ne $key "fullName") (ne $key "contact") (ne $key "website") (ne $key "draft") (ne $key "iscjklanguage") (ne $key "allowed_editors") }}
                 <div class="mb4">
                   <h2 class="f4 fw6">{{ $key | title }}</h2>
                   {{ if reflect.IsSlice $value }}
