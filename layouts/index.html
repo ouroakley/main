@@ -113,7 +113,6 @@
           <h2 class="f3 fw6 mb4">
             <span class="mr2">📅</span>Next 30 Days
           </h2>
-          {{ $thisMonth := now.Format "January 2006" }}
           {{ $eventsThisMonth := where .Site.RegularPages "Type" "events" }}
           {{ $eventsThisMonth = where $eventsThisMonth "Params.eventStart" "ge" now }}
           {{ $eventsThisMonth = where $eventsThisMonth "Params.eventStart" "le" (now.AddDate 0 1 0) }}
@@ -121,7 +120,6 @@
 
           {{ if $sortedMonthEvents }}
             <div class="pa3 bg-light-gray br2">
-              <h3 class="f4 fw6 mt0 mb3">{{ $thisMonth }}</h3>
               <ul class="list pl0">
                 {{ range $sortedMonthEvents }}
                   <li class="mb3">
@@ -146,7 +144,7 @@
               </div>
             </div>
           {{ else }}
-            <p class="i gray">No events scheduled this month</p>
+            <p class="i gray">No events scheduled in the next 30 days</p>
           {{ end }}
         </section>
 
