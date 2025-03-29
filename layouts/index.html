@@ -111,7 +111,7 @@
         {{/* This Month's Calendar */}}
         <section class="mb5">
           <h2 class="f3 fw6 mb4">
-            <span class="mr2">📅</span>This Month
+            <span class="mr2">📅</span>Next 30 Days
           </h2>
           {{ $thisMonth := now.Format "January 2006" }}
           {{ $eventsThisMonth := where .Site.RegularPages "Type" "events" }}
