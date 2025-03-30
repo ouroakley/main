@@ -53,10 +53,18 @@
                     </p>
                     {{ end }}
 
-                    {{/* Venue */}}
-                    {{ with index .Params.venues 0 }}
+                    {{/* Venue(s) */}}
+                    {{ if .Params.venues }}
                     <p class="f6 mb2">
-                      <span class="mr2">📍</span>{{ . }}
+                      <span class="mr2">📍</span>
+                      {{- range $index, $venue := .Params.venues -}}
+                        {{- if $index }}, {{ end -}}
+                        {{- with $.Site.GetPage (printf "/venues/%s" ($venue | urlize)) -}}
+                          {{ .Title }}
+                        {{- else -}}
+                          {{ $venue | strings.TrimSpace }}
+                        {{- end -}}
+                      {{- end -}}
                     </p>
                     {{ end }}
 
