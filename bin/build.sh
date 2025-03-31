@@ -19,6 +19,8 @@ fi
 # Run Hugo to build the site
 echo "Running Hugo..."
 
+cat go.mod
+
 hugo mod graph
 hugo mod get -u
 hugo
