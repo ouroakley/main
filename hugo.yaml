@@ -46,13 +46,23 @@ module:
     - source: content
       target: content
   imports:
-    - path: github.com/ouroakley/example-group
+    - path: github.com/ouroakley/organiser-example
       mounts:
         - source: content/events
-          target: content/events/example-group
+          target: content/events/example
         - source: content/organisers-info
-          target: content/organisers-info/example-group
+          target: content/organisers-info/example
         - source: content/venues-info
-          target: content/venues-info/example-group
+          target: content/venues-info/example
         - source: static/admin
-          target: static/admin/example-group
+          target: static/admin/example
+    - path: github.com/ouroakley/organiser-oca
+      mounts:
+        - source: content/events
+          target: content/events/oca
+        - source: content/organisers-info
+          target: content/organisers-info/oca
+        - source: content/venues-info
+          target: content/venues-info/oca
+        - source: static/admin
+          target: static/admin/oca
