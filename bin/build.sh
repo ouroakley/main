@@ -19,10 +19,16 @@ fi
 # Run Hugo to build the site
 echo "Running Hugo..."
 
+echo "Output of go.mod:"
 cat go.mod
 
+echo "Output of hugo mod graph:"
 hugo mod graph
+
+echo "Output of hugo mod get -u:"
 hugo mod get -u
+
+echo "Output of hugo:"
 hugo
 
 ls -rla $PUBLIC_DIR
