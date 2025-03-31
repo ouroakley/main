@@ -19,23 +19,30 @@ fi
 # Run Hugo to build the site
 echo "Running Hugo..."
 
-echo "Output of hugo mod graph:"
-hugo mod graph
-
 echo "Output of hugo:"
-hugo build --buildFuture
+hugo build --buildFuture --logLevel debug
+
+echo "--------------------------------"
 
 echo "Output of hugo list published:"
 hugo list published
 
+echo "--------------------------------"
+
 echo "Output of hugo list drafts:"
 hugo list drafts
+
+echo "--------------------------------"
 
 echo "Output of hugo list future:"
 hugo list future
 
+echo "--------------------------------"
+
 echo "Output of ls -rla $PUBLIC_DIR:"
 ls -rla $PUBLIC_DIR
+
+echo "--------------------------------"
 
 # Print a success message
 echo "Build process completed successfully."
