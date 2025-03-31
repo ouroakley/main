@@ -45,6 +45,8 @@ module:
   mounts:
     - source: content
       target: content
+    - source: static
+      target: static
   imports:
     - path: github.com/ouroakley/organiser-example
       mounts:
