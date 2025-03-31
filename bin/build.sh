@@ -23,7 +23,7 @@ echo "Output of hugo mod graph:"
 hugo mod graph
 
 echo "Output of hugo:"
-hugo
+hugo build --buildFuture
 
 echo "Output of hugo list published:"
 hugo list published
