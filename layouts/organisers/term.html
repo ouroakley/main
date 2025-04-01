@@ -16,57 +16,13 @@
 
           {{/* Additional information from allowed editors */}}
           {{ partial "from-editors.html" . }}
-
-          {{/* Organiser Details */}}
-          <div class="mt4">
-            {{ with .Params.fullName }}
-            <div class="mb4">
-              <h2 class="f4 fw6">Full Name</h2>
-              <p>{{ . }}</p>
-            </div>
-            {{ end }}
-
-            {{ with .Params.contact }}
-            <div class="mb4">
-              <h2 class="f4 fw6">Contact</h2>
-              <p><a href="mailto:{{ . }}" class="link blue hover-dark-blue">{{ . }}</a></p>
-            </div>
-            {{ end }}
-
-            {{ with .Params.website }}
-            <div class="mb4">
-              <h2 class="f4 fw6">Website</h2>
-              <p><a href="{{ . }}" class="link blue hover-dark-blue" target="_blank" rel="noopener noreferrer">{{ . }}</a></p>
-            </div>
-            {{ end }}
-
-            {{/* Other parameters */}}
-            {{ range $key, $value := .Params }}
-              {{ if and (ne $key "title") (ne $key "description") (ne $key "fullName") (ne $key "contact") (ne $key "website") (ne $key "draft") (ne $key "iscjklanguage") (ne $key "allowed_editors") }}
-                <div class="mb4">
-                  <h2 class="f4 fw6">{{ $key | title }}</h2>
-                  {{ if reflect.IsSlice $value }}
-                    <ul class="list pl0">
-                      {{ range $value }}
-                      <li class="mb2">
-                        <span class="mr2">•</span>{{ . }}
-                      </li>
-                      {{ end }}
-                    </ul>
-                  {{ else }}
-                    <p>{{ $value }}</p>
-                  {{ end }}
-                </div>
-              {{ end }}
-            {{ end }}
-          </div>
         </div>
 
         <div class="w-100 w-40-ns pl4-ns mb4">
           {{/* Events Section */}}
           <h2 class="f4 fw6">Upcoming Events</h2>
           {{ $events := where (where .Site.RegularPages "Type" "events") "Params.organisers" "intersect" (slice .Data.Term) }}
-          {{ $upcomingEvents := where $events "Date" "ge" now }}
+          {{ $upcomingEvents := where $events "Params.eventStart" "ge" now }}
           {{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
 
           {{ if $sortedEvents }}
@@ -92,7 +48,7 @@
           {{ end }}
 
           {{/* Past Events Section */}}
-          {{ $pastEvents := where $events "Date" "lt" now }}
+          {{ $pastEvents := where $events "Params.eventStart" "lt" now }}
           {{ $recentPastEvents := first 3 (sort $pastEvents "Params.eventStart" "desc") }}
           {{ if $recentPastEvents }}
             <h2 class="f4 fw6 mt5">Recent Events</h2>
