@@ -14,12 +14,6 @@
               <a href="{{ .Page.RelPermalink }}" class="link near-black hover-blue">
                 <div class="pa3 bg-white br2 shadow-4 h-100">
                   <h2 class="f4 fw6 mt0 mb2">{{ .Page.Title }}</h2>
-                  {{ with .Page.Description }}
-                    <p class="f6 gray mt0 mb3">{{ . }}</p>
-                  {{ end }}
-                  {{ with .Page.Params.contact }}
-                    <p class="f6 gray mt0 mb3">{{ . }}</p>
-                  {{ end }}
                   <p class="f6 blue mb0">
                     {{ .Count }} {{ if eq .Count 1 }}event{{ else }}events{{ end }} →
                   </p>
