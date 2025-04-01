@@ -89,12 +89,11 @@
             {{- .Content -}}
           </div>
 
-          <!-- Posted Date section commented out - events use eventStart as their date, so the post's date field is not used -->
-          <!-- {{ if not .Date.IsZero }}
+          {{ if not .Params.date.IsZero }}
           <div class="f6 gray mt4">
-            Posted: {{- .Date | time.Format "January 2, 2006" -}}
+            Edited: {{- .Params.date | time.Format "January 2, 2006" -}}
           </div>
-          {{ end }} -->
+          {{ end }}
 
           {{- partial "tags.html" . -}}
         </div>
