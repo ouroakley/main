@@ -47,24 +47,24 @@ module:
       target: content
     - source: static
       target: static
-  imports:
-    - path: github.com/ouroakley/organiser-example
-      mounts:
-        - source: content/events
-          target: content/events/example
-        - source: content/organisers-info
-          target: content/organisers-info/example
-        - source: content/venues-info
-          target: content/venues-info/example
-        - source: static/admin
-          target: static/admin/example
-    - path: github.com/ouroakley/organiser-oca
-      mounts:
-        - source: content/events
-          target: content/events/oca
-        - source: content/organisers-info
-          target: content/organisers-info/oca
-        - source: content/venues-info
-          target: content/venues-info/oca
-        - source: static/admin
-          target: static/admin/oca
+  # imports:
+  #   - path: github.com/ouroakley/organiser-example
+  #     mounts:
+  #       - source: content/events
+  #         target: content/events/example
+  #       - source: content/organisers-info
+  #         target: content/organisers-info/example
+  #       - source: content/venues-info
+  #         target: content/venues-info/example
+  #       - source: static/admin
+  #         target: static/admin/example
+  #   - path: github.com/ouroakley/organiser-oca
+  #     mounts:
+  #       - source: content/events
+  #         target: content/events/oca
+  #       - source: content/organisers-info
+  #         target: content/organisers-info/oca
+  #       - source: content/venues-info
+  #         target: content/venues-info/oca
+  #       - source: static/admin
+  #         target: static/admin/oca
