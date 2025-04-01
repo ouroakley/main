@@ -88,12 +88,13 @@
           <div class="lh-copy">
             {{- .Content -}}
           </div>
-
+<!--
           {{ if not .Params.date.IsZero }}
           <div class="f6 gray mt4">
             Edited: {{- .Params.date | time.Format "January 2, 2006" -}}
           </div>
           {{ end }}
+-->
 
           {{- partial "tags.html" . -}}
         </div>
