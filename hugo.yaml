@@ -33,10 +33,20 @@ menus:
       url: /calendar/
       weight: 4
 
+outputFormats:
+  ical:
+    mediaType: text/calendar
+    baseName: events
+    isPlainText: true
+
 outputs:
   home:
     - HTML
     - JSON
+    - ical
+  section:
+    - HTML
+    - ical
   taxonomy:
     - HTML
     - JSON
