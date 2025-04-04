@@ -68,6 +68,16 @@ module:
           target: content/venues-info/oca
         - source: static/admin
           target: static/admin/oca
+    - path: github.com/ouroakley/organiser-odpc
+      mounts:
+        - source: content/events
+          target: content/events/odpc
+        - source: content/organisers-info
+          target: content/organisers-info/odpc
+        - source: content/venues-info
+          target: content/venues-info/odpc
+        - source: static/admin
+          target: static/admin/odpc
     - path: github.com/ouroakley/organiser-oww
       mounts:
         - source: content/events
