@@ -68,3 +68,13 @@ module:
           target: content/venues-info/oca
         - source: static/admin
           target: static/admin/oca
+    - path: github.com/ouroakley/organiser-oakley-with-wootton
+      mounts:
+        - source: content/events
+          target: content/events/oakley-with-wootton
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-with-wootton
+        - source: content/venues-info
+          target: content/venues-info/oakley-with-wootton
+        - source: static/admin
+          target: static/admin/oakley-with-wootton
