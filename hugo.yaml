@@ -47,6 +47,8 @@ module:
       target: content
     - source: static
       target: static
+
+# Example Organiser
   imports:
     - path: github.com/ouroakley/organiser-example
       mounts:
@@ -58,6 +60,20 @@ module:
           target: content/venues-info/example
         - source: static/admin
           target: static/admin/example
+
+# Oakley Stitchers CIC
+    - path: github.com/ouroakley/organiser-oakley-stitchers-cic
+      mounts:
+        - source: content/events
+          target: content/events/oakley-stitchers-cic
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-stitchers-cic
+        - source: content/venues-info
+          target: content/venues-info/oakley-stitchers-cic
+        - source: static/admin
+          target: static/admin/oakley-stitchers-cic
+
+# OCA - Oakley Community Association
     - path: github.com/ouroakley/organiser-oca
       mounts:
         - source: content/events
@@ -68,6 +84,8 @@ module:
           target: content/venues-info/oca
         - source: static/admin
           target: static/admin/oca
+
+# ODPC
     - path: github.com/ouroakley/organiser-odpc
       mounts:
         - source: content/events
@@ -78,6 +96,8 @@ module:
           target: content/venues-info/odpc
         - source: static/admin
           target: static/admin/odpc
+
+# OWW - Oakley with Wootton
     - path: github.com/ouroakley/organiser-oww
       mounts:
         - source: content/events
