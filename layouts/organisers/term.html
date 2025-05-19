@@ -34,7 +34,7 @@
                     <span class="db f6 gray">
                       {{ with .Params.eventStart }}
                         {{ dateFormat "Monday, January 2, 2006" . }}
-                        {{ with time.Format ":04 PM" . }}
+                        {{ with time.Format "15:04 PM" . }}
                           at {{ . }}
                         {{ end }}
                       {{ end }}
