@@ -73,6 +73,18 @@ module:
         - source: static/admin
           target: static/admin/oakley-stitchers-cic
 
+# Oakley Wellbeing Forum
+    - path: github.com/ouroakley/organiser-oakley-wellbeing-forum
+      mounts:
+        - source: content/events
+          target: content/events/oakley-wellbeing-forum
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-wellbeing-forum
+        - source: content/venues-info
+          target: content/venues-info/oakley-wellbeing-forum
+        - source: static/admin
+          target: static/admin/oakley-wellbeing-forum
+
 # OCA - Oakley Community Association
     - path: github.com/ouroakley/organiser-oca
       mounts:
