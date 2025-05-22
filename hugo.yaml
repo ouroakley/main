@@ -132,3 +132,15 @@ module:
           target: content/venues-info/oww
         - source: static/admin
           target: static/admin/oww
+
+# ramblers-wellbeing-walks-basingstoke
+    - path: github.com/ouroakley/organiser-ramblers-wellbeing-walks-basingstoke
+      mounts:
+        - source: content/events
+          target: content/events/ramblers-wellbeing-walks-basingstoke
+        - source: content/organisers-info
+          target: content/organisers-info/ramblers-wellbeing-walks-basingstoke
+        - source: content/venues-info
+          target: content/venues-info/ramblers-wellbeing-walks-basingstoke
+        - source: static/admin
+          target: static/admin/ramblers-wellbeing-walks-basingstoke
