@@ -61,6 +61,18 @@ module:
         - source: static/admin
           target: static/admin/example
 
+# Oakley FC
+    - path: github.com/ouroakley/organiser-oakley-fc
+      mounts:
+        - source: content/events
+          target: content/events/oakley-fc
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-fc
+        - source: content/venues-info
+          target: content/venues-info/oakley-fc
+        - source: static/admin
+          target: static/admin/oakley-fc
+
 # Oakley Stitchers CIC
     - path: github.com/ouroakley/organiser-oakley-stitchers-cic
       mounts:
