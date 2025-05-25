@@ -7,7 +7,7 @@
     {{ $infoType := printf "%s-info" $.Type }}
 
     {{/* Look for content in the editor's info directory */}}
-    {{ $editorInfoPath := printf "/%s/%s/%s" $infoType $editor $.Title }}
+    {{ $editorInfoPath := printf "/%s/%s/%s" $infoType $editor ($.Title | urlize) }}
     {{ with $.Site.GetPage $editorInfoPath }}
       <div class="mt5 pt3 bt b--black-10">
         <h2 class="f4 fw6">Additional Information from {{ $editor | title }}</h2>
