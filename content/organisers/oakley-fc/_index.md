@@ -1,5 +1,5 @@
 ---
-title: Oakley FC
+title: Oakley Football Club
 allowed_editors:
   - oakley-fc
 organisers:

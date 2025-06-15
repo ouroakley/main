@@ -1,7 +1,7 @@
 ---
 title: Oakley Cricket Club
 allowed_editors:
-  - oakley-cricket-club
+  - oakley-cc
 organisers:
-  - oakley-cricket-club
+  - oakley-cc
 ---
