@@ -7,19 +7,28 @@
     </header>
 
     <div class="lh-copy">
-      {{ if .Data.Terms }}
+      {{ $filteredTerms := dict }}
+      {{ range $term, $pages := .Data.Terms }}
+        {{ $eventPages := where $pages "Type" "events" }}
+        {{ if gt (len $eventPages) 0 }}
+          {{ $filteredTerms = merge $filteredTerms (dict $term $eventPages) }}
+        {{ end }}
+      {{ end }}
+      {{ if $filteredTerms }}
         <div class="flex flex-wrap nl3 nr3">
-          {{ range .Data.Terms.Alphabetical }}
+          {{ range $term, $pages := $filteredTerms }}
+            {{ with $.Site.GetPage (printf "/%s/%s" $.Data.Plural $term) }}
             <div class="w-100 w-50-m w-third-l ph3 mb4">
-              <a href="{{ .Page.RelPermalink }}" class="link near-black hover-blue">
+              <a href="{{ .RelPermalink }}" class="link near-black hover-blue">
                 <div class="pa3 bg-white br2 shadow-4 h-100">
-                  <h2 class="f4 fw6 mt0 mb2">{{ .Page.Title }}</h2>
+                  <h2 class="f4 fw6 mt0 mb2">{{ .Title }}</h2>
                   <p class="f6 blue mb0">
-                    {{ .Count }} {{ if eq .Count 1 }}event{{ else }}events{{ end }} →
+                    {{ len $pages }} {{ if eq (len $pages) 1 }}event{{ else }}events{{ end }} →
                   </p>
                 </div>
               </a>
             </div>
+            {{ end }}
           {{ end }}
         </div>
       {{ else }}
