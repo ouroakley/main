@@ -6,11 +6,10 @@
         </div>
 
         <div class="flex-ns flex-wrap mhn2-ns mb3">
-            {{ range .Site.Data.organisers }}
+            {{ range .Site.Taxonomies.organisers }}
             <div class="ph2-ns w-50-ns mb4">
-                <h2 class="f3 b lh-title mb2">{{ .name }}</h2>
-                <p class="mb2">{{ .description }}</p>
-                <a href="/admin/{{ .slug }}" class="btn raise">Manage Content</a>
+                <h2 class="f3 b lh-title mb2">{{ .Page.Title }}</h2>
+                <a href="/admin/{{ .Page.File.ContentBaseName }}" class="btn raise">Manage Content</a>
             </div>
             {{ end }}
         </div>
