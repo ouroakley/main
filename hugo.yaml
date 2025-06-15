@@ -61,8 +61,8 @@ module:
         - source: static/admin
           target: static/admin/example
 
-# Oakley FC
-    - path: github.com/ouroakley/organiser-oakley-fc
+# Oakley Football Club
+    - path: github.com/ouroakley/organiser-oakley-football-club
       mounts:
         - source: content/events
           target: content/events/oakley-fc
@@ -146,17 +146,17 @@ module:
           target: static/admin/ramblers-wellbeing-walks-basingstoke
 
 
-# oakley-cricket-club
+# Oakley Cricket Club oakley-cc
     - path: github.com/ouroakley/organiser-oakley-cricket-club
       mounts:
         - source: content/events
-          target: content/events/oakley-cricket-club
+          target: content/events/oakley-cc
         - source: content/organisers-info
-          target: content/organisers-info/oakley-cricket-club
+          target: content/organisers-info/oakley-cc
         - source: content/venues-info
-          target: content/venues-info/oakley-cricket-club
+          target: content/venues-info/oakley-cc
         - source: static/admin
-          target: static/admin/oakley-cricket-club
+          target: static/admin/oakley-cc
 
 # The Barley Mow
     - path: github.com/ouroakley/organiser-the-barley-mow
