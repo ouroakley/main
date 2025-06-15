@@ -15,7 +15,43 @@
         <div class="w-100 w-60-ns pr4-ns mb4">
           {{/* Event Details Section */}}
           <div class="pa4 bg-light-gray br3 mb4">
-            {{/* Event Time */}}
+            {{/* Event Dates */}}
+            {{ if .Params.eventDates }}
+            <div class="mb3">
+              <h2 class="f4 fw6 mt0 mb2">
+                <span class="mr2">📅</span>When
+              </h2>
+              <ul class="list pl0 mt0 mb3">
+                {{ range .Params.eventDates }}
+                  {{ $startDate := .start }}
+                  {{ $endDate := .end }}
+                  <li class="mb2">
+                    {{ if eq (dateFormat "15:04" $startDate) "00:00" }}
+                      {{ dateFormat "Monday, January 2, 2006" $startDate }}
+                    {{ else }}
+                      {{ dateFormat "Monday, January 2, 2006 3:04 PM" $startDate }}
+                    {{ end }}
+                    {{ if $endDate }}
+                      {{ if eq (dateFormat "2006-01-02" $endDate) (dateFormat "2006-01-02" $startDate) }}
+                        {{ if eq (dateFormat "15:04" $endDate) "00:00" }}
+                          {{/* Same day, no end time - don't show anything */}}
+                        {{ else }}
+                          - {{ dateFormat "3:04 PM" $endDate }}
+                        {{ end }}
+                      {{ else }}
+                        - {{ if eq (dateFormat "15:04" $endDate) "00:00" }}
+                          {{ dateFormat "Monday, January 2, 2006" $endDate }}
+                        {{ else }}
+                          {{ dateFormat "Monday, January 2, 2006 3:04 PM" $endDate }}
+                        {{ end }}
+                      {{ end }}
+                    {{ end }}
+                  </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ else }}
+            {{/* Legacy single date support */}}
             {{ with .Params.eventStart }}
             <div class="mb3">
               <h2 class="f4 fw6 mt0 mb2">
@@ -45,6 +81,7 @@
                 {{ end }}
               </p>
             </div>
+            {{ end }}
             {{ end }}
 
             {{/* Venue(s) */}}
