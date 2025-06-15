@@ -13,7 +13,7 @@
     {{/* Look for content in the editor's info directory */}}
     {{ $editorInfoPath := printf "/%s/%s/%s" $infoType $editor $.File.ContentBaseName }}
     {{ with $.Site.GetPage $editorInfoPath }}
-      <div class="mt5 pt3 bt b--black-10">
+      <div class="">
         <h2 class="f4 fw6">Additional Information from {{ $editorMain.Title }}</h2>
         {{ .Content }}
       </div>
