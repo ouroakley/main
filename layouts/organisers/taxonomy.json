@@ -3,8 +3,7 @@
     {{- if $index }}, {{ end }}
     {
         "title": "{{ .Title }}",
-        "fullName": "{{ .Params.fullName }}",
-        "contact": "{{ .Params.contact }}"
+        "baseName": "{{ .File.ContentBaseName }}"
     }
     {{- end }}
 ]
