@@ -1,9 +1,6 @@
 ---
 title: "Organiser Signup Instructions"
 ---
-
-# Organiser Signup Instructions
-
 The Our Oakley Content Management System (CMS) uses [GitHub](https://github.com) login to manage content on the website. You will not use GitHub directly, but you will need a GitHub account to sign in to the CMS and manage your community event listings. This allows organisers to securely add, edit, and remove events through the website.
 
 ## Step 1: Create a GitHub Account
