@@ -19,54 +19,7 @@
         </div>
 
         <div class="w-100 w-40-ns pl4-ns mb4">
-          {{/* Events Section */}}
-          <h2 class="f4 fw6">Upcoming Events</h2>
-          {{ $events := where (where .Site.RegularPages "Type" "events") "Params.organisers" "intersect" (slice .Data.Term) }}
-          {{ $upcomingEvents := where $events "Params.eventStart" "ge" now }}
-          {{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
-
-          {{ if $sortedEvents }}
-            <ul class="list pl0">
-              {{ range $sortedEvents }}
-                <li class="mb3">
-                  <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
-                    <span class="db f5">{{ .Title }}</span>
-                    <span class="db f6 gray">
-                      {{ with .Params.eventStart }}
-                        {{ dateFormat "Monday, January 2, 2006" . }}
-                        {{ with time.Format "15:04 PM" . }}
-                          at {{ . }}
-                        {{ end }}
-                      {{ end }}
-                    </span>
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
-          {{ else }}
-            <p class="i gray">No upcoming events</p>
-          {{ end }}
-
-          {{/* Past Events Section */}}
-          {{ $pastEvents := where $events "Params.eventStart" "lt" now }}
-          {{ $recentPastEvents := first 3 (sort $pastEvents "Params.eventStart" "desc") }}
-          {{ if $recentPastEvents }}
-            <h2 class="f4 fw6 mt5">Recent Events</h2>
-            <ul class="list pl0">
-              {{ range $recentPastEvents }}
-                <li class="mb3">
-                  <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
-                    <span class="db f5">{{ .Title }}</span>
-                    <span class="db f6 gray">
-                      {{ with .Params.eventStart }}
-                        {{ dateFormat "Monday, January 2, 2006" . }}
-                      {{ end }}
-                    </span>
-                  </a>
-                </li>
-              {{ end }}
-            </ul>
-          {{ end }}
+          {{ partial "term-sidebar.html" (dict "Site" .Site "Data" .Data "paramName" "organisers") }}
         </div>
       </div>
     </div>
