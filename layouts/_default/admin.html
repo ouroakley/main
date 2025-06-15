@@ -1,19 +1,31 @@
 {{ define "main" }}
-<!-- Debug: _default Admin layout is being used -->
-<div class="ph3 bg-off-white">
-    <div class="center mw7 pv3">
-        <div class="cms mw6">
-            {{ .Content }}
-        </div>
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <header class="mb4">
+      <p class="f4 mb4">{{ .Content }}</p>
+    </header>
 
-        <div class="flex-ns flex-wrap mhn2-ns mb3">
-            {{ range .Site.Taxonomies.organisers }}
-            <div class="ph2-ns w-50-ns mb4">
-                <h2 class="f3 b lh-title mb2">{{ .Page.Title }}</h2>
-                <a href="/admin/{{ .Page.File.ContentBaseName }}" class="btn raise">Manage Content</a>
-            </div>
+    <div class="lh-copy">
+      {{ if .Site.Taxonomies.organisers }}
+        <div class="flex flex-wrap nl3 nr3">
+          {{ range .Site.Taxonomies.organisers }}
+            {{ if not (in $.Params.ignored_organisers .Page.File.ContentBaseName) }}
+              <div class="w-100 w-50-m w-third-l ph3 mb4">
+                <a href="/admin/{{ .Page.File.ContentBaseName }}" class="link near-black hover-blue">
+                  <div class="pa3 bg-white br2 shadow-4 h-100">
+                    <h2 class="f4 fw6 mt0 mb2">{{ .Page.Title }}</h2>
+                    <p class="f6 blue mb0">Manage Content →</p>
+                  </div>
+                </a>
+              </div>
             {{ end }}
+          {{ end }}
         </div>
+      {{ else }}
+        <p class="i gray">No organisers found.</p>
+      {{ end }}
     </div>
+  </article>
 </div>
 {{ end }}
