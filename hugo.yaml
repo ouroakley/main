@@ -157,3 +157,15 @@ module:
           target: content/venues-info/oakley-cricket-club
         - source: static/admin
           target: static/admin/oakley-cricket-club
+
+# The Barley Mow
+    - path: github.com/ouroakley/organiser-the-barley-mow
+      mounts:
+        - source: content/events
+          target: content/events/the-barley-mow
+        - source: content/organisers-info
+          target: content/organisers-info/the-barley-mow
+        - source: content/venues-info
+          target: content/venues-info/the-barley-mow
+        - source: static/admin
+          target: static/admin/the-barley-mow
