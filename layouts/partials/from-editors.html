@@ -6,8 +6,8 @@
     {{/* Create the info directory name based on the current type */}}
     {{ $infoType := printf "%s-info" $.Type }}
 
-    {{/* Look up the editor's main content file */}}
-    {{ $editorMainPath := printf "/%s/%s" $.Type $editor }}
+    {{/* Look up the editor's main organiser content file */}}
+    {{ $editorMainPath := printf "/%s/%s" "organisers" $editor }}
     {{ $editorMain := $.Site.GetPage $editorMainPath }}
 
     {{/* Look for content in the editor's info directory */}}
