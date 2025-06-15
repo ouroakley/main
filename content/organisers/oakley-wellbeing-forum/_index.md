@@ -1,5 +1,7 @@
 ---
 title: Oakley Wellbeing Forum
 allowed_editors:
-- oakley-wellbeing-forum
+  - oakley-wellbeing-forum
+organisers:
+  - oakley-wellbeing-forum
 ---

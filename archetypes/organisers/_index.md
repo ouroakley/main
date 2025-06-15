@@ -1,7 +1,7 @@
 ---
 title: "{{ .Name | humanize }}"
-fullName: ""
-description: ""
-contact: ""
-website: ""
+allowed_editors:
+  - example
+organisers:
+  - example
 ---

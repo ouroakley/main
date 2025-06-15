@@ -1,5 +1,7 @@
 ---
 title: Oakley FC
 allowed_editors:
-- oakley-fc
+  - oakley-fc
+organisers:
+  - oakley-fc
 ---
