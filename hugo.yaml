@@ -144,3 +144,16 @@ module:
           target: content/venues-info/ramblers-wellbeing-walks-basingstoke
         - source: static/admin
           target: static/admin/ramblers-wellbeing-walks-basingstoke
+
+
+# oakley-cricket-club
+    - path: github.com/ouroakley/organiser-oakley-cricket-club
+      mounts:
+        - source: content/events
+          target: content/events/oakley-cricket-club
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-cricket-club
+        - source: content/venues-info
+          target: content/venues-info/oakley-cricket-club
+        - source: static/admin
+          target: static/admin/oakley-cricket-club
