@@ -1,0 +1,32 @@
+{{ define "header" }}
+  {{ partial "page-header.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<div class="mw8 center ph3">
+  {{ partial "breadcrumb.html" . }}
+  <article class="pb6">
+    <div class="flex flex-wrap">
+      <div class="w-100 w-60-ns pr4-ns mb4">
+        {{/* Main Content */}}
+        <div class="lh-copy">
+          {{ .Content }}
+        </div>
+      </div>
+
+      <div class="w-100 w-40-ns pl4-ns mb4">
+        {{/* Sidebar Content */}}
+        {{ $sidebarPath := printf "sidebars/%s" .File.ContentBaseName }}
+        {{ with .Site.GetPage $sidebarPath }}
+          <div class="pa3 bg-light-gray br3">
+            <h2 class="f4 fw6 mt0 mb3">{{ .Title }}</h2>
+            <div class="f6 mb3">
+              {{ .Content }}
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </article>
+</div>
+{{ end }}
