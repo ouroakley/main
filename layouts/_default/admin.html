@@ -10,15 +10,18 @@
       {{ if .Site.Taxonomies.organisers }}
         <div class="flex flex-wrap nl3 nr3">
           {{ range .Site.Taxonomies.organisers }}
-            {{ if not (in $.Params.ignored_organisers .Page.File.ContentBaseName) }}
-              <div class="w-100 w-50-m w-third-l ph3 mb4">
-                <a href="/admin/{{ .Page.File.ContentBaseName }}" class="link near-black hover-blue">
-                  <div class="pa3 bg-white br2 shadow-4 h-100">
-                    <h2 class="f4 fw6 mt0 mb2">{{ .Page.Title }}</h2>
-                    <p class="f6 blue mb0">Manage Content →</p>
-                  </div>
-                </a>
-              </div>
+            {{ $organiserPage := .Page }}
+            {{ with .Page.File }}
+              {{ if not (in $.Params.ignored_organisers .ContentBaseName) }}
+                <div class="w-100 w-50-m w-third-l ph3 mb4">
+                  <a href="/admin/{{ .ContentBaseName }}" class="link near-black hover-blue">
+                    <div class="pa3 bg-white br2 shadow-4 h-100">
+                      <h2 class="f4 fw6 mt0 mb2">{{ $organiserPage.Title }}</h2>
+                      <p class="f6 blue mb0">Manage Content →</p>
+                    </div>
+                  </a>
+                </div>
+              {{ end }}
             {{ end }}
           {{ end }}
         </div>
