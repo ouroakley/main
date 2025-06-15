@@ -45,9 +45,9 @@ This step is only required for new organisers.
 ## Step 4: Access the CMS
 
 1. Visit `/admin` on the Our Oakley website
-2. Click "Login with GitHub"
-3. Select the appropriate organiser you wish to manage content for
-4. Authorise the CMS application when prompted if required.
+2. Select the appropriate organiser you wish to manage content for
+3. Click "Login with GitHub" on the CMS page
+4. If required, authorise the CMS application when prompted. Only required on first login to a new organiser.
 
 ## Need Help?
 
