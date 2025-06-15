@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="ph3 bg-off-white">
+    <div class="center mw7 pv3">
+        <h1 class="f2 lh-title b mb3">{{.Title}}</h1>
+        <div class="cms mw6">
+            {{ .Content }}
+        </div>
+
+        <div class="flex-ns flex-wrap mhn2-ns mb3">
+            {{ range .Site.Data.organisers }}
+            <div class="ph2-ns w-50-ns mb4">
+                <h2 class="f3 b lh-title mb2">{{ .name }}</h2>
+                <p class="mb2">{{ .description }}</p>
+                <a href="/admin/{{ .slug }}" class="btn raise">Manage Content</a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</div>
+{{ end }}
