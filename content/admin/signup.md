@@ -48,9 +48,3 @@ This step is only required for new organisers.
 2. Select the appropriate organiser you wish to manage content for
 3. Click "Login with GitHub" on the CMS page
 4. If required, authorise the CMS application when prompted. Only required on first login to a new organiser.
-
-## Need Help?
-
-If you encounter any issues during the signup process, you can:
-1. Visit [GitHub's help documentation](https://docs.github.com/en/get-started)
-2. Contact support@ouroakley.uk
