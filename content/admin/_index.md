@@ -9,6 +9,8 @@ ignored_organisers:
   - oakley-neighbourhood-watch
 ---
 
-Welcome to the Our Oakley content management system. Here you can manage content for your organisation's events, information, and venues.
+Welcome to the Our Oakley content management system.
 
-Select your organisation below to access its content management interface.
+Here you can manage content for your events, organiser information, and venue information.
+
+Select your organiser card below to access its content management portal.
