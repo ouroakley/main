@@ -7,5 +7,3 @@ facilities:
 allowed_editors:
   - odpc
 ---
-
-The Peter Houseman Recreation Ground is a large open space used for various community events and activities.

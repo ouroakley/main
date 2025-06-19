@@ -8,5 +8,3 @@ facilities:
 allowed_editors:
   - odpc
 ---
-
-The Newfound Recreation Ground is a spacious venue that hosts various community events throughout the year, including the annual fireworks display.
