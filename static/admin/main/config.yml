@@ -38,8 +38,16 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Description", name: "description", widget: "text", required: false}
-      - {label: "Event Start", name: "eventStart", widget: "datetime"}
-      - {label: "Event End", name: "eventEnd", widget: "datetime", required: false}
+      - label: "Event Dates"
+        name: "eventDates"
+        widget: "list"
+        required: false
+        hint: "Add multiple dates for recurring or multi-day events"
+        fields:
+          - {label: "Start Date", name: "start", widget: "datetime"}
+          - {label: "End Date", name: "end", widget: "datetime"}
+      - {label: "Event Start (Legacy)", name: "eventStart", widget: "datetime", required: false, hint: "Use Event Dates above for multi-day events"}
+      - {label: "Event End (Legacy)", name: "eventEnd", widget: "datetime", required: false, hint: "Use Event Dates above for multi-day events"}
       - label: "Venues"
         name: "venues"
         widget: "relation"
