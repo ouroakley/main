@@ -168,10 +168,23 @@
               <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
                 <span class="db f5">{{ .Title }}</span>
                 <span class="db f6 gray">
-                  {{ with .Params.eventStart }}
-                    {{ dateFormat "Monday, January 2, 2006" . }}
-                    {{ with time.Format ":04 PM" . }}
-                      at {{ . }}
+                  {{ if .Params.eventDates }}
+                    {{ with index .Params.eventDates 0 }}
+                      {{ if eq (dateFormat "15:04" .start) "00:00" }}
+                        {{ dateFormat "Monday, January 2, 2006" .start }}
+                      {{ else }}
+                        {{ dateFormat "Monday, January 2, 2006" .start }}
+                        at {{ dateFormat "3:04 PM" .start }}
+                      {{ end }}
+                    {{ end }}
+                  {{ else }}
+                    {{ with .Params.eventStart }}
+                      {{ if eq (dateFormat "15:04" .) "00:00" }}
+                        {{ dateFormat "Monday, January 2, 2006" . }}
+                      {{ else }}
+                        {{ dateFormat "Monday, January 2, 2006" . }}
+                        at {{ dateFormat "3:04 PM" . }}
+                      {{ end }}
                     {{ end }}
                   {{ end }}
                 </span>
