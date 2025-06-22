@@ -37,6 +37,7 @@ collections:
         index_file: 'index'
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Poster", name: "poster", widget: "image", required: false, hint: "Upload a poster image for the event"}
       - {label: "Description", name: "description", widget: "text", required: false}
       - label: "Event Dates"
         name: "eventDates"
