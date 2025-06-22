@@ -121,24 +121,25 @@
             </div>
           </div>
 
+          {{/* Poster Image (Mobile) */}}
+          {{ with .Params.poster }}
+          <div class="db dn-ns mt4 mb4">
+            <img src="{{ . }}" alt="Event poster for {{ $.Title }}" class="w-100 br3">
+          </div>
+          {{ end }}
+
           {{/* Event Content */}}
           <div class="lh-copy">
             {{- .Content -}}
           </div>
-<!--
+
+          <!--
           {{ if not .Params.date.IsZero }}
           <div class="f6 gray mt4">
             Edited: {{- .Params.date | time.Format "January 2, 2006" -}}
           </div>
           {{ end }}
--->
-
-          {{/* Poster Image (Mobile) */}}
-          {{ with .Params.poster }}
-          <div class="db dn-ns mt4">
-            <img src="{{ . }}" alt="Event poster for {{ $.Title }}" class="w-100 br3">
-          </div>
-          {{ end }}
+          -->
 
           {{- partial "tags.html" . -}}
         </div>
