@@ -1,0 +1,13 @@
+{{ if and .IsPage (eq .Type "events") }}
+  {{ with .Params.poster }}
+    <!-- Twitter/X Card tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="{{ . | absURL }}" />
+    <meta name="twitter:image:alt" content="Event poster for {{ $.Title }}" />
+
+    <!-- OpenGraph tags -->
+    <meta property="og:image" content="{{ . | absURL }}" />
+    <meta property="og:image:secure_url" content="{{ . | absURL }}" />
+    <meta property="og:image:alt" content="Event poster for {{ $.Title }}" />
+  {{ end }}
+{{ end }}
