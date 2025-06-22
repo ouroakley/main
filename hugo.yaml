@@ -169,3 +169,27 @@ module:
           target: content/venues-info/the-barley-mow
         - source: static/admin
           target: static/admin/the-barley-mow
+
+# Oakley Junior School Association
+    - path: github.com/ouroakley/organiser-oakley-junior-school-association
+      mounts:
+        - source: content/events
+          target: content/events/ojsa
+        - source: content/organisers-info
+          target: content/organisers-info/ojsa
+        - source: content/venues-info
+          target: content/venues-info/ojsa
+        - source: static/admin
+          target: static/admin/ojsa
+
+# Friends of Oakley Infant School
+    - path: github.com/ouroakley/organiser-friends-of-oakley-infant-school
+      mounts:
+        - source: content/events
+          target: content/events/friends-ois
+        - source: content/organisers-info
+          target: content/organisers-info/friends-ois
+        - source: content/venues-info
+          target: content/venues-info/friends-ois
+        - source: static/admin
+          target: static/admin/friends-ois
