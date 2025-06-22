@@ -193,3 +193,15 @@ module:
           target: content/venues-info/friends-ois
         - source: static/admin
           target: static/admin/friends-ois
+
+# The Methodist Church
+    - path: github.com/ouroakley/organiser-the-methodist-church
+      mounts:
+        - source: content/events
+          target: content/events/the-methodist-church
+        - source: content/organisers-info
+          target: content/organisers-info/the-methodist-church
+        - source: content/venues-info
+          target: content/venues-info/the-methodist-church
+        - source: static/admin
+          target: static/admin/the-methodist-church
