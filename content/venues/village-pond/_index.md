@@ -1,7 +1,5 @@
 ---
-title: The Methodist Church
+title: Village Pond
 allowed_editors:
-- the-methodist-church
 - ramblers-wellbeing-walks-basingstoke
-- oww
 ---
