@@ -133,10 +133,24 @@
           {{ end }}
 -->
 
+          {{/* Poster Image (Mobile) */}}
+          {{ with .Params.poster }}
+          <div class="db dn-ns mt4">
+            <img src="{{ . }}" alt="Event poster for {{ $.Title }}" class="w-100 br3">
+          </div>
+          {{ end }}
+
           {{- partial "tags.html" . -}}
         </div>
 
         <div class="w-100 w-40-ns pl4-ns mb4">
+          {{/* Poster Image (Desktop) */}}
+          {{ with .Params.poster }}
+          <div class="dn db-ns mb4">
+            <img src="{{ . }}" alt="Event poster for {{ $.Title }}" class="w-100 br3">
+          </div>
+          {{ end }}
+
           {{/* Related Events */}}
           {{ $related := .Site.RegularPages.Related . | first 3 }}
           {{ with $related }}
