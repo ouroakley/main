@@ -16,109 +16,80 @@
           {{/* Event Details Section */}}
           <div class="pa4 bg-light-gray br3 mb4">
             {{/* Event Dates */}}
-            {{ if .Params.eventDates }}
             <div class="mb3">
               <h2 class="f4 fw6 mt0 mb2">
                 <span class="mr2">📅</span>When
               </h2>
               <ul class="list pl0 mt0 mb3">
-                {{ range .Params.eventDates }}
-                  {{ $startDate := .start }}
-                  {{ $endDate := .end }}
-                  <li class="mb2">
-                    {{ if eq (dateFormat "15:04" $startDate) "00:00" }}
-                      {{ dateFormat "Monday, January 2, 2006" $startDate }}
-                    {{ else }}
-                      {{ dateFormat "Monday, January 2, 2006 3:04 PM" $startDate }}
-                    {{ end }}
-                    {{ if $endDate }}
-                      {{ if eq (dateFormat "2006-01-02" $endDate) (dateFormat "2006-01-02" $startDate) }}
-                        {{ if eq (dateFormat "15:04" $endDate) "00:00" }}
-                          {{/* Same day, no end time - don't show anything */}}
-                        {{ else }}
-                          - {{ dateFormat "3:04 PM" $endDate }}
-                        {{ end }}
+                {{ with .Params.eventDates }}
+                  {{ range . }}
+                    {{ $startDate := .start }}
+                    <li class="mb2">
+                      {{ if eq (dateFormat "15:04" .start) "00:00" }}
+                        {{ dateFormat "Monday, January 2, 2006" .start }}
                       {{ else }}
-                        - {{ if eq (dateFormat "15:04" $endDate) "00:00" }}
-                          {{ dateFormat "Monday, January 2, 2006" $endDate }}
+                        {{ dateFormat "Monday, January 2, 2006 3:04 PM" .start }}
+                      {{ end }}
+                      {{ with .end }}
+                        {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
+                          {{ if ne (dateFormat "15:04" .) "00:00" }}
+                            - {{ dateFormat "3:04 PM" . }}
+                          {{ end }}
                         {{ else }}
-                          {{ dateFormat "Monday, January 2, 2006 3:04 PM" $endDate }}
+                          - {{ if eq (dateFormat "15:04" .) "00:00" }}
+                            {{ dateFormat "Monday, January 2, 2006" . }}
+                          {{ else }}
+                            {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
+                          {{ end }}
                         {{ end }}
                       {{ end }}
-                    {{ end }}
-                  </li>
+                    </li>
+                  {{ end }}
                 {{ end }}
               </ul>
             </div>
-            {{ else }}
-            {{/* Legacy single date support */}}
-            {{ with .Params.eventStart }}
-            <div class="mb3">
-              <h2 class="f4 fw6 mt0 mb2">
-                <span class="mr2">📅</span>When
-              </h2>
-              {{ $startDate := . }}
-              <p class="mt0 mb3">
-                {{ if eq (dateFormat "15:04" .) "00:00" }}
-                  {{ dateFormat "Monday, January 2, 2006" . }}
-                {{ else }}
-                  {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
-                {{ end }}
-                {{ with $.Params.eventEnd }}
-                  {{ if eq (dateFormat "2006-01-02" .) (dateFormat "2006-01-02" $startDate) }}
-                    {{ if eq (dateFormat "15:04" .) "00:00" }}
-                      {{/* Same day, no end time - don't show anything */}}
-                    {{ else }}
-                      - {{ dateFormat "3:04 PM" . }}
-                    {{ end }}
-                  {{ else }}
-                    - {{ if eq (dateFormat "15:04" .) "00:00" }}
-                      {{ dateFormat "Monday, January 2, 2006" . }}
-                    {{ else }}
-                      {{ dateFormat "Monday, January 2, 2006 3:04 PM" . }}
-                    {{ end }}
-                  {{ end }}
-                {{ end }}
-              </p>
-            </div>
-            {{ end }}
-            {{ end }}
 
             {{/* Venue(s) */}}
+            {{ if .Params.venues }}
             <div class="mb3">
               <h2 class="f4 fw6 mt0 mb2">
-                <span class="mr2">📍</span>{{ if gt (len .Params.venues) 1 }}Venues{{ else }}Venue{{ end }}
+                <span class="mr2">📍</span>Where
               </h2>
-              <p class="mt0 mb3">
-                {{- range $index, $venue := .Params.venues -}}
-                  {{- if $index }}, {{ end -}}
-                  {{- with $.Site.GetPage (printf "/venues/%s" ($venue | urlize)) -}}
-                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
-                  {{- else -}}
-                    {{/* Fallback to raw value if page not found */}}
-                    <a href="{{ "/venues/" | relLangURL }}{{ $venue | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $venue | strings.TrimSpace }}</a>
-                  {{- end -}}
+              <ul class="list pl0 mt0 mb3">
+                {{- range $venue := .Params.venues -}}
+                  <li class="mb2">
+                    {{- with $.Site.GetPage (printf "/venues/%s" ($venue | urlize)) -}}
+                      <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
+                    {{- else -}}
+                      {{/* Fallback to raw value if page not found */}}
+                      <a href="{{ "/venues/" | relLangURL }}{{ $venue | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $venue | strings.TrimSpace }}</a>
+                    {{- end -}}
+                  </li>
                 {{- end -}}
-              </p>
+              </ul>
             </div>
+            {{ end }}
 
-            {{/* Organiser(s) */}}
+            {{/* Organisers */}}
+            {{ if .Params.organisers }}
             <div class="mb3">
               <h2 class="f4 fw6 mt0 mb2">
-                <span class="mr2">👥</span>{{ if gt (len .Params.organisers) 1 }}Organisers{{ else }}Organiser{{ end }}
+                <span class="mr2">👥</span>Organised by
               </h2>
-              <p class="mt0 mb0">
-                {{- range $index, $organiser := .Params.organisers -}}
-                  {{- if $index }}, {{ end -}}
-                  {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
-                    <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
-                  {{- else -}}
-                    {{/* Fallback to raw value if page not found */}}
-                    <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
-                  {{- end -}}
+              <ul class="list pl0 mt0 mb3">
+                {{- range $organiser := .Params.organisers -}}
+                  <li class="mb2">
+                    {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
+                      <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
+                    {{- else -}}
+                      {{/* Fallback to raw value if page not found */}}
+                      <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
+                    {{- end -}}
+                  </li>
                 {{- end -}}
-              </p>
+              </ul>
             </div>
+            {{ end }}
           </div>
 
           {{/* Poster Image (Mobile) */}}
@@ -132,20 +103,6 @@
           <div class="lh-copy">
             {{- .Content -}}
           </div>
-
-          {{/*
-          Removed "last edited" timestamp display as we're not currently tracking edit dates on events.
-          If we want to show edit history in the future, we'll need to:
-          1. Add a "date" field to event frontmatter
-          2. Implement a process to update this date when events are modified
-          3. Uncomment and potentially update this section
-
-          {{ if not .Params.date.IsZero }}
-          <div class="f6 gray mt4">
-            Edited: {{- .Params.date | time.Format "January 2, 2006" -}}
-          </div>
-          {{ end }}
-          */}}
 
           {{- partial "tags.html" . -}}
         </div>
@@ -168,22 +125,13 @@
               <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
                 <span class="db f5">{{ .Title }}</span>
                 <span class="db f6 gray">
-                  {{ if .Params.eventDates }}
-                    {{ with index .Params.eventDates 0 }}
+                  {{ with .Params.eventDates }}
+                    {{ with index . 0 }}
                       {{ if eq (dateFormat "15:04" .start) "00:00" }}
                         {{ dateFormat "Monday, January 2, 2006" .start }}
                       {{ else }}
                         {{ dateFormat "Monday, January 2, 2006" .start }}
                         at {{ dateFormat "3:04 PM" .start }}
-                      {{ end }}
-                    {{ end }}
-                  {{ else }}
-                    {{ with .Params.eventStart }}
-                      {{ if eq (dateFormat "15:04" .) "00:00" }}
-                        {{ dateFormat "Monday, January 2, 2006" . }}
-                      {{ else }}
-                        {{ dateFormat "Monday, January 2, 2006" . }}
-                        at {{ dateFormat "3:04 PM" . }}
                       {{ end }}
                     {{ end }}
                   {{ end }}

@@ -9,8 +9,7 @@
             "description": {{ .Description | jsonify }},
             "content": {{ .Plain | jsonify }},
             "date": {{ .Date.Format "2006-01-02" | jsonify }},
-            "eventStart": {{ .Params.eventStart | jsonify }},
-            "eventEnd": {{ .Params.eventEnd | jsonify }},
+            "eventDates": {{ .Params.eventDates | jsonify }},
             "venues": [{{ range $index, $venue := .Params.venues }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/venues/%s" $venue) }}{{ .Title | jsonify }}{{ end }}{{ end }}],
             "organisers": [{{ range $index, $organiser := .Params.organisers }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/organisers/%s" $organiser) }}{{ .Title | jsonify }}{{ end }}{{ end }}]
         }

@@ -36,15 +36,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Format date for display
-    function formatEventDate(dateStr) {
-        if (!dateStr) return '';
-        const date = new Date(dateStr);
-        return date.toLocaleDateString('en-GB', {
+    function formatEventDate(date) {
+        if (!date) return '';
+        const options = {
             weekday: 'long',
             day: 'numeric',
             month: 'long',
-            year: 'numeric'
-        });
+            year: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+        };
+        const d = new Date(date);
+        let dateStr = d.toLocaleDateString('en-GB', options);
+        // If time is midnight (00:00), only show the date
+        if (d.getHours() === 0 && d.getMinutes() === 0) {
+            dateStr = d.toLocaleDateString('en-GB', {
+                weekday: 'long',
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric'
+            });
+        }
+        return dateStr;
+    }
+
+    // Format date range for display
+    function formatDateRange(startDate, endDate) {
+        const start = new Date(startDate);
+        const end = new Date(endDate);
+        const startStr = formatEventDate(start);
+
+        // If end date is same as start date
+        if (start.toDateString() === end.toDateString()) {
+            // If end time is different from start time and not midnight
+            if (end.getHours() !== 0 || end.getMinutes() !== 0) {
+                return `${startStr} - ${end.toLocaleTimeString('en-GB', { hour: 'numeric', minute: 'numeric' })}`;
+            }
+            return startStr;
+        }
+
+        return `${startStr} - ${formatEventDate(end)}`;
     }
 
     // Perform search
@@ -78,7 +109,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Fill in the template
             resultElement.querySelector('h3').textContent = event.title;
-            resultElement.querySelector('.event-date').textContent = formatEventDate(event.eventStart);
+
+            // Handle event dates
+            const eventDatesContainer = resultElement.querySelector('.event-dates');
+            if (event.eventDates && event.eventDates.length > 0) {
+                const dateStrings = event.eventDates.map(date => {
+                    return `<p class="mv2"><span class="mr2">📅</span>${formatDateRange(date.start, date.end)}</p>`;
+                });
+                eventDatesContainer.innerHTML = dateStrings.join('');
+            }
 
             const venueElement = resultElement.querySelector('.venue');
             if (event.venues && event.venues.length > 0) {
@@ -107,38 +146,24 @@ document.addEventListener('DOMContentLoaded', function() {
         noResults.classList.add('dn');
     }
 
-    // Event listeners
-    searchInput.addEventListener('input', debounce(function(e) {
-        const query = e.target.value.trim();
-        searchClear.classList.toggle('dn', query.length === 0);
+    // Initialize search functionality
+    if (searchInput) {
+        loadSearchIndex();
 
-        if (query.length >= 2) {
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            if (query.length > 0) {
+                searchClear.classList.remove('dn');
+            } else {
+                searchClear.classList.add('dn');
+            }
             performSearch(query);
-        } else {
+        });
+
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            searchClear.classList.add('dn');
             hideResults();
-        }
-    }, 300));
-
-    searchClear.addEventListener('click', function() {
-        searchInput.value = '';
-        searchClear.classList.add('dn');
-        hideResults();
-        searchInput.focus();
-    });
-
-    // Debounce function
-    function debounce(func, wait) {
-        let timeout;
-        return function executedFunction(...args) {
-            const later = () => {
-                clearTimeout(timeout);
-                func(...args);
-            };
-            clearTimeout(timeout);
-            timeout = setTimeout(later, wait);
-        };
+        });
     }
-
-    // Initialize
-    loadSearchIndex();
 });

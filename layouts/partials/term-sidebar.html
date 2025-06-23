@@ -2,20 +2,38 @@
 <h2 class="f4 fw6">Upcoming Events</h2>
 {{ $paramName := .paramName }}
 {{ $events := where (where .Site.RegularPages "Type" "events") (printf "Params.%s" $paramName) "intersect" (slice .Data.Term) }}
-{{ $upcomingEvents := where $events "Params.eventStart" "ge" now }}
-{{ $sortedEvents := sort $upcomingEvents "Params.eventStart" "asc" }}
+{{ $now := now }}
+{{ $upcomingEvents := slice }}
+{{ range $events }}
+  {{ $eventDate := "" }}
+  {{ with .Params.eventDates }}
+    {{ with index . 0 }}
+      {{ $eventDate = time .start }}
+    {{ end }}
+  {{ end }}
+  {{ if and $eventDate (ge $eventDate $now) }}
+    {{ $upcomingEvents = $upcomingEvents | append (dict "page" . "date" $eventDate) }}
+  {{ end }}
+{{ end }}
+{{ $sortedEvents := sort $upcomingEvents "date" "asc" }}
 
 {{ if $sortedEvents }}
   <ul class="list pl0">
     {{ range $sortedEvents }}
+      {{ $event := .page }}
       <li class="mb3">
-        <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
-          <span class="db f5">{{ .Title }}</span>
+        <a href="{{ $event.RelPermalink }}" class="link blue hover-dark-blue">
+          <span class="db f5">{{ $event.Title }}</span>
           <span class="db f6 gray">
-            {{ with .Params.eventStart }}
-              {{ dateFormat "Monday, January 2, 2006" . }}
-              {{ with time.Format "15:04 PM" . }}
-                at {{ . }}
+            {{ with $event.Params.eventDates }}
+              {{ range . }}
+                {{ if eq (dateFormat "15:04" .start) "00:00" }}
+                  {{ dateFormat "Monday, January 2, 2006" .start }}
+                {{ else }}
+                  {{ dateFormat "Monday, January 2, 2006" .start }}
+                  at {{ dateFormat "3:04 PM" .start }}
+                {{ end }}
+                <br>
               {{ end }}
             {{ end }}
           </span>
@@ -28,18 +46,38 @@
 {{ end }}
 
 {{/* Past Events Section */}}
-{{ $pastEvents := where $events "Params.eventStart" "lt" now }}
-{{ $recentPastEvents := first 3 (sort $pastEvents "Params.eventStart" "desc") }}
+{{ $pastEvents := slice }}
+{{ range $events }}
+  {{ $eventDate := "" }}
+  {{ with .Params.eventDates }}
+    {{ with index . 0 }}
+      {{ $eventDate = time .start }}
+    {{ end }}
+  {{ end }}
+  {{ if and $eventDate (lt $eventDate $now) }}
+    {{ $pastEvents = $pastEvents | append (dict "page" . "date" $eventDate) }}
+  {{ end }}
+{{ end }}
+{{ $recentPastEvents := first 3 (sort $pastEvents "date" "desc") }}
 {{ if $recentPastEvents }}
   <h2 class="f4 fw6 mt5">Recent Events</h2>
   <ul class="list pl0">
     {{ range $recentPastEvents }}
+      {{ $event := .page }}
       <li class="mb3">
-        <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">
-          <span class="db f5">{{ .Title }}</span>
+        <a href="{{ $event.RelPermalink }}" class="link blue hover-dark-blue">
+          <span class="db f5">{{ $event.Title }}</span>
           <span class="db f6 gray">
-            {{ with .Params.eventStart }}
-              {{ dateFormat "Monday, January 2, 2006" . }}
+            {{ with $event.Params.eventDates }}
+              {{ range . }}
+                {{ if eq (dateFormat "15:04" .start) "00:00" }}
+                  {{ dateFormat "Monday, January 2, 2006" .start }}
+                {{ else }}
+                  {{ dateFormat "Monday, January 2, 2006" .start }}
+                  at {{ dateFormat "3:04 PM" .start }}
+                {{ end }}
+                <br>
+              {{ end }}
             {{ end }}
           </span>
         </a>
