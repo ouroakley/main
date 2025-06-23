@@ -16,7 +16,7 @@ frontmatter:
   date: ["eventStart", ":default", ":filename"]
 
 permalinks:
-  events: /events/:year/:month/:slug/
+  events: /events/:slug/
 
 menus:
   main:
