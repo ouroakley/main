@@ -160,10 +160,12 @@
 
       {{/* Check for events in this month */}}
       {{ range $page := $ctx.Site.RegularPages }}
-        {{ with $page.Params.eventStart }}
-          {{ $eventDate := time . }}
-          {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) }}
-            {{ $hasEvents = true }}
+        {{ if $page.Params.eventDates }}
+          {{ range $dateRange := $page.Params.eventDates }}
+            {{ $eventDate := time $dateRange.start }}
+            {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) }}
+              {{ $hasEvents = true }}
+            {{ end }}
           {{ end }}
         {{ end }}
       {{ end }}
@@ -229,8 +231,7 @@
             {{ $gridColumn := add $displayPosition 1 }}
 
             {{/* Check for events on this specific day */}}
-            {{ $multiDayEvents := slice }}
-            {{ $singleDayEvents := slice }}
+            {{ $events := slice }}
             {{ range $page := $ctx.Site.RegularPages }}
               {{ if $page.Params.eventDates }}
                 {{ range $dateRange := $page.Params.eventDates }}
@@ -240,59 +241,30 @@
                   {{ $startDateStr := $startDate.Format "2006-01-02" }}
                   {{ $endDateStr := $endDate.Format "2006-01-02" }}
                   {{ if and (ge $thisDayStr $startDateStr) (le $thisDayStr $endDateStr) }}
-                    {{ $multiDayEvents = $multiDayEvents | append $page }}
-                    {{ break }}
-                  {{ end }}
-                {{ end }}
-              {{ else }}
-                {{ with $page.Params.eventStart }}
-                  {{ $eventDate := time . }}
-                  {{ if and (eq $eventDate.Year $year) (eq $eventDate.Month $month) (eq $eventDate.Day $dayNum) }}
-                    {{ $singleDayEvents = $singleDayEvents | append $page }}
+                    {{ $events = $events | append (dict "page" $page "start" $startDate "end" $endDate) }}
                   {{ end }}
                 {{ end }}
               {{ end }}
             {{ end }}
 
-            <div class="calendar-day has-date{{ if or $multiDayEvents $singleDayEvents }} has-events{{ end }}" style="grid-column: {{ $gridColumn }}">
+            <div class="calendar-day has-date{{ if $events }} has-events{{ end }}" style="grid-column: {{ $gridColumn }}">
               <div class="date" data-day="{{ $thisDay.Format "Monday" }}">{{ $dayNum }}</div>
-              {{ if or $multiDayEvents $singleDayEvents }}
+              {{ if $events }}
                 <ul class="events">
-                  {{ if $multiDayEvents }}
-                    {{ range $event := $multiDayEvents }}
-                      <li>
-                        <a href="{{ $event.RelPermalink }}" class="hover-dark-blue">
-                          {{ $event.Title }}
-                          {{ range $dateRange := $event.Params.eventDates }}
-                            {{ $startDate := time $dateRange.start }}
-                            {{ $endDate := time $dateRange.end }}
-                            {{ $thisDayStr := $thisDay.Format "2006-01-02" }}
-                            {{ $startDateStr := $startDate.Format "2006-01-02" }}
-                            {{ $endDateStr := $endDate.Format "2006-01-02" }}
-                            {{ if eq $startDateStr $thisDayStr }}
-                              {{ if ne (dateFormat "15:04" $startDate) "00:00" }}
-                                <span class="f7 gray">{{ dateFormat "3:04 PM" $startDate }}</span>
-                              {{ end }}
-                            {{ else if eq $endDateStr $thisDayStr }}
-                              {{ if ne (dateFormat "15:04" $endDate) "00:00" }}
-                                <span class="f7 gray">ends {{ dateFormat "3:04 PM" $endDate }}</span>
-                              {{ end }}
-                            {{ end }}
-                          {{ end }}
-                        </a>
-                      </li>
-                    {{ end }}
-                    {{ if $singleDayEvents }}
-                      <li class="event-divider"><hr class="mv2"></li>
-                    {{ end }}
-                  {{ end }}
-                  {{ range $event := $singleDayEvents }}
+                  {{ range $event := $events }}
                     <li>
-                      <a href="{{ $event.RelPermalink }}" class="hover-dark-blue">
-                        {{ $event.Title }}
-                        {{ with $event.Params.eventStart }}
-                          {{ if ne (dateFormat "15:04" .) "00:00" }}
-                            <span class="f7 gray">{{ dateFormat "3:04 PM" . }}</span>
+                      <a href="{{ $event.page.RelPermalink }}" class="hover-dark-blue">
+                        {{ $event.page.Title }}
+                        {{ $thisDayStr := $thisDay.Format "2006-01-02" }}
+                        {{ $startDateStr := $event.start.Format "2006-01-02" }}
+                        {{ $endDateStr := $event.end.Format "2006-01-02" }}
+                        {{ if eq $startDateStr $thisDayStr }}
+                          {{ if ne (dateFormat "15:04" $event.start) "00:00" }}
+                            <span class="f7 gray">{{ dateFormat "3:04 PM" $event.start }}</span>
+                          {{ end }}
+                        {{ else if eq $endDateStr $thisDayStr }}
+                          {{ if ne (dateFormat "15:04" $event.end) "00:00" }}
+                            <span class="f7 gray">ends {{ dateFormat "3:04 PM" $event.end }}</span>
                           {{ end }}
                         {{ end }}
                       </a>
