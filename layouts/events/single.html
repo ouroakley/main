@@ -47,6 +47,28 @@
                   {{ end }}
                 {{ end }}
               </ul>
+              <!-- Debug Info -->
+              <div class="pa3 bg-light-gray">
+                <p>Available Output Formats:</p>
+                <ul>
+                {{ range .OutputFormats }}
+                  <li>{{ .Name }} - {{ .RelPermalink }}</li>
+                {{ end }}
+                </ul>
+              </div>
+              {{ $calendarURL := "" }}
+              {{ range .OutputFormats }}
+                {{ if eq .MediaType.Type "text/calendar" }}
+                  {{ $calendarURL = .RelPermalink }}
+                {{ end }}
+              {{ end }}
+              {{ with $calendarURL }}
+              <div class="mt3 pa3 bg-white br2">
+                <a href="{{ . }}" class="link blue hover-dark-blue dib" type="text/calendar">
+                  <span class="mr2">📅</span>Add to Calendar
+                </a>
+              </div>
+              {{ end }}
             </div>
 
             {{/* Venue(s) */}}

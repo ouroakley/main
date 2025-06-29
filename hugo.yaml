@@ -37,6 +37,25 @@ outputs:
   taxonomy:
     - HTML
     - JSON
+  section:
+    - HTML
+    - Calendar
+  page:
+    - HTML
+    - Calendar
+
+mediaTypes:
+  text/calendar:
+    suffixes:
+      - ics
+
+outputFormats:
+  Calendar:
+    mediaType: text/calendar
+    baseName: event
+    isPlainText: true
+    rel: alternate
+    notAlternative: true
 
 module:
   mounts:
