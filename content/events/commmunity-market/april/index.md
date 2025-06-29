@@ -23,3 +23,7 @@ organisers:
 * Home made by waited
 * L&S Signature Gifts
 * Shells and Gem's Handmade Gifts
+
+## Apply to be a Stallholder
+
+Apply to be a stallholder at a future market by completing the online form [here](https://forms.office.com/e/EXLzcp4mQX)
