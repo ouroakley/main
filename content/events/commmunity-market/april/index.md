@@ -1,6 +1,8 @@
 ---
 draft: false
 title: Community Market
+date: 2025-04-12
+poster: poster-market.jpg
 eventDates:
   - start: 2025-04-12T12:00:00
     end: 2025-04-12T15:00:00
@@ -10,19 +12,14 @@ organisers:
   - the-barley-mow
   - oakley-neighbourhood-watch
   - craft-kits-n-bits
-date: 2025-04-12
 ---
 ## Stallholders
 
-- Animal Serenity
-- Annie's Oakley Charity Shop
-- Cakes by Maze
-- Charles Butler400 Foundation
-- Craft Kits N Bits
-- Home made by waited
-- L&S Signature Gifts
-- Shells and Gem's Handmade Gifts
-
-## Poster
-
-![Our Oakley Community Market poster. Stall with cupcake, bear, present and easter egg. Saturday April 12th 12 PM - 3 PM Barley Mow, Oakley](/images/uploads/poster-market.jpg "Our Oakley Community Market")
+* Animal Serenity
+* Annie's Oakley Charity Shop
+* Cakes by Maze
+* Charles Butler400 Foundation
+* Craft Kits N Bits
+* Home made by waited
+* L&S Signature Gifts
+* Shells and Gem's Handmade Gifts
