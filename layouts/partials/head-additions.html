@@ -1,5 +1,16 @@
 {{ if and .IsPage (eq .Type "events") }}
+  {{ $image := "" }}
+
+  {{/* First try to get the poster image */}}
   {{ with .Params.poster }}
+    {{ $resource := $.Resources.GetMatch . }}
+    {{ if $resource }}
+      {{ $image = $resource.RelPermalink }}
+    {{ end }}
+  {{ end }}
+
+  {{/* Then output the appropriate meta tags */}}
+  {{ with $image }}
     <!-- Twitter/X Card tags -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="{{ . | absURL }}" />
@@ -9,5 +20,17 @@
     <meta property="og:image" content="{{ . | absURL }}" />
     <meta property="og:image:secure_url" content="{{ . | absURL }}" />
     <meta property="og:image:alt" content="Event poster for {{ $.Title }}" />
+  {{ else }}
+    {{ with $.Site.Params.site_logo }}
+      <!-- Twitter/X Card tags -->
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:image" content="{{ . | absURL }}" />
+      <meta name="twitter:image:alt" content="Logo for {{ $.Site.Title }}" />
+
+      <!-- OpenGraph tags -->
+      <meta property="og:image" content="{{ . | absURL }}" />
+      <meta property="og:image:secure_url" content="{{ . | absURL }}" />
+      <meta property="og:image:alt" content="Logo for {{ $.Site.Title }}" />
+    {{ end }}
   {{ end }}
 {{ end }}
