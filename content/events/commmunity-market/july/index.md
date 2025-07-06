@@ -12,6 +12,8 @@ organisers:
   - the-barley-mow
   - oakley-neighbourhood-watch
   - craft-kits-n-bits
+aliases:
+  - /events/2025/07/community-market/
 ---
 Lots of exciting info coming soon.
 
