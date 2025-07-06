@@ -202,3 +202,15 @@ module:
           target: content/venues-info/the-methodist-church
         - source: static/admin
           target: static/admin/the-methodist-church
+
+# Oakley & Deane WI
+    - path: github.com/ouroakley/organiser-oakley-deane-wi
+      mounts:
+        - source: content/events
+          target: content/events/oakley-deane-wi
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-deane-wi
+        - source: content/venues-info
+          target: content/venues-info/oakley-deane-wi
+        - source: static/admin
+          target: static/admin/oakley-deane-wi
