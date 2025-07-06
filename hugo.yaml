@@ -214,3 +214,16 @@ module:
           target: content/venues-info/oakley-deane-wi
         - source: static/admin
           target: static/admin/oakley-deane-wi
+
+
+# Oakley Bowling Club
+    - path: github.com/ouroakley/organiser-oakley-bowling-club
+      mounts:
+        - source: content/events
+          target: content/events/oakley-bowling-club
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-bowling-club
+        - source: content/venues-info
+          target: content/venues-info/oakley-bowling-club
+        - source: static/admin
+          target: static/admin/oakley-bowling-club
