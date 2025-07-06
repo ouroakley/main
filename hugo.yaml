@@ -220,10 +220,10 @@ module:
     - path: github.com/ouroakley/organiser-oakley-bowling-club
       mounts:
         - source: content/events
-          target: content/events/oakley-bowling-club
+          target: content/events/oakley-bc
         - source: content/organisers-info
-          target: content/organisers-info/oakley-bowling-club
+          target: content/organisers-info/oakley-bc
         - source: content/venues-info
-          target: content/venues-info/oakley-bowling-club
+          target: content/venues-info/oakley-bc
         - source: static/admin
-          target: static/admin/oakley-bowling-club
+          target: static/admin/oakley-bc
