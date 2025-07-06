@@ -8,7 +8,7 @@
 
     <div class="lh-copy">
       {{ $now := now }}
-      {{ $allEvents := .Pages }}
+      {{ $allEvents := .RegularPagesRecursive }}
       {{ $upcomingEvents := slice }}
       {{ range $allEvents }}
         {{ $eventDate := "" }}

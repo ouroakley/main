@@ -1,18 +1,21 @@
 {
     "events": [
-        {{- $events := where .Site.RegularPages "Type" "events" -}}
-        {{- range $index, $event := $events -}}
-        {{- if $index }}, {{ end }}
-        {
-            "title": {{ .Title | jsonify }},
-            "permalink": {{ .RelPermalink | jsonify }},
-            "description": {{ .Description | jsonify }},
-            "content": {{ .Plain | jsonify }},
-            "date": {{ .Date.Format "2006-01-02" | jsonify }},
-            "eventDates": {{ .Params.eventDates | jsonify }},
-            "venues": [{{ range $index, $venue := .Params.venues }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/venues/%s" $venue) }}{{ .Title | jsonify }}{{ end }}{{ end }}],
-            "organisers": [{{ range $index, $organiser := .Params.organisers }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/organisers/%s" $organiser) }}{{ .Title | jsonify }}{{ end }}{{ end }}]
-        }
-        {{- end -}}
+        {{- $eventsSection := .Site.GetPage "section" "events" }}
+        {{- $events := $eventsSection.RegularPagesRecursive }}
+        {{- range $index, $event := $events }}
+            {{- if $index }},{{ end }}
+            {
+                "title": {{ .Title | jsonify }},
+                "permalink": {{ .RelPermalink | jsonify }},
+                "description": {{ .Description | jsonify }},
+                "content": {{ .Plain | jsonify }},
+                "date": {{ .Date.Format "2006-01-02" | jsonify }},
+                "eventDates": {{ .Params.eventDates | jsonify }},
+                "venues": [{{ range $index, $venue := .Params.venues }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/venues/%s" $venue) }}{{ .Title | jsonify }}{{ end }}{{ end }}],
+                "organisers": [{{ range $index, $organiser := .Params.organisers }}{{ if $index }}, {{ end }}{{ with $.Site.GetPage (printf "/organisers/%s" $organiser) }}{{ .Title | jsonify }}{{ end }}{{ end }}],
+                "section": {{ .Section | jsonify }},
+                "subsection": {{ trim (path.Dir .RelPermalink) "/" | jsonify }}
+            }
+        {{- end }}
     ]
 }
