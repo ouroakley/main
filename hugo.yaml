@@ -13,7 +13,7 @@ taxonomies:
   organiser: organisers
 
 permalinks:
-  events: /events/:year/:month/:slug/
+  events: /:sections/:year/:month/:day/:slug/
 
 menus:
   main:
