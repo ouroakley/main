@@ -236,7 +236,10 @@
               {{ if $page.Params.eventDates }}
                 {{ range $dateRange := $page.Params.eventDates }}
                   {{ $startDate := time $dateRange.start }}
-                  {{ $endDate := time $dateRange.end }}
+                  {{ $endDate := $startDate }}
+                  {{ if $dateRange.end }}
+                    {{ $endDate = time $dateRange.end }}
+                  {{ end }}
                   {{ $thisDayStr := $thisDay.Format "2006-01-02" }}
                   {{ $startDateStr := $startDate.Format "2006-01-02" }}
                   {{ $endDateStr := $endDate.Format "2006-01-02" }}
