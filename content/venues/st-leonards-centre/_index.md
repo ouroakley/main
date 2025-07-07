@@ -1,5 +1,5 @@
 ---
-title: St Leonard's
+title: St Leonard's Centre
 allowed_editors:
   - oww
 ---
