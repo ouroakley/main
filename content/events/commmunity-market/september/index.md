@@ -1,7 +1,8 @@
 ---
-date: 2025-09-27
 draft: false
 title: Community Market
+date: 2025-09-27
+poster: poster-market-september.jpg
 eventDates:
   - start: 2025-09-27T12:00:00
     end: 2025-09-27T16:00:00
