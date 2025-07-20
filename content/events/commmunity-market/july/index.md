@@ -18,6 +18,7 @@ aliases:
 ## Confirmed Stallholders
 
 * By Nat Jewellery
+* Cake Corner
 * Craft Kits N Bits
 * Cuddly Cats
 * Elaine’s Gifts
