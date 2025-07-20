@@ -19,8 +19,8 @@ aliases:
 
 * By Nat Jewellery
 * Craft Kits N Bits
-* Elaine’s Gifts
 * Cuddly Cats
+* Elaine’s Gifts
 * Home made by waited
 * Tamar Hive
 * The Secret Little Hedgehog Rescue
