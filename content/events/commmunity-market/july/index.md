@@ -15,7 +15,15 @@ organisers:
 aliases:
   - /events/2025/07/community-market/
 ---
-Lots of exciting info coming soon.
+## Confirmed Stallholders
+
+* By Nat Jewellery
+* Craft Kits N Bits
+* Elaine’s Gifts
+* Cuddly Cats
+* Home made by waited
+* Tamar Hive
+* The Secret Little Hedgehog Rescue
 
 ## Apply to be a Stallholder
 
