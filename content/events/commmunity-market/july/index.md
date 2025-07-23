@@ -17,6 +17,7 @@ aliases:
 ---
 ## Confirmed Stallholders
 
+* Annie's Oakley Charity Shop
 * By Nat Jewellery
 * Cake Corner
 * Craft Kits N Bits
@@ -24,6 +25,7 @@ aliases:
 * Elaine’s Gifts
 * Home made by waited
 * Tamar Hive
+* TLE
 * The Secret Little Hedgehog Rescue
 
 ## Apply to be a Stallholder
