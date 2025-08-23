@@ -1,0 +1,19 @@
+backend:
+  name: github
+  repo: your-org/your-repo
+  branch: main
+  site_domain: https://example.com
+  base_url: https://example.com
+  auth_endpoint: /api/auth
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    folder: "content/pages"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
