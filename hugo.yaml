@@ -240,3 +240,16 @@ module:
           target: content/venues-info/oakley-ramblers
         - source: static/admin
           target: static/admin/oakley-ramblers
+
+
+# Oakley Gardening Club
+    - path: github.com/ouroakley/organiser-oakley-gardening-club
+      mounts:
+        - source: content/events
+          target: content/events/oakley-gardening-club
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-gardening-club
+        - source: content/venues-info
+          target: content/venues-info/oakley-gardening-club
+        - source: static/admin
+          target: static/admin/oakley-gardening-club
