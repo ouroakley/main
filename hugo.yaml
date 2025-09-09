@@ -227,3 +227,16 @@ module:
           target: content/venues-info/oakley-bc
         - source: static/admin
           target: static/admin/oakley-bc
+
+
+# Oakley Ramblers
+    - path: github.com/ouroakley/organiser-oakley-ramblers
+      mounts:
+        - source: content/events
+          target: content/events/oakley-ramblers
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-ramblers
+        - source: content/venues-info
+          target: content/venues-info/oakley-ramblers
+        - source: static/admin
+          target: static/admin/oakley-ramblers
