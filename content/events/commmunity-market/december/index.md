@@ -15,7 +15,9 @@ organisers:
 aliases:
   - /events/2025/12/community-market/
 ---
-Lots of exciting info coming soon.
+Sadly we have taken the decision to cancel the market this Saturday.
+
+The brewery for the Barley Mow has decided to start refurbishment work in the garden marquee this week, so the garden marquee had to be taken down.
 
 ## Apply to be a Stallholder
 
