@@ -1,0 +1,1092 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Our Oakley</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="">
+    <meta name="generator" content="Hugo 0.145.0">
+    
+    
+    
+      <meta name="robots" content="index, follow">
+    
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.d05fb5f317fcf33b3a52936399bdf6f47dc776516e1692e412ec7d76f4a5faa2.css" >
+
+
+
+
+    
+
+    
+      
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Our Oakley" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+    
+
+    
+
+    
+      <link rel="canonical" href="https://www.ouroakley.uk/">
+    
+
+    <meta property="og:url" content="https://www.ouroakley.uk/">
+  <meta property="og:site_name" content="Our Oakley">
+  <meta property="og:title" content="Our Oakley">
+  <meta property="og:description" content="Welcome to Our Oakley!
+Discover local events and connect with our community in Oakley.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+  <meta itemprop="name" content="Our Oakley">
+  <meta itemprop="description" content="Welcome to Our Oakley!
+Discover local events and connect with our community in Oakley.">
+  <meta itemprop="datePublished" content="2026-01-28T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2026-07-22T00:00:00+00:00">
+  <meta itemprop="wordCount" content="14">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Our Oakley">
+  <meta name="twitter:description" content="Welcome to Our Oakley!
+Discover local events and connect with our community in Oakley.">
+
+      
+    
+	
+
+  </head><body class="ma0 avenir bg-near-white production">
+
+    
+
+
+
+<header style="" class="bg-dark-green">
+  <div class="h-100 ">
+    <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex flex-column flex-row-l items-center justify-between">
+    <a href="/" class="mb3 mb0-l w-100 tc tl-l">
+      
+        <img src="/images/logo.png" class="w-40 w-100-ns mw6 mw5-ns" alt="Our Oakley" />
+      
+    </a>
+    <div class="flex items-center">
+      
+
+      
+        <ul class="list ma0 pa0 flex">
+          
+          <li class="f5 f4-ns fw4 dib mh1">
+            <a class="hover-white no-underline white-90 pv1 ph2 db" href="/events/" title="Events page">
+              Events
+            </a>
+          </li>
+          
+          <li class="f5 f4-ns fw4 dib mh1">
+            <a class="hover-white no-underline white-90 pv1 ph2 db" href="/organisers/" title="Organisers page">
+              Organisers
+            </a>
+          </li>
+          
+          <li class="f5 f4-ns fw4 dib mh1">
+            <a class="hover-white no-underline white-90 pv1 ph2 db" href="/venues/" title="Venues page">
+              Venues
+            </a>
+          </li>
+          
+          <li class="f5 f4-ns fw4 dib mh1">
+            <a class="hover-white no-underline white-90 pv1 ph2 db" href="/calendar/" title="Calendar page">
+              Calendar
+            </a>
+          </li>
+          
+        </ul>
+      
+      <div class="ananke-socials"></div>
+
+    </div>
+  </div>
+</nav>
+
+    <div class="tc-l pv2 ph3 ph4-ns">
+      
+        <h1 class="f2 f-subheadline-l fw5 white-90 lh-title">
+          Our Oakley
+        </h1>
+      
+    </div>
+  </div>
+</header>
+
+
+    <main class="pb7" role="main">
+      
+<div class="mw8 center ph3">
+  <article class="pb6">
+    
+    <header class="tc mb5 pb4">
+      <h1 class="f2 f1-ns fw6 mt4 mb3">Welcome to Our Oakley</h1>
+      <p class="f4 f3-ns measure center lh-copy mb4">Discover local events and connect with our community in Oakley</p>
+
+      
+      
+<div class="search-container mb4">
+  <div class="relative">
+    <input
+      type="text"
+      id="search-input"
+      class="w-100 pa3 pr5 br2 ba b--light-gray"
+      placeholder="Search events, venues, or organisers..."
+      autocomplete="off"
+    >
+    <button
+      id="search-clear"
+      class="absolute right-1 top-0 bottom-0 bn bg-transparent pointer dn"
+      aria-label="Clear search"
+    >
+      <span class="f6 gray">✕</span>
+    </button>
+  </div>
+
+  
+  <div id="search-results" class="dn mt3">
+    <div class="results-info mb3">
+      <span id="results-count" class="f6 gray"></span>
+    </div>
+    <div id="results-container" class="flex flex-wrap nl3 nr3"></div>
+  </div>
+
+  
+  <div id="no-results" class="dn mt3">
+    <p class="f6 gray i">No events found. Try adjusting your search terms.</p>
+  </div>
+
+  
+  <div id="search-loading" class="dn mt3">
+    <p class="f6 gray i">Searching...</p>
+  </div>
+</div>
+
+
+<template id="search-result-template">
+  <div class="w-100 w-third-ns ph3 mb4">
+    <div class="pa3 bg-white br2 shadow-4 h-100">
+      <h3 class="f4 fw6 mt0 mb2"></h3>
+      <div class="event-dates f6 gray mt0 mb3"></div>
+      <p class="f6 mb2 venue">
+        <span class="mr2">📍</span>
+        <span class="venue-name"></span>
+      </p>
+      <p class="f6 mb3 organiser">
+        <span class="mr2">👥</span>
+        <span class="organiser-name"></span>
+      </p>
+      <a class="link blue hover-dark-blue f6">
+        View details →
+      </a>
+    </div>
+  </div>
+</template>
+
+
+      <div class="flex justify-center">
+        <a href="/events/" class="f5 link dim br2 ph4 pv3 dib white bg-blue mr3">Browse Events</a>
+        <a href="/calendar/" class="f5 link dim br2 ph4 pv3 dib white bg-dark-blue">View Calendar</a>
+      </div>
+    </header>
+
+    <div class="flex flex-wrap">
+      <div class="w-100 w-60-ns pr4-ns">
+        
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">
+            <span class="mr2">📅</span>Upcoming Events
+          </h2>
+          
+          
+          
+          
+            
+            
+              
+                
+              
+            
+            
+              
+            
+          
+            
+            
+              
+                
+              
+            
+            
+              
+            
+          
+            
+            
+              
+                
+              
+            
+            
+              
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+          
+
+          
+            <div class="flex flex-wrap nl3 nr3">
+              
+                
+                <div class="w-100 w-third-ns ph3 mb4">
+                  <div class="pa3 bg-white br2 shadow-4 h-100">
+                    <h3 class="f4 fw6 mt0 mb2">Wellbeing Forum</h3>
+
+                    
+                    
+                      <p class="f6 mb2">
+                        <span class="mr2">📅</span>
+                        
+                          
+                          
+                            Wednesday, March 25, 2026 4:00 PM
+                          
+                          
+                            
+                              
+                                - 5:00 PM
+                              
+                            
+                          
+                          <br>
+                        
+                      </p>
+                    
+
+                    
+                    
+                    <p class="f6 mb2">
+                      <span class="mr2">📍</span>St Leonard&#39;s Centre</p>
+                    
+
+                    <a href="/events/oakley-wellbeing-forum/2026/03/25/wellbeing-forum/" class="link blue hover-dark-blue f6">
+                      View details →
+                    </a>
+                  </div>
+                </div>
+              
+                
+                <div class="w-100 w-third-ns ph3 mb4">
+                  <div class="pa3 bg-white br2 shadow-4 h-100">
+                    <h3 class="f4 fw6 mt0 mb2">Wellbeing Forum</h3>
+
+                    
+                    
+                      <p class="f6 mb2">
+                        <span class="mr2">📅</span>
+                        
+                          
+                          
+                            Wednesday, May 27, 2026 4:00 PM
+                          
+                          
+                            
+                              
+                                - 5:00 PM
+                              
+                            
+                          
+                          <br>
+                        
+                      </p>
+                    
+
+                    
+                    
+                    <p class="f6 mb2">
+                      <span class="mr2">📍</span>St Leonard&#39;s Centre</p>
+                    
+
+                    <a href="/events/oakley-wellbeing-forum/2026/05/27/wellbeing-forum/" class="link blue hover-dark-blue f6">
+                      View details →
+                    </a>
+                  </div>
+                </div>
+              
+                
+                <div class="w-100 w-third-ns ph3 mb4">
+                  <div class="pa3 bg-white br2 shadow-4 h-100">
+                    <h3 class="f4 fw6 mt0 mb2">Wellbeing Forum</h3>
+
+                    
+                    
+                      <p class="f6 mb2">
+                        <span class="mr2">📅</span>
+                        
+                          
+                          
+                            Wednesday, July 22, 2026 4:00 PM
+                          
+                          
+                            
+                              
+                                - 5:00 PM
+                              
+                            
+                          
+                          <br>
+                        
+                      </p>
+                    
+
+                    
+                    
+                    <p class="f6 mb2">
+                      <span class="mr2">📍</span>St Leonard&#39;s Centre</p>
+                    
+
+                    <a href="/events/oakley-wellbeing-forum/2026/07/22/wellbeing-forum/" class="link blue hover-dark-blue f6">
+                      View details →
+                    </a>
+                  </div>
+                </div>
+              
+            </div>
+            <div class="tc mt3">
+              <a href="/events/" class="f5 link blue hover-dark-blue">
+                View all events →
+              </a>
+            </div>
+          
+        </section>
+
+        
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">Quick Links</h2>
+          <div class="flex flex-wrap nl3 nr3">
+            <div class="w-100 w-50-ns ph3 mb4">
+              <div class="pa3 bg-light-gray br2">
+                <h3 class="f4 fw6 mt0 mb3">
+                  <span class="mr2">📍</span>Venues
+                </h3>
+                <p class="f6 mb3">Discover places where community events are held</p>
+                <a href="/venues/" class="link blue hover-dark-blue f6">
+                  Browse venues →
+                </a>
+              </div>
+            </div>
+            <div class="w-100 w-50-ns ph3 mb4">
+              <div class="pa3 bg-light-gray br2">
+                <h3 class="f4 fw6 mt0 mb3">
+                  <span class="mr2">👥</span>Organisers
+                </h3>
+                <p class="f6 mb3">Meet the groups and people behind our events</p>
+                <a href="/organisers/" class="link blue hover-dark-blue f6">
+                  Meet organisers →
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="w-100 w-40-ns pl4-ns">
+        
+        <section class="mb5">
+          <h2 class="f3 fw6 mb4">
+            <span class="mr2">📅</span>Next 30 Days
+          </h2>
+          
+          
+          
+          
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+            
+            
+              
+                
+              
+            
+            
+          
+          
+
+          
+            <p class="i gray">No events scheduled in the next 30 days</p>
+          
+        </section>
+
+        
+      </div>
+    </div>
+  </article>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="/js/search.js"></script>
+
+    </main>
+    <footer class="bg-dark-green bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://www.ouroakley.uk/" >
+    &copy;  Our Oakley 2026 
+  </a>
+    <div><div class="ananke-socials"></div>
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
