@@ -1,0 +1,139 @@
+backend:
+  name: github
+  repo: ouroakley/main
+  branch: main
+  site_domain: https://www.ouroakley.uk
+  base_url: https://www.ouroakley.uk
+  auth_endpoint: /api/auth
+  squash_merges: true
+
+editor:
+  preview: false
+
+publish_mode: editorial_workflow
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "content/events"
+    create: true
+    summary: "{{title}} - {{date | date('DD MMM YYYY')}}"
+    nested:
+      depth: 5
+      summary: '{{dirname}}'
+      subfolders: true
+    view_groups:
+      - label: "Venue"
+        field: venues
+      - label: "Organiser"
+        field: organisers
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Enter the title of the event."
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        required: true
+        hint: "Enter the date to use for the link for the event. This may not be the same as the event date."
+        default: "{{now}}"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "Poster"
+        name: "poster"
+        widget: "image"
+        required: false
+        hint: "Upload a poster image for the event"
+      - label: "Event Dates"
+        name: "eventDates"
+        widget: "list"
+        required: false
+        hint: "Add a single date for a one-day event, or multiple dates for recurring or multi-day events"
+        fields:
+          - label: "Start Date"
+            name: "start"
+            widget: "datetime"
+            format: YYYY-MM-DDTHH:mm:ssZ
+          - label: "End Date"
+            name: "end"
+            widget: "datetime"
+            format: YYYY-MM-DDTHH:mm:ssZ
+            required: false
+      - label: "Venues"
+        name: "venues"
+        widget: "list"
+        required: true
+        default: [""]
+        hint: "Enter the venues for this event. Comma separated, with no spaces. Replace spaces with a dash. Use tbc if required."
+      - label: "Organisers"
+        name: "organisers"
+        widget: "list"
+        required: true
+        default: [""]
+        hint: "Enter the organisers for this event. Comma separated, with no spaces. Replace spaces with a dash."
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Aliases"
+        name: "aliases"
+        widget: "list"
+        required: false
+        hint: "Enter any aliases for this event. Comma seperated, with no spaces. Replace spaces with a dash."
+
+
+  - name: "venues"
+    label: "Venues"
+    label_singular: "Venue"
+    folder: "content/venues"
+    create: true
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    meta:
+      path:
+        widget: string
+        label: 'Path'
+        index_file: '_index'
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Address", name: "address", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown", required: false}
+      - label: "Allowed Editors"
+        name: "allowed_editors"
+        widget: "list"
+        required: false
+        hint: "Editors that can add additional information about this venue"
+
+  - name: "organisers"
+    label: "Organisers"
+    label_singular: "Organiser"
+    folder: "content/organisers"
+    create: true
+    nested:
+      depth: 100
+      summary: '{{title}}'
+    meta:
+      path:
+        widget: string
+        label: 'Path'
+        index_file: '_index'
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "text", required: false}
+      - {label: "Full Name", name: "fullName", widget: "string"}
+      - {label: "Content", name: "body", widget: "markdown", required: false}
+      - label: "Allowed Editors"
+        name: "allowed_editors"
+        widget: "list"
+        required: false
+        hint: "Editors that can add additional information about this organiser"

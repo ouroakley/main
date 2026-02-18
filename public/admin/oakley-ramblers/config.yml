@@ -1,0 +1,148 @@
+backend:
+  name: github
+  repo: ouroakley/organiser-oakley-ramblers
+  branch: main
+  site_domain: https://www.ouroakley.uk
+  base_url: https://www.ouroakley.uk
+  auth_endpoint: /api/auth
+  squash_merges: true
+
+editor:
+  preview: false
+
+publish_mode: simple
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+logo_url: https://www.ouroakley.uk/images/logo.png
+
+collections:
+  - name: "events"
+    label: "Events"
+    label_singular: "Event"
+    folder: "content/events"
+    create: true
+    summary: "{{title}} - {{date | date('DD MMM YYYY')}}"
+    nested:
+      depth: 5
+      summary: '{{dirname}}'
+      subfolders: true
+    view_groups:
+      - label: "Venue"
+        field: venues
+      - label: "Organiser"
+        field: organisers
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+        hint: "Enter the title of the event."
+      - label: "Date"
+        name: "date"
+        widget: "datetime"
+        required: true
+        hint: "Enter the date to use for the link for the event. This may not be the same as the event date."
+        default: "{{now}}"
+        format: "YYYY-MM-DD"
+        date_format: "YYYY-MM-DD"
+        time_format: false
+      - label: "Poster"
+        name: "poster"
+        widget: "image"
+        required: false
+        hint: "Upload a poster image for the event"
+      - label: "Event Dates"
+        name: "eventDates"
+        widget: "list"
+        required: false
+        hint: "Add a single date for a one-day event, or multiple dates for recurring or multi-day events"
+        fields:
+          - label: "Start Date"
+            name: "start"
+            widget: "datetime"
+            format: YYYY-MM-DDTHH:mm:ssZ
+          - label: "End Date"
+            name: "end"
+            widget: "datetime"
+            format: YYYY-MM-DDThh:mm:ss[A]
+            required: false
+      - label: "Venues"
+        name: "venues"
+        widget: "list"
+        required: true
+        hint: "Enter the venues for this event. Comma separated, with no spaces. Replace spaces with a dash. Use tbc if required."
+      - label: "Organisers"
+        name: "organisers"
+        widget: "list"
+        required: true
+        default: ["oakley-ramblers"]
+        hint: "Enter the organisers for this event. Comma separated, with no spaces. Replace spaces with a dash."
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Aliases"
+        name: "aliases"
+        widget: "list"
+        required: false
+        hint: "Enter any aliases for this event. Comma seperated, with no spaces. Replace spaces with a dash."
+
+  - name: "organisers-info"
+    label: "Organiser Info"
+    label_singular: "Organiser Info"
+    folder: "content/organisers-info"
+    create: true
+    nested:
+      depth: 2
+      summary: '{{title}}'
+      subfolders: true
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Build Settings"
+        name: "build"
+        widget: "hidden"
+        default: 
+          render: "never"
+          list: "always"
+          publishResources: true
+
+  - name: "venues-info"
+    label: "Venue Info"
+    label_singular: "Venue Info"
+    folder: "content/venues-info"
+    create: true
+    nested:
+      depth: 2
+      summary: '{{title}}'
+      subfolders: true
+    path: '{{slug}}/index'
+    media_folder: ''
+    public_folder: ''
+    fields:
+      - label: "Title"
+        name: "title"
+        widget: "string"
+      - label: "Content"
+        name: "body"
+        widget: "markdown"
+        required: false
+      - label: "Build Settings"
+        name: "build"
+        widget: "hidden"
+        default: 
+          render: "never"
+          list: "always"
+          publishResources: true

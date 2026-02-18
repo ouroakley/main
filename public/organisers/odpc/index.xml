@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oakley &amp; Deane Parish Council on Our Oakley</title>
+    <link>https://www.ouroakley.uk/organisers/odpc/</link>
+    <description>Recent content in Oakley &amp; Deane Parish Council on Our Oakley</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://www.ouroakley.uk/organisers/odpc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oakley &amp; Deane Parish Council</title>
+      <link>https://www.ouroakley.uk/organisers/odpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ouroakley.uk/organisers/odpc/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
