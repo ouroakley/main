@@ -13,13 +13,18 @@ jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       deployments: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           submodules: recursive
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
@@ -30,6 +35,44 @@ jobs:
       - name: Build with Hugo
         run: ./bin/build.sh
 
+      - name: Store built files
+        run: |
+          mkdir -p ../built-site
+          cp -r public/* ../built-site/
+
+      - name: Checkout public branch
+        uses: actions/checkout@v3
+        with:
+          ref: public
+          path: public-branch
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Clean public directory on public branch
+        run: |
+          cd public-branch
+          if [ -d "public" ]; then
+            rm -rf public/*
+            find public -type f -delete 2>/dev/null || true
+            find public -type d -empty -delete 2>/dev/null || true
+          else
+            mkdir -p public
+          fi
+
+      - name: Copy built files to public branch
+        run: |
+          cp -r ../built-site/* public-branch/public/
+
+      - name: Commit and push to public branch
+        run: |
+          cd public-branch
+          git add public/
+          if ! git diff --staged --quiet; then
+            git commit -m "Build: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+            git push origin public
+          else
+            echo "No changes to commit"
+          fi
+
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
@@ -37,3 +80,4 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy public --project-name=${{ secrets.CLOUDFLARE_PROJECT_NAME }}
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          workingDirectory: public-branch
