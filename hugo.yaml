@@ -253,3 +253,40 @@ module:
           target: content/venues-info/oakley-gardening-club
         - source: static/admin
           target: static/admin/oakley-gardening-club
+
+
+# Jolly Olly's
+    - path: github.com/ouroakley/organiser-jolly-ollys
+      mounts:
+        - source: content/events
+          target: content/events/jolly-ollys
+        - source: content/organisers-info
+          target: content/organisers-info/jolly-ollys
+        - source: content/venues-info
+          target: content/venues-info/jolly-ollys
+        - source: static/admin
+          target: static/admin/jolly-ollys
+
+# Oakley Afternoon WI
+    - path: github.com/ouroakley/organiser-oakley-afternoon-wi
+      mounts:
+        - source: content/events
+          target: content/events/oakley-afternoon-wi
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-afternoon-wi
+        - source: content/venues-info
+          target: content/venues-info/oakley-afternoon-wi
+        - source: static/admin
+          target: static/admin/oakley-afternoon-wi
+
+# Oakley Woodlands Group
+    - path: github.com/ouroakley/organiser-oakley-woodlands-group
+      mounts:
+        - source: content/events
+          target: content/events/oakley-woodlands-group
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-woodlands-group
+        - source: content/venues-info
+          target: content/venues-info/oakley-woodlands-group
+        - source: static/admin
+          target: static/admin/oakley-woodlands-group
