@@ -20,7 +20,7 @@ fi
 echo "Running Hugo..."
 
 echo "Output of hugo:"
-hugo build --buildFuture --logLevel debug
+hugo --buildFuture --logLevel debug
 
 echo "--------------------------------"
 
