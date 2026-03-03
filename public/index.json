@@ -1,6 +1,30 @@
 {
     "events": [
             {
+                "title": "Community Market",
+                "permalink": "/events/2026/12/05/community-market/",
+                "description": "",
+                "content": "Lots of exciting info coming soon.\nApply to be a Stallholder Apply to be a stallholder at a future market by completing the online form here\n",
+                "date": "2026-12-05",
+                "eventDates": [{"end":"2026-12-05T15:00:00","start":"2026-12-05T12:00:00"}],
+                "venues": ["The Barley Mow"],
+                "organisers": ["The Barley Mow", "Oakley Neighbourhood Watch", "Craft Kits N Bits"],
+                "section": "events",
+                "subsection": "events/2026/12/05/community-market"
+            },
+            {
+                "title": "Community Market",
+                "permalink": "/events/2026/09/19/community-market/",
+                "description": "",
+                "content": "Lots of exciting info coming soon.\nApply to be a Stallholder Apply to be a stallholder at a future market by completing the online form here\n",
+                "date": "2026-09-19",
+                "eventDates": [{"end":"2026-09-19T16:00:00","start":"2026-09-19T12:00:00"}],
+                "venues": ["The Barley Mow"],
+                "organisers": ["The Barley Mow", "Oakley Neighbourhood Watch", "Craft Kits N Bits"],
+                "section": "events",
+                "subsection": "events/2026/09/19/community-market"
+            },
+            {
                 "title": "Wellbeing Forum",
                 "permalink": "/events/oakley-wellbeing-forum/2026/07/22/wellbeing-forum/",
                 "description": "",
@@ -13,6 +37,18 @@
                 "subsection": "events/oakley-wellbeing-forum/2026/07/22/wellbeing-forum"
             },
             {
+                "title": "Community Market",
+                "permalink": "/events/2026/07/11/community-market/",
+                "description": "",
+                "content": "Lots of exciting info coming soon.\nApply to be a Stallholder Apply to be a stallholder at a future market by completing the online form here\n",
+                "date": "2026-07-11",
+                "eventDates": [{"end":"2026-07-11T16:00:00","start":"2026-07-11T12:00:00"}],
+                "venues": ["The Barley Mow"],
+                "organisers": ["The Barley Mow", "Oakley Neighbourhood Watch", "Craft Kits N Bits"],
+                "section": "events",
+                "subsection": "events/2026/07/11/community-market"
+            },
+            {
                 "title": "Wellbeing Forum",
                 "permalink": "/events/oakley-wellbeing-forum/2026/05/27/wellbeing-forum/",
                 "description": "",
@@ -23,6 +59,18 @@
                 "organisers": ["Oakley Wellbeing Forum"],
                 "section": "events",
                 "subsection": "events/oakley-wellbeing-forum/2026/05/27/wellbeing-forum"
+            },
+            {
+                "title": "Community Market",
+                "permalink": "/events/2026/03/28/community-market/",
+                "description": "",
+                "content": "Lots of exciting info coming soon.\nApply to be a Stallholder Apply to be a stallholder at a future market by completing the online form here\n",
+                "date": "2026-03-28",
+                "eventDates": [{"end":"2026-03-28T15:00:00","start":"2026-03-28T12:00:00"}],
+                "venues": ["The Barley Mow"],
+                "organisers": ["The Barley Mow", "Oakley Neighbourhood Watch", "Craft Kits N Bits"],
+                "section": "events",
+                "subsection": "events/2026/03/28/community-market"
             },
             {
                 "title": "Wellbeing Forum",
