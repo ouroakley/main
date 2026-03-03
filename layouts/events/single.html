@@ -79,12 +79,7 @@
               <ul class="list pl0 mt0 mb3">
                 {{- range $organiser := .Params.organisers -}}
                   <li class="mb2">
-                    {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
-                      <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
-                    {{- else -}}
-                      {{/* Fallback to raw value if page not found */}}
-                      <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
-                    {{- end -}}
+                    {{ partial "organiser-link.html" (dict "organiser" $organiser "Site" $.Site) }}
                   </li>
                 {{- end -}}
               </ul>

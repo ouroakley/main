@@ -1,0 +1,12 @@
+{{/* Partial to generate organiser link, redirecting to venue page if it exists */}}
+{{ $organiserTerm := .organiser | urlize }}
+{{ $organiserPage := .Site.GetPage (printf "/organisers/%s" $organiserTerm) }}
+{{ $venuePath := printf "/venues/%s" $organiserTerm }}
+{{ $venuePage := .Site.GetPage $venuePath }}
+{{ $linkPage := cond (and $venuePage (ne $venuePage nil) (ne $venuePage.RelPermalink "")) $venuePage $organiserPage }}
+{{ if $linkPage }}
+  <a href="{{ $linkPage.RelPermalink }}" class="link blue hover-dark-blue">{{ $linkPage.Title }}</a>
+{{ else }}
+  {{/* Fallback if no page found */}}
+  <a href="{{ "/organisers/" | relLangURL }}{{ $organiserTerm }}" class="link blue hover-dark-blue">{{ .organiser | strings.TrimSpace }}</a>
+{{ end }}

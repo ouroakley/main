@@ -88,12 +88,7 @@
                   <span class="mr2">👥</span>
                   {{- range $index, $organiser := $event.Params.organisers -}}
                     {{- if $index }}, {{ end -}}
-                    {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
-                      <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
-                    {{- else -}}
-                      {{/* Fallback to raw value if page not found */}}
-                      <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
-                    {{- end -}}
+                    {{ partial "organiser-link.html" (dict "organiser" $organiser "Site" $.Site) }}
                   {{- end -}}
                 </p>
                 {{ end }}
@@ -186,12 +181,7 @@
                   <span class="mr2">👥</span>
                   {{- range $index, $organiser := $event.Params.organisers -}}
                     {{- if $index }}, {{ end -}}
-                    {{- with $.Site.GetPage (printf "/organisers/%s" ($organiser | urlize)) -}}
-                      <a href="{{ .RelPermalink }}" class="link blue hover-dark-blue">{{ .Title }}</a>
-                    {{- else -}}
-                      {{/* Fallback to raw value if page not found */}}
-                      <a href="{{ "/organisers/" | relLangURL }}{{ $organiser | strings.TrimSpace | urlize }}" class="link blue hover-dark-blue">{{ $organiser | strings.TrimSpace }}</a>
-                    {{- end -}}
+                    {{ partial "organiser-link.html" (dict "organiser" $organiser "Site" $.Site) }}
                   {{- end -}}
                 </p>
                 {{ end }}
