@@ -4,6 +4,16 @@
 {{ end }}
 
 {{ define "main" }}
+{{/* Check if this organiser is also a venue and redirect if so */}}
+{{ $organiserSlug := .Data.Term | urlize }}
+{{ $venuePath := printf "/venues/%s" $organiserSlug }}
+{{ $venuePage := .Site.GetPage $venuePath }}
+{{ if and $venuePage (ne $venuePage nil) (ne $venuePage.RelPermalink "") }}
+<div style="text-align: center; padding: 2rem;">
+  <p>Redirecting to <a href="{{ $venuePage.RelPermalink }}">{{ $venuePage.Title }}</a>...</p>
+</div>
+<script>window.location.replace("{{ $venuePage.RelPermalink }}");</script>
+{{ else }}
 <div class="mw8 center ph3">
   {{ partial "breadcrumb.html" . }}
   <article class="pb6">
@@ -25,4 +35,5 @@
     </div>
   </article>
 </div>
+{{ end }}
 {{ end }}
