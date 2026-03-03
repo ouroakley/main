@@ -7,31 +7,158 @@
     </header>
 
     <div class="lh-copy">
-      {{ $filteredTerms := dict }}
+      {{ $now := now }}
+      {{ $organisersWithUpcoming := slice }}
+      {{ $organisersWithoutUpcoming := slice }}
+      {{ $processedOrganisers := dict }}
+      
+      {{/* First, process organisers that have events in .Data.Terms */}}
       {{ range $term, $pages := .Data.Terms }}
         {{ $eventPages := where $pages "Type" "events" }}
         {{ if gt (len $eventPages) 0 }}
-          {{ $filteredTerms = merge $filteredTerms (dict $term $eventPages) }}
+          {{ $organiserPage := $.Site.GetPage (printf "/%s/%s" $.Data.Plural $term) }}
+          {{ if $organiserPage }}
+            {{ $upcomingEventCount := 0 }}
+            {{ range $eventPages }}
+              {{ $eventDate := "" }}
+              {{ with .Params.eventDates }}
+                {{ with index . 0 }}
+                  {{ $eventDate = time .start }}
+                {{ end }}
+              {{ end }}
+              {{ if and $eventDate (ge $eventDate $now) }}
+                {{ $upcomingEventCount = add $upcomingEventCount 1 }}
+              {{ end }}
+            {{ end }}
+            
+            {{/* Track that we've processed this organiser */}}
+            {{ $processedOrganisers = merge $processedOrganisers (dict $term true) }}
+            
+            {{/* Categorize organiser based on upcoming event count */}}
+            {{ if gt $upcomingEventCount 0 }}
+              {{ $organisersWithUpcoming = $organisersWithUpcoming | append (dict "page" $organiserPage "count" $upcomingEventCount) }}
+            {{ else }}
+              {{ $organisersWithoutUpcoming = $organisersWithoutUpcoming | append (dict "page" $organiserPage) }}
+            {{ end }}
+          {{ end }}
         {{ end }}
       {{ end }}
-      {{ if $filteredTerms }}
+      
+      {{/* Then, add organisers that don't have any events */}}
+      {{ if .Site.Taxonomies.organisers }}
+        {{ range .Site.Taxonomies.organisers }}
+          {{ $organiserPage := .Page }}
+          {{ $organiserTerm := "" }}
+          {{ with .Page.File }}
+            {{ $organiserTerm = .ContentBaseName }}
+          {{ end }}
+          {{/* Only add if we haven't already processed this organiser */}}
+          {{ if and $organiserTerm (not (isset $processedOrganisers $organiserTerm)) }}
+            {{ $organisersWithoutUpcoming = $organisersWithoutUpcoming | append (dict "page" $organiserPage) }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      {{/* Section 1: Organisers with Upcoming Events */}}
+      {{ if $organisersWithUpcoming }}
+        <h2 class="f3 fw6 mb4">Organisers with Upcoming Events</h2>
         <div class="flex flex-wrap nl3 nr3">
-          {{ range $term, $pages := $filteredTerms }}
-            {{ with $.Site.GetPage (printf "/%s/%s" $.Data.Plural $term) }}
+          {{ range $organisersWithUpcoming }}
+            {{ $organiser := .page }}
             <div class="w-100 w-50-m w-third-l ph3 mb4">
-              <a href="{{ .RelPermalink }}" class="link near-black hover-blue">
+              <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
                 <div class="pa3 bg-white br2 shadow-4 h-100">
-                  <h2 class="f4 fw6 mt0 mb2">{{ .Title }}</h2>
+                  <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
                   <p class="f6 blue mb0">
-                    {{ len $pages }} {{ if eq (len $pages) 1 }}event{{ else }}events{{ end }} →
+                    {{ .count }} {{ if eq .count 1 }}upcoming event{{ else }}upcoming events{{ end }} →
                   </p>
                 </div>
               </a>
             </div>
-            {{ end }}
           {{ end }}
         </div>
-      {{ else }}
+      {{ end }}
+
+      {{/* Section 2: Organisers with No Upcoming Events - A-Z Format */}}
+      {{ if $organisersWithoutUpcoming }}
+        <h2 class="f3 fw6 mt5 mb4">Organisers with No Upcoming Events</h2>
+        
+        {{/* Sort organisers alphabetically by title */}}
+        {{ $sortedOrganisers := sort $organisersWithoutUpcoming "page.Title" "asc" }}
+        
+        {{/* Group organisers by first letter */}}
+        {{ $groupedByLetter := dict }}
+        {{ range $sortedOrganisers }}
+          {{ $firstChar := upper (substr .page.Title 0 1) }}
+          {{ $letter := "" }}
+          {{ if and (ge $firstChar "A") (le $firstChar "Z") }}
+            {{ $letter = $firstChar }}
+          {{ else }}
+            {{ $letter = "#" }}
+          {{ end }}
+          
+          {{ $existing := default slice (index $groupedByLetter $letter) }}
+          {{ $newList := $existing | append . }}
+          {{ $groupedByLetter = merge $groupedByLetter (dict $letter $newList) }}
+        {{ end }}
+        
+        {{/* A-Z Index Navigation */}}
+        {{ if $groupedByLetter }}
+          {{ $alphabet := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
+          <div class="flex flex-wrap justify-center mb4 pb3 bb b--light-gray">
+            {{ range $letter := $alphabet }}
+              {{ if isset $groupedByLetter $letter }}
+                <a href="#letter-{{ $letter }}" class="link blue hover-dark-blue ph2">{{ $letter }}</a>
+              {{ end }}
+            {{ end }}
+            {{ if isset $groupedByLetter "#" }}
+              <a href="#letter-other" class="link blue hover-dark-blue ph2">#</a>
+            {{ end }}
+          </div>
+        {{ end }}
+        
+        {{/* Display organisers grouped by letter */}}
+        {{ $alphabet := slice "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" }}
+        {{ range $letter := $alphabet }}
+          {{ if isset $groupedByLetter $letter }}
+            {{ $organisersInLetter := index $groupedByLetter $letter }}
+            <h3 class="f3 fw6 mt5 mb3" id="letter-{{ $letter }}">{{ $letter }}</h3>
+            <div class="flex flex-wrap nl3 nr3">
+              {{ range $organisersInLetter }}
+                {{ $organiser := .page }}
+                <div class="w-100 w-50-m w-third-l ph3 mb4">
+                  <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
+                    <div class="pa3 bg-near-white br2 shadow-4 h-100">
+                      <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
+                    </div>
+                  </a>
+                </div>
+              {{ end }}
+            </div>
+          {{ end }}
+        {{ end }}
+        
+        {{/* Display non-alphabetic organisers under # */}}
+        {{ if isset $groupedByLetter "#" }}
+          {{ $organisersOther := index $groupedByLetter "#" }}
+          <h3 class="f3 fw6 mt5 mb3" id="letter-other">#</h3>
+          <div class="flex flex-wrap nl3 nr3">
+            {{ range $organisersOther }}
+              {{ $organiser := .page }}
+              <div class="w-100 w-50-m w-third-l ph3 mb4">
+                <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
+                  <div class="pa3 bg-near-white br2 shadow-4 h-100">
+                    <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
+                  </div>
+                </a>
+              </div>
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+
+      {{/* Show message if no organisers found */}}
+      {{ if and (not $organisersWithUpcoming) (not $organisersWithoutUpcoming) }}
         <p class="i gray">No organisers found.</p>
       {{ end }}
     </div>

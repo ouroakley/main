@@ -3,7 +3,11 @@
     {{- if $index }}, {{ end }}
     {
         "title": "{{ .Title }}",
-        "baseName": "{{ .File.ContentBaseName }}"
+        {{- with .File }}
+        "baseName": "{{ .ContentBaseName }}"
+        {{- else }}
+        "baseName": ""
+        {{- end }}
     }
     {{- end }}
 ]
