@@ -31,6 +31,33 @@ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git theme
 echo "theme = 'ananke'" >> hugo.toml
 ```
 
+## Local Development Setup
+
+When cloning this repository for local development, you need to initialize the git submodules (which include the Hugo theme):
+
+**Option 1: Clone with submodules (recommended)**
+```bash
+git clone --recursive <repo-url>
+cd main
+```
+
+**Option 2: Initialize submodules after cloning**
+```bash
+git clone <repo-url>
+cd main
+git submodule update --init --recursive
+```
+
+After initializing submodules, you can start the Hugo development server:
+
+```bash
+hugo server
+```
+
+The site will be available at `http://localhost:1313/`
+
+> **Note:** If you see a blank page, it's likely because the theme submodule wasn't initialized. Run `git submodule update --init --recursive` to fix this.
+
 ## Cloudflare Setup
 
 1. Go to Compute (Workers)
