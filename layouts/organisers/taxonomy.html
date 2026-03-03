@@ -65,8 +65,18 @@
         <div class="flex flex-wrap nl3 nr3">
           {{ range $organisersWithUpcoming }}
             {{ $organiser := .page }}
+            {{ $organiserSlug := "" }}
+            {{ $linkPage := $organiser }}
+            {{ with $organiser.File }}
+              {{ $organiserSlug = .ContentBaseName }}
+              {{ $venuePath := printf "/venues/%s" $organiserSlug }}
+              {{ $foundVenuePage := $.Site.GetPage $venuePath }}
+              {{ if and $foundVenuePage (ne $foundVenuePage nil) (ne $foundVenuePage.RelPermalink "") }}
+                {{ $linkPage = $foundVenuePage }}
+              {{ end }}
+            {{ end }}
             <div class="w-100 w-50-m w-third-l ph3 mb4">
-              <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
+              <a href="{{ $linkPage.RelPermalink }}" class="link near-black hover-blue">
                 <div class="pa3 bg-white br2 shadow-4 h-100">
                   <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
                   <p class="f6 blue mb0">
@@ -126,8 +136,18 @@
             <div class="flex flex-wrap nl3 nr3">
               {{ range $organisersInLetter }}
                 {{ $organiser := .page }}
+                {{ $organiserSlug := "" }}
+                {{ $linkPage := $organiser }}
+                {{ with $organiser.File }}
+                  {{ $organiserSlug = .ContentBaseName }}
+                  {{ $venuePath := printf "/venues/%s" $organiserSlug }}
+                  {{ $foundVenuePage := $.Site.GetPage $venuePath }}
+                  {{ if and $foundVenuePage (ne $foundVenuePage nil) (ne $foundVenuePage.RelPermalink "") }}
+                    {{ $linkPage = $foundVenuePage }}
+                  {{ end }}
+                {{ end }}
                 <div class="w-100 w-50-m w-third-l ph3 mb4">
-                  <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
+                  <a href="{{ $linkPage.RelPermalink }}" class="link near-black hover-blue">
                     <div class="pa3 bg-near-white br2 shadow-4 h-100">
                       <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
                     </div>
@@ -145,8 +165,18 @@
           <div class="flex flex-wrap nl3 nr3">
             {{ range $organisersOther }}
               {{ $organiser := .page }}
+              {{ $organiserSlug := "" }}
+              {{ $linkPage := $organiser }}
+              {{ with $organiser.File }}
+                {{ $organiserSlug = .ContentBaseName }}
+                {{ $venuePath := printf "/venues/%s" $organiserSlug }}
+                {{ $foundVenuePage := $.Site.GetPage $venuePath }}
+                {{ if and $foundVenuePage (ne $foundVenuePage nil) (ne $foundVenuePage.RelPermalink "") }}
+                  {{ $linkPage = $foundVenuePage }}
+                {{ end }}
+              {{ end }}
               <div class="w-100 w-50-m w-third-l ph3 mb4">
-                <a href="{{ $organiser.RelPermalink }}" class="link near-black hover-blue">
+                <a href="{{ $linkPage.RelPermalink }}" class="link near-black hover-blue">
                   <div class="pa3 bg-near-white br2 shadow-4 h-100">
                     <h2 class="f4 fw6 mt0 mb2">{{ $organiser.Title }}</h2>
                   </div>
