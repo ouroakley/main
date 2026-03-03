@@ -2,7 +2,7 @@
 draft: false
 title: Community Market
 date: 2026-07-11
-poster:
+poster: poster-market-july.png
 eventDates:
   - start: 2026-07-11T12:00:00
     end: 2026-07-11T16:00:00

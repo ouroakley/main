@@ -2,7 +2,7 @@
 draft: false
 title: Community Market
 date: 2026-03-28
-poster:
+poster: poster-market-march.png
 eventDates:
   - start: 2026-03-28T12:00:00
     end: 2026-03-28T15:00:00

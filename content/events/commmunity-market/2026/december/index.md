@@ -2,7 +2,7 @@
 draft: false
 title: Community Market
 date: 2026-12-05
-poster:
+poster: poster-market-december.png
 eventDates:
   - start: 2026-12-05T12:00:00
     end: 2026-12-05T15:00:00

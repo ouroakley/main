@@ -2,7 +2,7 @@
 draft: false
 title: Community Market
 date: 2026-09-19
-poster:
+poster: poster-market-september.png
 eventDates:
   - start: 2026-09-19T12:00:00
     end: 2026-09-19T16:00:00
