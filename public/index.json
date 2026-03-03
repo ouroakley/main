@@ -61,6 +61,42 @@
                 "subsection": "events/oakley-wellbeing-forum/2026/05/27/wellbeing-forum"
             },
             {
+                "title": "Oakley \u0026 Deane Parish Council Annual Parish Meeting",
+                "permalink": "/events/odpc/2026/04/22/oakley-deane-parish-council-annual-parish-meeting/",
+                "description": "",
+                "content": "Wednesday 22 April, 7:00 pm, Oakley Junior School\n",
+                "date": "2026-04-22",
+                "eventDates": [{"start":"2026-04-22T19:00:00"}],
+                "venues": ["Oakley C.E. Junior School"],
+                "organisers": ["Oakley \u0026 Deane Parish Council"],
+                "section": "events",
+                "subsection": "events/odpc/2026/04/22/oakley-deane-parish-council-annual-parish-meeting"
+            },
+            {
+                "title": "Bean Pole \u0026 Pea Stick Collection Morning",
+                "permalink": "/events/oakley-woodlands-group/2026/04/04/bean-pole-pea-stick-collection-morning/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-04",
+                "eventDates": [{"end":"2026-04-04T13:00:00","start":"2026-04-04T10:00:00"}],
+                "venues": ["St John's Copse"],
+                "organisers": ["Oakley Woodlands Group"],
+                "section": "events",
+                "subsection": "events/oakley-woodlands-group/2026/04/04/bean-pole-pea-stick-collection-morning"
+            },
+            {
+                "title": "Oakley Kids Easter Egg Hunt",
+                "permalink": "/events/oca/2026/04/03/oakley-kids-easter-egg-hunt/",
+                "description": "",
+                "content": "Follow clues around Oakley\nClaim Easter treat at the Barley Mow car park.\n",
+                "date": "2026-04-03",
+                "eventDates": [{"end":"2026-04-03T14:00:00","start":"2026-04-03T10:30:00"}],
+                "venues": ["The Barley Mow"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/03/oakley-kids-easter-egg-hunt"
+            },
+            {
                 "title": "Community Market",
                 "permalink": "/events/2026/03/28/community-market/",
                 "description": "",
@@ -73,6 +109,18 @@
                 "subsection": "events/2026/03/28/community-market"
             },
             {
+                "title": "Oakley \u0026 Deane WI Vintage Jumble Sale",
+                "permalink": "/events/oakley-deane-wi/2026/03/28/oakley-deane-wi-vintage-jumble-sale/",
+                "description": "",
+                "content": "Saturday 28 March, Doors open 1:45pm, East Oakley Village Hall\n",
+                "date": "2026-03-28",
+                "eventDates": [{"start":"2026-03-28T13:45:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["Oakley \u0026 Deane WI"],
+                "section": "events",
+                "subsection": "events/oakley-deane-wi/2026/03/28/oakley-deane-wi-vintage-jumble-sale"
+            },
+            {
                 "title": "Wellbeing Forum",
                 "permalink": "/events/oakley-wellbeing-forum/2026/03/25/wellbeing-forum/",
                 "description": "",
@@ -83,6 +131,66 @@
                 "organisers": ["Oakley Wellbeing Forum"],
                 "section": "events",
                 "subsection": "events/oakley-wellbeing-forum/2026/03/25/wellbeing-forum"
+            },
+            {
+                "title": "Methodist Church Coffee Morning",
+                "permalink": "/events/the-methodist-church/2026/03/24/methodist-church-coffee-morning/",
+                "description": "",
+                "content": "£1.50 for tea/coffee and biscuits.\n",
+                "date": "2026-03-24",
+                "eventDates": [{"end":"2026-03-24T12:00:00","start":"2026-03-24T10:30:00"}],
+                "venues": ["The Methodist Church"],
+                "organisers": ["The Methodist Church"],
+                "section": "events",
+                "subsection": "events/the-methodist-church/2026/03/24/methodist-church-coffee-morning"
+            },
+            {
+                "title": "Oakley Woodlands Group AGM",
+                "permalink": "/events/oakley-woodlands-group/2026/03/17/oakley-woodlands-group-agm/",
+                "description": "",
+                "content": "",
+                "date": "2026-03-17",
+                "eventDates": [{"start":"2026-03-17T19:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["Oakley Woodlands Group"],
+                "section": "events",
+                "subsection": "events/oakley-woodlands-group/2026/03/17/oakley-woodlands-group-agm"
+            },
+            {
+                "title": "Who Let the Dads Out",
+                "permalink": "/events/oww/2026/03/14/who-let-the-dads-out/",
+                "description": "",
+                "content": "Monthly dad/male-carer meet-up with breakfast.\n",
+                "date": "2026-03-14",
+                "eventDates": [{"end":"2026-03-14T11:30:00","start":"2026-03-14T10:00:00"}],
+                "venues": ["St Leonard's Centre"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/03/14/who-let-the-dads-out"
+            },
+            {
+                "title": "Methodist Church Coffee Morning",
+                "permalink": "/events/the-methodist-church/2026/03/10/methodist-church-coffee-morning/",
+                "description": "",
+                "content": "£1.50 for tea/coffee and biscuits.\n",
+                "date": "2026-03-10",
+                "eventDates": [{"end":"2026-03-10T12:00:00","start":"2026-03-10T10:30:00"}],
+                "venues": ["The Methodist Church"],
+                "organisers": ["The Methodist Church"],
+                "section": "events",
+                "subsection": "events/the-methodist-church/2026/03/10/methodist-church-coffee-morning"
+            },
+            {
+                "title": "World Day of Prayer Service",
+                "permalink": "/events/oww/2026/03/06/world-day-of-prayer-service/",
+                "description": "",
+                "content": "Refreshments afterwards.\n",
+                "date": "2026-03-06",
+                "eventDates": [{"end":"2026-03-06T11:30:00","start":"2026-03-06T10:30:00"}],
+                "venues": ["St Leonard's Church"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/03/06/world-day-of-prayer-service"
             },
             {
                 "title": "Wellbeing Forum",

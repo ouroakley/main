@@ -16,20 +16,32 @@
         "baseName": "oakley-wellbeing-forum"
     }, 
     {
-        "title": "Oakley with Wootton",
-        "baseName": "oww"
+        "title": "Oakley & Deane Parish Council",
+        "baseName": "odpc"
+    }, 
+    {
+        "title": "Oakley Woodlands Group",
+        "baseName": "oakley-woodlands-group"
     }, 
     {
         "title": "OCA",
         "baseName": "oca"
     }, 
     {
-        "title": "Oakley Ramblers",
-        "baseName": "oakley-ramblers"
-    }, 
-    {
         "title": "Oakley & Deane WI",
         "baseName": "oakley-deane-wi"
+    }, 
+    {
+        "title": "The Methodist Church",
+        "baseName": "the-methodist-church"
+    }, 
+    {
+        "title": "Oakley with Wootton",
+        "baseName": "oww"
+    }, 
+    {
+        "title": "Oakley Ramblers",
+        "baseName": "oakley-ramblers"
     }, 
     {
         "title": "Oakley Bowling Club",
@@ -68,10 +80,6 @@
         "baseName": "jolly-ollys"
     }, 
     {
-        "title": "Oakley & Deane Parish Council",
-        "baseName": "odpc"
-    }, 
-    {
         "title": "Oakley Afternoon WI",
         "baseName": "oakley-afternoon-wi"
     }, 
@@ -80,19 +88,11 @@
         "baseName": "oakley-gardening-club"
     }, 
     {
-        "title": "Oakley Woodlands Group",
-        "baseName": "oakley-woodlands-group"
-    }, 
-    {
         "title": "The Beach Arms",
         "baseName": "the-beach-arms"
     }, 
     {
         "title": "The Fox Inn",
         "baseName": "the-fox-inn"
-    }, 
-    {
-        "title": "The Methodist Church",
-        "baseName": "the-methodist-church"
     }
 ]
