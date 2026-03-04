@@ -44,12 +44,12 @@
         "baseName": "oakley-ramblers"
     }, 
     {
-        "title": "Oakley Afternoon WI",
-        "baseName": "oakley-afternoon-wi"
-    }, 
-    {
         "title": "Oakley with Wootton",
         "baseName": "oww"
+    }, 
+    {
+        "title": "Oakley Afternoon WI",
+        "baseName": "oakley-afternoon-wi"
     }, 
     {
         "title": "Oakley Bowling Club",
