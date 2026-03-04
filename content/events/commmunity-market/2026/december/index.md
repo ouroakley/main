@@ -15,7 +15,9 @@ organisers:
 aliases:
   - /events/2026/12/community-market/
 ---
-Lots of exciting info coming soon.
+Join us at The Barley Mow for our Community Market, featuring a wonderful selection of local stallholders. This is a great opportunity to support local businesses and discover something special while celebrating our neighbourly community spirit.
+
+Stallholders information coming soon.
 
 ## Apply to be a Stallholder
 
