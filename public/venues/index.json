@@ -20,23 +20,35 @@
         "address": "<no value>"
     }, 
     {
+        "title": "Newfound Recreation Ground",
+        "address": "Newfound, Oakley"
+    }, 
+    {
         "title": "The Methodist Church",
         "address": "<no value>"
     }, 
     {
-        "title": "Newfound Recreation Ground",
-        "address": "Newfound, Oakley"
+        "title": "St-Johns-Road-Layby",
+        "address": "<no value>"
+    }, 
+    {
+        "title": "Oakley Village Hall",
+        "address": "<no value>"
+    }, 
+    {
+        "title": "Village Pond",
+        "address": "<no value>"
     }, 
     {
         "title": "St Leonard's Church",
         "address": "<no value>"
     }, 
     {
-        "title": "St John's Field",
+        "title": "Outside-Oakley",
         "address": "<no value>"
     }, 
     {
-        "title": "Oakley Village Hall",
+        "title": "St John's Field",
         "address": "<no value>"
     }, 
     {
@@ -58,10 +70,6 @@
     {
         "title": "Across Oakley",
         "address": "Various locations across Oakley"
-    }, 
-    {
-        "title": "Village Pond",
-        "address": "<no value>"
     }, 
     {
         "title": "Peter Houseman Recreation Ground",

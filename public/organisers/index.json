@@ -32,16 +32,24 @@
         "baseName": "oakley-deane-wi"
     }, 
     {
+        "title": "Ramblers Wellbeing Walks Basingstoke",
+        "baseName": "ramblers-wellbeing-walks-basingstoke"
+    }, 
+    {
         "title": "The Methodist Church",
         "baseName": "the-methodist-church"
     }, 
     {
-        "title": "Oakley with Wootton",
-        "baseName": "oww"
-    }, 
-    {
         "title": "Oakley Ramblers",
         "baseName": "oakley-ramblers"
+    }, 
+    {
+        "title": "Oakley Afternoon WI",
+        "baseName": "oakley-afternoon-wi"
+    }, 
+    {
+        "title": "Oakley with Wootton",
+        "baseName": "oww"
     }, 
     {
         "title": "Oakley Bowling Club",
@@ -64,10 +72,6 @@
         "baseName": "oakley-cc"
     }, 
     {
-        "title": "Ramblers Wellbeing Walks Basingstoke",
-        "baseName": "ramblers-wellbeing-walks-basingstoke"
-    }, 
-    {
         "title": "Oakley Football Club",
         "baseName": "oakley-fc"
     }, 
@@ -78,10 +82,6 @@
     {
         "title": "Jolly Olly's",
         "baseName": "jolly-ollys"
-    }, 
-    {
-        "title": "Oakley Afternoon WI",
-        "baseName": "oakley-afternoon-wi"
     }, 
     {
         "title": "Oakley Gardening Club",
