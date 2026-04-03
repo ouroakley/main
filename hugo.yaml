@@ -279,6 +279,7 @@ module:
         - source: static/admin
           target: static/admin/oakley-afternoon-wi
 
+
 # Oakley Woodlands Group
     - path: github.com/ouroakley/organiser-oakley-woodlands-group
       mounts:
@@ -290,3 +291,16 @@ module:
           target: content/venues-info/oakley-woodlands-group
         - source: static/admin
           target: static/admin/oakley-woodlands-group
+
+
+# Oakley Mens Shed
+    - path: github.com/ouroakley/organiser-oakley-mens-shed
+      mounts:
+        - source: content/events
+          target: content/events/oakley-mens-shed
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-mens-shed
+        - source: content/venues-info
+          target: content/venues-info/oakley-mens-shed
+        - source: static/admin
+          target: static/admin/oakley-mens-shed
