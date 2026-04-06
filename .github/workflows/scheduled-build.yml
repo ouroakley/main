@@ -37,8 +37,8 @@ jobs:
 
       - name: Store built files
         run: |
-          mkdir -p ../built-site
-          cp -r public/* ../built-site/
+          rm -rf ../built-site
+          cp -a public ../built-site
 
       - name: Checkout public branch
         uses: actions/checkout@v3
@@ -48,25 +48,30 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 1
 
-      - name: Clean public directory on public branch
+      - name: Clean public and functions directories on public branch
         run: |
           if [ ! -d "public-branch" ]; then
             echo "Error: public-branch directory does not exist"
             exit 1
           fi
           cd public-branch
-          rm -rf public
-          mkdir -p public
+          rm -rf public functions
           ls -la
 
       - name: Copy built files to public branch
         run: |
-          cp -r ../built-site/. public-branch/public/
+          cd public-branch
+          cp -a ../built-site public
+
+      - name: Sync functions from main to public branch
+        run: |
+          cd public-branch
+          cp -a ../functions functions
 
       - name: Commit and push to public branch
         run: |
           cd public-branch
-          git add public/
+          git add public/ functions/
           if ! git diff --staged --quiet; then
             git commit -m "Build: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
             git push origin public
