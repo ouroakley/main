@@ -20,6 +20,10 @@
         "address": "<no value>"
     }, 
     {
+        "title": "The Methodist Church",
+        "address": "<no value>"
+    }, 
+    {
         "title": "TBC",
         "address": "<no value>"
     }, 
@@ -32,18 +36,6 @@
         "address": "Oakley Lane, Oakley"
     }, 
     {
-        "title": "St John's Copse",
-        "address": "<no value>"
-    }, 
-    {
-        "title": "Newfound Recreation Ground",
-        "address": "Newfound, Oakley"
-    }, 
-    {
-        "title": "The Methodist Church",
-        "address": "<no value>"
-    }, 
-    {
         "title": "St-Johns-Road-Layby",
         "address": "<no value>"
     }, 
@@ -52,8 +44,20 @@
         "address": "<no value>"
     }, 
     {
+        "title": "St John's Garden of Remembrance",
+        "address": "<no value>"
+    }, 
+    {
         "title": "St Leonard's Church",
         "address": "<no value>"
+    }, 
+    {
+        "title": "St John's Copse",
+        "address": "<no value>"
+    }, 
+    {
+        "title": "Newfound Recreation Ground",
+        "address": "Newfound, Oakley"
     }, 
     {
         "title": "Outside-Oakley",
@@ -82,10 +86,6 @@
     {
         "title": "Peter Houseman Recreation Ground",
         "address": "Rectory Road, Oakley"
-    }, 
-    {
-        "title": "St John's Garden of Remembrance",
-        "address": "<no value>"
     }, 
     {
         "title": "The Beach Arms",

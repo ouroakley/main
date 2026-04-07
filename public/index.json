@@ -109,6 +109,30 @@
                 "subsection": "events/2026/04/29/kickboxercise"
             },
             {
+                "title": "Coffee Morning",
+                "permalink": "/events/the-methodist-church/2026/04/28/coffee-morning/",
+                "description": "",
+                "content": "Coffee morning with bottomless tea or coffee and biscuits for £1.50. Located on Hill Road by the pond.\nCharity of the year is Dementia UK. We welcome Woodland wellbeing walkers at the end of their walk.\nCome and join us for a warm drink and friendly conversation in our welcoming community space.\n",
+                "date": "2026-04-28",
+                "eventDates": [{"end":"2026-04-28T12:00:00","start":"2026-04-28T10:30:00"}],
+                "venues": ["The Methodist Church"],
+                "organisers": ["The Methodist Church"],
+                "section": "events",
+                "subsection": "events/the-methodist-church/2026/04/28/coffee-morning"
+            },
+            {
+                "title": "Woodland Wellbeing Walk",
+                "permalink": "/events/ramblers-wellbeing-walks-basingstoke/2026/04/28/woodland-wellbeing-walk/",
+                "description": "",
+                "content": "Woodland wellbeing walk led by Barbara. Meeting at East Oakley Village Hall (Green Hut).\nPace: gentle\nDuration: 1 hour approx\nRoutes: varied\nLed by Barbara\n",
+                "date": "2026-04-28",
+                "eventDates": [{"end":"2026-04-28T11:00:00","start":"2026-04-28T10:00:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["Ramblers Wellbeing Walks Basingstoke"],
+                "section": "events",
+                "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/28/woodland-wellbeing-walk"
+            },
+            {
                 "title": "Oakley Ramblers Walk",
                 "permalink": "/events/oakley-ramblers/2026/04/26/oakley-ramblers-walk/",
                 "description": "",
@@ -193,6 +217,18 @@
                 "subsection": "events/2026/04/21/ppg-nhs-app-drop-in-clinic"
             },
             {
+                "title": "Woodland Wellbeing Walk",
+                "permalink": "/events/ramblers-wellbeing-walks-basingstoke/2026/04/21/woodland-wellbeing-walk/",
+                "description": "",
+                "content": "Woodland wellbeing walk led by Richard. Meeting at St John\u0026rsquo;s Road lay-by, Oakley.\nPace: gentle\nDuration: 1 hour approx\nRoutes: varied\nLed by Richard\n",
+                "date": "2026-04-21",
+                "eventDates": [{"end":"2026-04-21T11:00:00","start":"2026-04-21T10:00:00"}],
+                "venues": ["St-Johns-Road-Layby"],
+                "organisers": ["Ramblers Wellbeing Walks Basingstoke"],
+                "section": "events",
+                "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/21/woodland-wellbeing-walk"
+            },
+            {
                 "title": "Coffee \u0026 Chat",
                 "permalink": "/events/2026/04/15/coffee-chat/",
                 "description": "",
@@ -215,6 +251,54 @@
                 "organisers": ["Louise Wesley"],
                 "section": "events",
                 "subsection": "events/2026/04/15/kickboxercise"
+            },
+            {
+                "title": "Coffee Morning",
+                "permalink": "/events/the-methodist-church/2026/04/14/coffee-morning/",
+                "description": "",
+                "content": "Coffee morning with bottomless tea or coffee and biscuits for £1.50. Located on Hill Road by the pond.\nCharity of the year is Dementia UK. We welcome Woodland wellbeing walkers at the end of their walk.\nCome and join us for a warm drink and friendly conversation in our welcoming community space.\n",
+                "date": "2026-04-14",
+                "eventDates": [{"end":"2026-04-14T12:00:00","start":"2026-04-14T10:30:00"}],
+                "venues": ["The Methodist Church"],
+                "organisers": ["The Methodist Church"],
+                "section": "events",
+                "subsection": "events/the-methodist-church/2026/04/14/coffee-morning"
+            },
+            {
+                "title": "WI Meeting – Knitting for the Military",
+                "permalink": "/events/oakley-deane-wi/2026/04/14/wi-meeting-knitting-for-the-military/",
+                "description": "",
+                "content": "Tuesday 14 April\n7:30 pm – 9:30 pm\nOakley Village Hall\nKnitting for the Military.\n",
+                "date": "2026-04-14",
+                "eventDates": [{"end":"2026-04-14T21:30:00","start":"2026-04-14T19:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley \u0026 Deane WI"],
+                "section": "events",
+                "subsection": "events/oakley-deane-wi/2026/04/14/wi-meeting-knitting-for-the-military"
+            },
+            {
+                "title": "Woodland Wellbeing Walk",
+                "permalink": "/events/ramblers-wellbeing-walks-basingstoke/2026/04/14/woodland-wellbeing-walk/",
+                "description": "",
+                "content": "Woodland wellbeing walk led by Barbara. Meeting at Village Pond, East Oakley.\nPace: gentle\nDuration: 1 hour approx\nRoutes: varied\nLed by Barbara\n",
+                "date": "2026-04-14",
+                "eventDates": [{"end":"2026-04-14T11:00:00","start":"2026-04-14T10:00:00"}],
+                "venues": ["Village Pond"],
+                "organisers": ["Ramblers Wellbeing Walks Basingstoke"],
+                "section": "events",
+                "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/14/woodland-wellbeing-walk"
+            },
+            {
+                "title": "Welcome Club",
+                "permalink": "/events/oww/2026/04/09/welcome-club/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-09",
+                "eventDates": [{"end":"2026-04-09T11:30:00","start":"2026-04-09T10:00:00"}],
+                "venues": ["St Leonard's Centre"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/04/09/welcome-club"
             },
             {
                 "title": "Coffee \u0026 Chat",
@@ -253,6 +337,30 @@
                 "subsection": "events/oakley-ramblers/2026/04/08/oakley-ramblers-walk"
             },
             {
+                "title": "Easter Sunrise Service",
+                "permalink": "/events/oww/2026/04/05/easter-sunrise-service/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-05",
+                "eventDates": [{"end":"2026-04-05T07:00:00","start":"2026-04-05T06:00:00"}],
+                "venues": ["St John's Garden of Remembrance"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/04/05/easter-sunrise-service"
+            },
+            {
+                "title": "Family Easter Celebration",
+                "permalink": "/events/oww/2026/04/05/family-easter-celebration/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-05",
+                "eventDates": [{"end":"2026-04-05T11:30:00","start":"2026-04-05T10:30:00"}],
+                "venues": ["St Leonard's Church"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/04/05/family-easter-celebration"
+            },
+            {
                 "title": "Bean Pole \u0026 Pea Stick Collection Morning",
                 "permalink": "/events/oakley-woodlands-group/2026/04/04/bean-pole-pea-stick-collection-morning/",
                 "description": "",
@@ -265,6 +373,18 @@
                 "subsection": "events/oakley-woodlands-group/2026/04/04/bean-pole-pea-stick-collection-morning"
             },
             {
+                "title": "Good Friday Reflections",
+                "permalink": "/events/oww/2026/04/03/good-friday-reflections/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-03",
+                "eventDates": [{"end":"2026-04-03T13:00:00","start":"2026-04-03T12:00:00"}],
+                "venues": ["St Leonard's Church"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/04/03/good-friday-reflections"
+            },
+            {
                 "title": "Oakley Kids Easter Egg Hunt",
                 "permalink": "/events/oca/2026/04/03/oakley-kids-easter-egg-hunt/",
                 "description": "",
@@ -275,6 +395,18 @@
                 "organisers": ["OCA"],
                 "section": "events",
                 "subsection": "events/oca/2026/04/03/oakley-kids-easter-egg-hunt"
+            },
+            {
+                "title": "Welcome Club",
+                "permalink": "/events/oww/2026/04/02/welcome-club/",
+                "description": "",
+                "content": "",
+                "date": "2026-04-02",
+                "eventDates": [{"end":"2026-04-02T11:30:00","start":"2026-04-02T10:00:00"}],
+                "venues": ["St Leonard's Centre"],
+                "organisers": ["Oakley with Wootton"],
+                "section": "events",
+                "subsection": "events/oww/2026/04/02/welcome-club"
             },
             {
                 "title": "Coffee \u0026 Chat",
