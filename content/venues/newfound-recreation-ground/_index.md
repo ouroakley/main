@@ -4,6 +4,7 @@ description: A large recreation ground ideal for community events
 address: Newfound, Oakley
 aliases:
   - newfound-sports-pavilion
+  - newfound-pavilion
 facilities:
   - Football pitches
   - Open space
