@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oakley Community Care on Our Oakley</title>
+    <link>https://www.ouroakley.uk/organisers/oakley-community-care/</link>
+    <description>Recent content in Oakley Community Care on Our Oakley</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 22 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ouroakley.uk/organisers/oakley-community-care/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oakley Community Care</title>
+      <link>https://www.ouroakley.uk/organisers/oakley-community-care/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ouroakley.uk/organisers/oakley-community-care/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Oakley Community Care AGM</title>
+      <link>https://www.ouroakley.uk/events/2026/04/22/oakley-community-care-agm/</link>
+      <pubDate>Wed, 22 Apr 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ouroakley.uk/events/2026/04/22/oakley-community-care-agm/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

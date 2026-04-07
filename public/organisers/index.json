@@ -16,8 +16,36 @@
         "baseName": "oakley-wellbeing-forum"
     }, 
     {
+        "title": "TOPS – The Oakley Pantomime Society",
+        "baseName": "tops"
+    }, 
+    {
+        "title": "Oakley Bowling Club",
+        "baseName": "oakley-bc"
+    }, 
+    {
+        "title": "Coffee & Chat",
+        "baseName": "coffee-and-chat"
+    }, 
+    {
+        "title": "Louise Wesley",
+        "baseName": "louise-wesley"
+    }, 
+    {
+        "title": "Oakley Ramblers",
+        "baseName": "oakley-ramblers"
+    }, 
+    {
+        "title": "Watership Down Health",
+        "baseName": "watership-down-health"
+    }, 
+    {
         "title": "Oakley & Deane Parish Council",
         "baseName": "odpc"
+    }, 
+    {
+        "title": "Oakley Community Care",
+        "baseName": "oakley-community-care"
     }, 
     {
         "title": "Oakley Woodlands Group",
@@ -40,20 +68,12 @@
         "baseName": "the-methodist-church"
     }, 
     {
-        "title": "Oakley Ramblers",
-        "baseName": "oakley-ramblers"
-    }, 
-    {
         "title": "Oakley with Wootton",
         "baseName": "oww"
     }, 
     {
         "title": "Oakley Afternoon WI",
         "baseName": "oakley-afternoon-wi"
-    }, 
-    {
-        "title": "Oakley Bowling Club",
-        "baseName": "oakley-bc"
     }, 
     {
         "title": "Oakley Stitchers CIC",

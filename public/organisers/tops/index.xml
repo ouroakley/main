@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TOPS – The Oakley Pantomime Society on Our Oakley</title>
+    <link>https://www.ouroakley.uk/organisers/tops/</link>
+    <description>Recent content in TOPS – The Oakley Pantomime Society on Our Oakley</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 06 Jun 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.ouroakley.uk/organisers/tops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Murder by Moonlight</title>
+      <link>https://www.ouroakley.uk/events/2026/06/06/murder-by-moonlight/</link>
+      <pubDate>Sat, 06 Jun 2026 00:00:00 +0000</pubDate>
+      <guid>https://www.ouroakley.uk/events/2026/06/06/murder-by-moonlight/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TOPS – The Oakley Pantomime Society</title>
+      <link>https://www.ouroakley.uk/organisers/tops/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://www.ouroakley.uk/organisers/tops/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
