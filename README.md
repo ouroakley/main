@@ -9,6 +9,17 @@ The site is built using the static site generator Hugo - https://gohugo.io/
 
 Hugo provide a quick start guide: https://gohugo.io/getting-started/quick-start/
 
+## Hugo modules and go.mod
+
+Organiser content is pulled in via Hugo’s module system; dependencies are declared in [go.mod](go.mod).
+
+**Convention:** every `require` for `github.com/ouroakley/organiser-*` must use the version token **`main`** (the branch), not a resolved pseudo-version. This matches revert commit `fc60918` and keeps builds tracking the latest `main` on each organiser repo.
+
+**Avoid:** running `go get`, `hugo mod get`, or similar and committing the result if it replaces `main` with `v0.0.0-…` pins. If tooling rewrites the file, restore the `main` lines before committing.
+
+**Adding a new organiser:** add the import mounts in `hugo.yaml`, then add one line to the `require (` block in `go.mod` with `…/organiser-<name> main // indirect` (sorted with the other organiser lines). Do not pin versions unless the project explicitly decides otherwise.
+
+**`go.sum`:** listed in [.gitignore](.gitignore); do not commit it. Tooling may recreate it locally; that file stays untracked.
 
 ## How this repo was created
 
