@@ -11,3 +11,4 @@ organisers:
   - oakley-ramblers
 ---
 
+Check the [Oakley Ramblers website](https://oakleyramblers.org/) about a week before the walk for meeting point, route, and other details.
