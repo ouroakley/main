@@ -61,7 +61,8 @@ jobs:
       - name: Copy built files to public branch
         run: |
           cd public-branch
-          cp -a ../built-site public
+          # built-site lives next to GITHUB_WORKSPACE (see Store built files); from here go up twice
+          cp -a ../../built-site public
 
       - name: Sync functions from main to public branch
         run: |
