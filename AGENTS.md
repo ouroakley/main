@@ -2,6 +2,8 @@
 
 This workspace contains multiple independent projects related to Our Oakley.
 
+At the workspace root, `AGENTS.md` is a symlink to this file (`main/AGENTS.md`). Edit **`main/AGENTS.md`** only. Longer operational notes (for example [`.ai/organiser-cms-slugs.md`](.ai/organiser-cms-slugs.md)) live under [`.ai/`](.ai/) so this guide stays short.
+
 ## Top-level directories
 
 - `main/`

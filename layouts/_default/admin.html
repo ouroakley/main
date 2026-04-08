@@ -1,4 +1,13 @@
 {{ define "main" }}
+{{ $page := . }}
+{{ $cms := site.Params.organiser_cms_slugs }}
+{{ $visible := slice }}
+{{ range .Site.Taxonomies.organisers.Alphabetical }}
+  {{ $slug := .Term }}
+  {{ if and $cms (not (in $page.Params.ignored_organisers $slug)) (in $cms $slug) }}
+    {{ $visible = $visible | append . }}
+  {{ end }}
+{{ end }}
 <div class="mw8 center ph3">
   {{ partial "breadcrumb.html" . }}
   <article class="pb6">
@@ -7,22 +16,18 @@
     </header>
 
     <div class="lh-copy">
-      {{ if .Site.Taxonomies.organisers }}
+      {{ if $visible }}
         <div class="flex flex-wrap nl3 nr3">
-          {{ range .Site.Taxonomies.organisers }}
+          {{ range $visible }}
             {{ $organiserPage := .Page }}
-            {{ with .Page.File }}
-              {{ if not (in $.Params.ignored_organisers .ContentBaseName) }}
-                <div class="w-100 w-50-m w-third-l ph3 mb4">
-                  <a href="/admin/{{ .ContentBaseName }}" class="link near-black hover-blue">
-                    <div class="pa3 bg-white br2 shadow-4 h-100">
-                      <h2 class="f4 fw6 mt0 mb2">{{ $organiserPage.Title }}</h2>
-                      <p class="f6 blue mb0">Manage Content →</p>
-                    </div>
-                  </a>
+            <div class="w-100 w-50-m w-third-l ph3 mb4">
+              <a href="/admin/{{ .Term }}" class="link near-black hover-blue">
+                <div class="pa3 bg-white br2 shadow-4 h-100">
+                  <h2 class="f4 fw6 mt0 mb2">{{ $organiserPage.Title }}</h2>
+                  <p class="f6 blue mb0">Manage Content →</p>
                 </div>
-              {{ end }}
-            {{ end }}
+              </a>
+            </div>
           {{ end }}
         </div>
       {{ else }}
