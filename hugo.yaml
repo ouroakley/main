@@ -7,6 +7,31 @@ params:
   site_logo: 'images/logo.png'
   background_color_class: bg-dark-green
   body_classes: avenir bg-near-white
+  # Admin hub (/admin/): taxonomy terms must be listed here to show a CMS card. Templates
+  # cannot read module.imports (Hugo site.Config is services/privacy only). When you add an
+  # organiser module, append the static/admin/<slug>/ segment (same slug as in module mounts).
+  organiser_cms_slugs:
+    - example
+    - oakley-fc
+    - oakley-stitchers-cic
+    - oakley-wellbeing-forum
+    - oca
+    - odpc
+    - oww
+    - ramblers-wellbeing-walks-basingstoke
+    - oakley-cc
+    - the-barley-mow
+    - ojsa
+    - friends-ois
+    - the-methodist-church
+    - oakley-deane-wi
+    - oakley-bc
+    - oakley-ramblers
+    - oakley-gardening-club
+    - jolly-ollys
+    - oakley-afternoon-wi
+    - oakley-woodlands-group
+    - oakley-mens-shed
 
 taxonomies:
   venue: venues
