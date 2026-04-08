@@ -4,12 +4,20 @@
         "address": "19 Oakley Ln, Oakley, Basingstoke RG23 7JZ"
     }, 
     {
+        "title": "Oakley Infant School",
+        "address": "Oakley Lane, Oakley"
+    }, 
+    {
         "title": "St Leonard's Centre",
         "address": "<no value>"
     }, 
     {
         "title": "Oakley Village Hall",
         "address": "<no value>"
+    }, 
+    {
+        "title": "Newfound Recreation Ground",
+        "address": "Newfound, Oakley"
     }, 
     {
         "title": "Oakley Bowling Club",
@@ -56,10 +64,6 @@
         "address": "<no value>"
     }, 
     {
-        "title": "Newfound Recreation Ground",
-        "address": "Newfound, Oakley"
-    }, 
-    {
         "title": "Outside-Oakley",
         "address": "<no value>"
     }, 
@@ -70,10 +74,6 @@
     {
         "title": "Station-Rd",
         "address": "<no value>"
-    }, 
-    {
-        "title": "Oakley Infant School",
-        "address": "Oakley Lane, Oakley"
     }, 
     {
         "title": "Oakley Cricket Club",

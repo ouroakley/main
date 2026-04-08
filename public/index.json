@@ -25,6 +25,18 @@
                 "subsection": "events/2026/09/19/community-market"
             },
             {
+                "title": "Oakley Village Show",
+                "permalink": "/events/oca/2026/08/08/oakley-village-show/",
+                "description": "",
+                "content": "",
+                "date": "2026-08-08",
+                "eventDates": [{"end":"2026-08-08T16:30:00+01:00","start":"2026-08-08T13:30:00+01:00"}],
+                "venues": ["Oakley Infant School"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/08/08/oakley-village-show"
+            },
+            {
                 "title": "Wellbeing Forum",
                 "permalink": "/events/oakley-wellbeing-forum/2026/07/22/wellbeing-forum/",
                 "description": "",
@@ -61,6 +73,18 @@
                 "subsection": "events/2026/06/06/murder-by-moonlight"
             },
             {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/05/28/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-05-28",
+                "eventDates": [{"end":"2026-05-28T13:30:00","start":"2026-05-28T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/05/28/oakley-village-show-container-collection"
+            },
+            {
                 "title": "Wellbeing Forum",
                 "permalink": "/events/oakley-wellbeing-forum/2026/05/27/wellbeing-forum/",
                 "description": "",
@@ -83,6 +107,54 @@
                 "organisers": ["Oakley Bowling Club"],
                 "section": "events",
                 "subsection": "events/oakley-bc/open-day/2026/05/23/oakley-bowling-club-open-day"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/05/21/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-05-21",
+                "eventDates": [{"end":"2026-05-21T13:30:00","start":"2026-05-21T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/05/21/oakley-village-show-container-collection"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/05/14/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-05-14",
+                "eventDates": [{"end":"2026-05-14T13:30:00","start":"2026-05-14T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/05/14/oakley-village-show-container-collection"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/05/07/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-05-07",
+                "eventDates": [{"end":"2026-05-07T13:30:00","start":"2026-05-07T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/05/07/oakley-village-show-container-collection"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/04/30/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-04-30",
+                "eventDates": [{"end":"2026-04-30T13:30:00","start":"2026-04-30T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/30/oakley-village-show-container-collection"
             },
             {
                 "title": "Coffee \u0026 Chat",
@@ -157,6 +229,18 @@
                 "subsection": "events/2026/04/25/covid-vaccination-clinic"
             },
             {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/04/23/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-04-23",
+                "eventDates": [{"end":"2026-04-23T13:30:00","start":"2026-04-23T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/23/oakley-village-show-container-collection"
+            },
+            {
                 "title": "Coffee \u0026 Chat",
                 "permalink": "/events/2026/04/22/coffee-chat/",
                 "description": "",
@@ -229,6 +313,18 @@
                 "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/21/woodland-wellbeing-walk"
             },
             {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/04/16/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-04-16",
+                "eventDates": [{"end":"2026-04-16T13:30:00","start":"2026-04-16T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/16/oakley-village-show-container-collection"
+            },
+            {
                 "title": "Coffee \u0026 Chat",
                 "permalink": "/events/2026/04/15/coffee-chat/",
                 "description": "",
@@ -287,6 +383,18 @@
                 "organisers": ["Ramblers Wellbeing Walks Basingstoke"],
                 "section": "events",
                 "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/14/woodland-wellbeing-walk"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/04/09/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-04-09",
+                "eventDates": [{"end":"2026-04-09T13:30:00","start":"2026-04-09T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/09/oakley-village-show-container-collection"
             },
             {
                 "title": "Welcome Club",
@@ -395,6 +503,18 @@
                 "organisers": ["OCA"],
                 "section": "events",
                 "subsection": "events/oca/2026/04/03/oakley-kids-easter-egg-hunt"
+            },
+            {
+                "title": "Oakley Village Show Container Collection",
+                "permalink": "/events/oca/2026/04/02/oakley-village-show-container-collection/",
+                "description": "",
+                "content": "At the Newfound sports pavilion (Newfound Recreation Ground).\n",
+                "date": "2026-04-02",
+                "eventDates": [{"end":"2026-04-02T13:30:00","start":"2026-04-02T10:30:00"}],
+                "venues": ["Newfound Recreation Ground"],
+                "organisers": ["OCA"],
+                "section": "events",
+                "subsection": "events/oca/2026/04/02/oakley-village-show-container-collection"
             },
             {
                 "title": "Welcome Club",
