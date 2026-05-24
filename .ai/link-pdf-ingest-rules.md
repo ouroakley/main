@@ -2,6 +2,8 @@
 
 Operational notes for translating *Link* issues into Hugo event pages.
 
+**Which organisers have Hugo modules:** see [`organiser-modules-and-taxonomy.md`](organiser-modules-and-taxonomy.md) (taxonomy slugs vs `hugo.yaml` mounts, and when to keep events on `main`).
+
 ## Where events are authored (filing under `/organisers`)
 
 **Primary rule:** Save new event markdown under **the organising group’s Hugo module tree** in this workspace:

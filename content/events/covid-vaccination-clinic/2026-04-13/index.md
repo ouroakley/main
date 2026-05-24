@@ -1,14 +1,17 @@
 ---
-draft: false
-title: Covid Vaccination Clinic
-date: 2026-04-25
+
+draft: false  
+title: Covid Vaccination Clinic  
+date: 2026-04-13  
 eventDates:
-  - start: 2026-04-25T00:00:00
-    end: 2026-04-25T00:00:00
+
+- start: 2026-04-13T00:00:00  
+end: 2026-06-30T00:00:00  
 venues:
-  - overton-surgery
+- overton-surgery
 organisers:
-  - watership-down-health
+- watership-down-health
+
 ---
 
 Vaccinations are available **from 13 April to 30 June** for:

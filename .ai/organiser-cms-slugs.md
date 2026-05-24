@@ -8,4 +8,4 @@ If you use [`scripts/new-organiser.sh`](../../scripts/new-organiser.sh) from the
 
 Only include slugs that should get a card on `/admin/`. For example, **organiser-example** mounts `static/admin/example/`, but the site uses taxonomy `example-organiser` (and it is in `ignored_organisers` on the admin page), so there is no `example` term card—`example` is omitted from the list even though the module remains in `module.imports`.
 
-See also [`README.md`](../README.md) (Hugo modules / adding an organiser).
+See also [`README.md`](../README.md) (Hugo modules / adding an organiser) and [`organiser-modules-and-taxonomy.md`](organiser-modules-and-taxonomy.md) (which taxonomy slugs have `content/events/` mounts vs need a new organiser repo).
