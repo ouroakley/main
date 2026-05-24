@@ -24,6 +24,10 @@
         "baseName": "tops"
     }, 
     {
+        "title": "Watership Down Health",
+        "baseName": "watership-down-health"
+    }, 
+    {
         "title": "Oakley Bowling Club",
         "baseName": "oakley-bc"
     }, 
@@ -40,24 +44,12 @@
         "baseName": "oakley-ramblers"
     }, 
     {
-        "title": "Oakley Village Hall",
-        "baseName": "oakley-village-hall"
-    }, 
-    {
         "title": "Coffee & Chat",
         "baseName": "coffee-and-chat"
     }, 
     {
-        "title": "East Oakley Village Hall",
-        "baseName": "east-oakley-village-hall"
-    }, 
-    {
         "title": "Oakley Stitchers CIC",
         "baseName": "oakley-stitchers-cic"
-    }, 
-    {
-        "title": "Louise Wesley",
-        "baseName": "louise-wesley"
     }, 
     {
         "title": "Ramblers Wellbeing Walks Basingstoke",
@@ -66,10 +58,6 @@
     {
         "title": "The Methodist Church",
         "baseName": "the-methodist-church"
-    }, 
-    {
-        "title": "Watership Down Health",
-        "baseName": "watership-down-health"
     }, 
     {
         "title": "Oakley Community Care",
@@ -86,6 +74,10 @@
     {
         "title": "Oakley Woodlands Group",
         "baseName": "oakley-woodlands-group"
+    }, 
+    {
+        "title": "Louise Wesley",
+        "baseName": "louise-wesley"
     }, 
     {
         "title": "Friends of Oakley Infant School",
@@ -108,12 +100,24 @@
         "baseName": "alex-rowley"
     }, 
     {
+        "title": "East Oakley Village Hall",
+        "baseName": "east-oakley-village-hall"
+    }, 
+    {
         "title": "Jolly Olly's",
         "baseName": "jolly-ollys"
     }, 
     {
         "title": "Oakley Gardening Club",
         "baseName": "oakley-gardening-club"
+    }, 
+    {
+        "title": "Oakley Men's Shed",
+        "baseName": "oakley-mens-shed"
+    }, 
+    {
+        "title": "Oakley Village Hall",
+        "baseName": "oakley-village-hall"
     }, 
     {
         "title": "The Beach Arms",

@@ -20,6 +20,10 @@
         "address": "Newfound, Oakley"
     }, 
     {
+        "title": "Overton Surgery",
+        "address": "<no value>"
+    }, 
+    {
         "title": "Oakley Bowling Club",
         "address": "<no value>"
     }, 
@@ -40,15 +44,11 @@
         "address": "<no value>"
     }, 
     {
-        "title": "Overton Surgery",
-        "address": "<no value>"
-    }, 
-    {
         "title": "Oakley C.E. Junior School",
         "address": "Oakley Lane, Oakley"
     }, 
     {
-        "title": "St-Johns-Road-Layby",
+        "title": "St John's Road Lay-by",
         "address": "<no value>"
     }, 
     {
@@ -68,7 +68,7 @@
         "address": "<no value>"
     }, 
     {
-        "title": "Outside-Oakley",
+        "title": "Outside Oakley",
         "address": "<no value>"
     }, 
     {
@@ -90,6 +90,14 @@
     {
         "title": "Peter Houseman Recreation Ground",
         "address": "Rectory Road, Oakley"
+    }, 
+    {
+        "title": "Cowdown Copse",
+        "address": "<no value>"
+    }, 
+    {
+        "title": "Jolly Olly's",
+        "address": "<no value>"
     }, 
     {
         "title": "The Beach Arms",
