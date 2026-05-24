@@ -7,8 +7,18 @@ MAIN_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 BIN_DIR="$(cd "$(dirname "$0")" && pwd)"
 cd "$MAIN_ROOT"
 
-"$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" apply
-"$BIN_DIR/go-work-local.sh"
+restore_safe() {
+  "$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" restore || true
+}
+
+"$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" apply || {
+  restore_safe
+  exit 1
+}
+"$BIN_DIR/go-work-local.sh" || {
+  restore_safe
+  exit 1
+}
 
 if [[ -f "$MAIN_ROOT/go.work" ]]; then
   export HUGO_MODULE_WORKSPACE="$MAIN_ROOT/go.work"
@@ -20,5 +30,5 @@ set +e
 hugo "$@"
 ec=$?
 set -e
-"$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" restore
+restore_safe
 exit "$ec"

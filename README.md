@@ -27,11 +27,11 @@ Organiser content is pulled in via Hugo’s module system; dependencies are decl
 
 When **`main/`** sits next to sibling **`organisers/*`** checkouts, maintain a **gitignored** `go.work` under `main/` so Go resolves `github.com/ouroakley/organiser-*` from those directories instead of the module proxy (avoids Hugo rewriting every `require` to `v0.0.0-…` locally).
 
-1. **Refresh `go.work`:** `./bin/go-work-local.sh` (no-op if `../organisers` is missing, e.g. a `main`-only clone).
-2. **Run Hugo (recommended):** `./bin/hugo-with-local-workspace.sh` with normal Hugo arguments, for example **`./bin/hugo-with-local-workspace.sh server`**. The script runs `go-work-local.sh`, then sets **`HUGO_MODULE_WORKSPACE`** to the absolute path of `main/go.work` when that file exists.
-3. **Alternative:** from `main`, `export HUGO_MODULE_WORKSPACE=go.work` then run **`hugo`** as usual.
+1. **Resolve + `go.work`:** `./bin/go-work-local.sh` runs **`resolve-organiser-requires-to-tip-of-main.sh apply`** first (when `go.mod` lists `main`), then refreshes **`go.work`** if `../organisers` exists. No-op on `../organisers` missing (e.g. a `main`-only clone).
+2. **Run Hugo (recommended):** `./bin/hugo-with-local-workspace.sh` with normal Hugo arguments, for example **`./bin/hugo-with-local-workspace.sh server`**. It applies the resolver, runs `go-work-local.sh`, sets **`HUGO_MODULE_WORKSPACE`** when `go.work` exists, runs **`hugo`**, then restores committed **`main`** lines in `go.mod`.
+3. **Avoid plain `hugo`:** while `go.mod` uses `main` as the version token, run **`./bin/hugo-with-local-workspace.sh`** (or **`./bin/build.sh`**) so pins are expanded first; otherwise Go/Hugo may error or rewrite the file.
 
-**Verify:** stop any running dev server, start again with **`./bin/hugo-with-local-workspace.sh server`**, then check **`git diff go.mod`** — organiser lines should stay on **`main`**.
+**Verify:** stop any running dev server, start again with **`./bin/hugo-with-local-workspace.sh server`**, then **`git diff go.mod`** — organiser lines should stay on **`main`**.
 
 **CI / production:** [bin/build.sh](bin/build.sh) runs **`resolve-organiser-requires-to-tip-of-main.sh apply`**, then plain **`hugo`**, then restores committed **`main`** `require` lines on exit. Do not set `module.workspace` in `hugo.yaml` to a path that only exists on developer machines. **`go.work`** and **`go.work.sum`** are gitignored; do not commit them.
 

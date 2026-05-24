@@ -22,7 +22,7 @@ resolve_one() {
     cd "$tmp"
     printf 'module pinlookup\ngo %s\n' "$go_ver" > go.mod
     GOTOOLCHAIN="go${go_ver}" GOPRIVATE='github.com/ouroakley/*' GONOSUMDB='github.com/ouroakley/*' \
-      go get "$mod@main"
+      go get "$mod@main" >/dev/null
     go list -m -f '{{.Version}}' "$mod"
   )
   rm -rf "$tmp"
@@ -68,8 +68,8 @@ case "${1:-}" in
   restore)
     if [[ -f "$BACKUP" ]]; then
       mv "$BACKUP" go.mod
+      rm -f go.work go.work.sum
     fi
-    rm -f go.work go.work.sum
     ;;
   *)
     echo "usage: $0 apply|restore" >&2
