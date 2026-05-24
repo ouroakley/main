@@ -4,9 +4,11 @@
     {
         "title": "{{ .Title }}",
         {{- with .File }}
-        "baseName": "{{ .ContentBaseName }}"
+        "baseName": "{{ .ContentBaseName }}",
+        "slug": "{{ path.Base .Dir }}"
         {{- else }}
-        "baseName": ""
+        "baseName": "",
+        "slug": ""
         {{- end }}
     }
     {{- end }}

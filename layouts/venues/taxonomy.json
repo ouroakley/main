@@ -3,7 +3,8 @@
     {{- if $index }}, {{ end }}
     {
         "title": "{{ .Title }}",
-        "address": "{{ .Params.address }}"
+        "address": "{{ .Params.address }}",
+        "slug": "{{ if .File }}{{ path.Base .File.Dir }}{{ else }}{{ .Title | urlize }}{{ end }}"
     }
     {{- end }}
 ]
