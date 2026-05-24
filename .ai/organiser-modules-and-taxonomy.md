@@ -61,6 +61,10 @@ Files you edit under **`organisers/<repo>/`** appear on **www.ouroakley.uk** onl
 
 The site output directory is named **`public/`**, which makes **`git log public`** ambiguous (Git treats it as a path). Use explicit refs, e.g. **`git log refs/remotes/origin/public`** for the deployment branch history (typically “Build: … UTC” commits). Local **`refs/heads/public`** may be unrelated or stale if it was never fast-forwarded from **`origin/public`**.
 
+## `go.mod` organiser `require` lines
+
+In the committed [`go.mod`](../go.mod), every `github.com/ouroakley/organiser-*` dependency must stay on version **`main`** (the branch), not `v0.0.0-…` pseudo-versions. **`go mod tidy`**, **`go mod download`**, and Hugo module commands often rewrite those lines locally; restore the `main` tokens before committing. Convention and rationale: [README — Hugo modules and go.mod](../README.md#hugo-modules-and-gomod).
+
 ## See also
 
 - [`organiser-bootstrap-backlog.md`](organiser-bootstrap-backlog.md) — main-only / pending repo slugs (working checklist).

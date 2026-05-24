@@ -21,7 +21,7 @@ require (
 	github.com/ouroakley/organiser-oakley-village-hall v0.0.0-20260524191357-ea5ab9086a35 // indirect
 	github.com/ouroakley/organiser-oakley-wellbeing-forum v0.0.0-20250909215252-fb6304f6d3b3 // indirect
 	github.com/ouroakley/organiser-oakley-woodlands-group v0.0.0-20260304001636-5da7ee9eb239 // indirect
-	github.com/ouroakley/organiser-oca v0.0.0-20260524192309-509253b20e06 // indirect
+	github.com/ouroakley/organiser-oca v0.0.0-20260524195950-eaa468d8f8f3 // indirect
 	github.com/ouroakley/organiser-odpc v0.0.0-20260524184252-4c4ad9fbdb5d // indirect
 	github.com/ouroakley/organiser-oww v0.0.0-20260407104209-9c6fccb75503 // indirect
 	github.com/ouroakley/organiser-ramblers-wellbeing-walks-basingstoke v0.0.0-20260407110234-6661d34f4fe7 // indirect
