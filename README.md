@@ -69,6 +69,8 @@ hugo server
 
 The site will be available at `http://localhost:1313/`
 
+If you use **Decap admin** under `/admin/<organiser>/` and see Hugo’s **permission denied** page for `public/admin/.../config.yml`, run **`hugo server --renderToMemory`** (`-M`) instead. A plain `hugo` build writes those files as read-only (`444`); the default server then cannot replace them when syncing into `public/`. See [`.ai/decap-cms-organiser.md`](.ai/decap-cms-organiser.md).
+
 > **Note:** If you see a blank page, it's likely because the theme submodule wasn't initialized. Run `git submodule update --init --recursive` to fix this.
 
 ## Cloudflare Setup
