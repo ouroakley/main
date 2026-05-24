@@ -6,4 +6,6 @@ Reason: the `/admin/` listing ([`layouts/_default/admin.html`](../layouts/_defau
 
 If you use [`scripts/new-organiser.sh`](../../scripts/new-organiser.sh) from the expected monorepo layout, it appends the slug for you. If you wire a module by hand, edit `organiser_cms_slugs` in the same change as the new import block.
 
+Only include slugs that should get a card on `/admin/`. For example, **organiser-example** mounts `static/admin/example/`, but the site uses taxonomy `example-organiser` (and it is in `ignored_organisers` on the admin page), so there is no `example` term card—`example` is omitted from the list even though the module remains in `module.imports`.
+
 See also [`README.md`](../README.md) (Hugo modules / adding an organiser).

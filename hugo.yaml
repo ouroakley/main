@@ -11,7 +11,6 @@ params:
   # cannot read module.imports (Hugo site.Config is services/privacy only). When you add an
   # organiser module, append the static/admin/<slug>/ segment (same slug as in module mounts).
   organiser_cms_slugs:
-    - example
     - oakley-fc
     - oakley-stitchers-cic
     - oakley-wellbeing-forum
