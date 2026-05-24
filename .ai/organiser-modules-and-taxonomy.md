@@ -16,6 +16,8 @@ Only move **`main/content/events/...`** into an organiser repo when **both** are
 
 If either is missing, leave the event on **`main`** until the organiser is bootstrapped.
 
+**May 2026 village-hall timetable bundles** where **`organisers:`** is only **`oakley-village-hall`** or **`east-oakley-village-hall`** now live under [`organisers/oakley-village-hall/content/events/`](../../organisers/oakley-village-hall/content/events/) and [`organisers/east-oakley-village-hall/content/events/`](../../organisers/east-oakley-village-hall/content/events/) respectively (same monthly `eventDates` shape and public URLs as before). Events whose organiser is another term (e.g. **`coffee-and-chat`**, **`louise-wesley`**) stay on **`main`** even when the venue is a hall.
+
 **Folder names vs mounts:** The directory under `organisers/` is not always identical to the taxonomy slug. Examples: taxonomy `friends-ois` → repo `organisers/friends-of-oakley-infant-school/`; taxonomy `oakley-fc` → repo `organisers/oakley-football-club/`. Always follow the **`content/events/<mount>/`** segment from `hugo.yaml`, not guesswork from the slug alone.
 
 ## Taxonomy slugs with **no** events module yet
