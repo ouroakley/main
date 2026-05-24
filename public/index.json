@@ -199,10 +199,22 @@
                 "content": "Informal chat with parish councillors.\n",
                 "date": "2026-05-12",
                 "eventDates": [{"end":"2026-05-12T14:00:00","start":"2026-05-12T13:00:00"}],
-                "venues": ["Jolly-Ollys-Coffee-Shop"],
+                "venues": ["Jolly Olly's"],
                 "organisers": ["Oakley \u0026 Deane Parish Council"],
                 "section": "events",
                 "subsection": "events/odpc/2026/05/12/parish-council-councillor-chat-session"
+            },
+            {
+                "title": "Badminton",
+                "permalink": "/events/oakley-village-hall/2026/05/07/badminton/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-07",
+                "eventDates": [{"end":"2026-05-07T21:30:00","start":"2026-05-07T20:00:00"},{"end":"2026-05-14T21:30:00","start":"2026-05-14T20:00:00"},{"end":"2026-05-21T21:30:00","start":"2026-05-21T20:00:00"},{"end":"2026-05-28T21:30:00","start":"2026-05-28T20:00:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/07/badminton"
             },
             {
                 "title": "Oakley Village Show Container Collection",
@@ -229,6 +241,114 @@
                 "subsection": "events/2026/05/06/coffee-chat"
             },
             {
+                "title": "Kickboxing",
+                "permalink": "/events/oakley-village-hall/2026/05/06/kickboxing/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-06",
+                "eventDates": [{"end":"2026-05-06T19:30:00","start":"2026-05-06T18:30:00"},{"end":"2026-05-13T19:30:00","start":"2026-05-13T18:30:00"},{"end":"2026-05-20T19:30:00","start":"2026-05-20T18:30:00"},{"end":"2026-05-27T19:30:00","start":"2026-05-27T18:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/06/kickboxing"
+            },
+            {
+                "title": "Speedy yoga",
+                "permalink": "/events/east-oakley-village-hall/2026/05/06/speedy-yoga/",
+                "description": "",
+                "content": "See oakleygreenhut.co.uk for bookings and up-to-date hall information.\n",
+                "date": "2026-05-06",
+                "eventDates": [{"end":"2026-05-06T15:15:00","start":"2026-05-06T14:00:00"},{"end":"2026-05-13T15:15:00","start":"2026-05-13T14:00:00"},{"end":"2026-05-20T15:15:00","start":"2026-05-20T14:00:00"},{"end":"2026-05-27T15:15:00","start":"2026-05-27T14:00:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["East Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/east-oakley-village-hall/2026/05/06/speedy-yoga"
+            },
+            {
+                "title": "Workout to music",
+                "permalink": "/events/oakley-village-hall/2026/05/06/workout-to-music/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-06",
+                "eventDates": [{"end":"2026-05-06T11:30:00","start":"2026-05-06T10:30:00"},{"end":"2026-05-13T11:30:00","start":"2026-05-13T10:30:00"},{"end":"2026-05-20T11:30:00","start":"2026-05-20T10:30:00"},{"end":"2026-05-27T11:30:00","start":"2026-05-27T10:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/06/workout-to-music"
+            },
+            {
+                "title": "Art class",
+                "permalink": "/events/east-oakley-village-hall/2026/05/05/art-class/",
+                "description": "",
+                "content": "See oakleygreenhut.co.uk for bookings and up-to-date hall information.\n",
+                "date": "2026-05-05",
+                "eventDates": [{"end":"2026-05-05T15:30:00","start":"2026-05-05T14:00:00"},{"end":"2026-05-12T15:30:00","start":"2026-05-12T14:00:00"},{"end":"2026-05-19T15:30:00","start":"2026-05-19T14:00:00"},{"end":"2026-05-26T15:30:00","start":"2026-05-26T14:00:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["East Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/east-oakley-village-hall/2026/05/05/art-class"
+            },
+            {
+                "title": "Badminton",
+                "permalink": "/events/oakley-village-hall/2026/05/05/badminton/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-05",
+                "eventDates": [{"end":"2026-05-05T15:45:00","start":"2026-05-05T14:15:00"},{"end":"2026-05-12T15:45:00","start":"2026-05-12T14:15:00"},{"end":"2026-05-19T15:45:00","start":"2026-05-19T14:15:00"},{"end":"2026-05-26T15:45:00","start":"2026-05-26T14:15:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/05/badminton"
+            },
+            {
+                "title": "Basingstoke Air Rifle \u0026 Pistol Club",
+                "permalink": "/events/east-oakley-village-hall/2026/05/05/basingstoke-air-rifle-pistol-club/",
+                "description": "",
+                "content": "See oakleygreenhut.co.uk for bookings and up-to-date hall information.\n",
+                "date": "2026-05-05",
+                "eventDates": [{"end":"2026-05-05T21:30:00","start":"2026-05-05T19:30:00"},{"end":"2026-05-12T21:30:00","start":"2026-05-12T19:30:00"},{"end":"2026-05-19T21:30:00","start":"2026-05-19T19:30:00"},{"end":"2026-05-26T21:30:00","start":"2026-05-26T19:30:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["East Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/east-oakley-village-hall/2026/05/05/basingstoke-air-rifle-pistol-club"
+            },
+            {
+                "title": "Marching",
+                "permalink": "/events/oakley-village-hall/2026/05/05/marching/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-05",
+                "eventDates": [{"end":"2026-05-05T10:30:00","start":"2026-05-05T09:30:00"},{"end":"2026-05-12T10:30:00","start":"2026-05-12T09:30:00"},{"end":"2026-05-19T10:30:00","start":"2026-05-19T09:30:00"},{"end":"2026-05-26T10:30:00","start":"2026-05-26T09:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/05/marching"
+            },
+            {
+                "title": "WI or yoga",
+                "permalink": "/events/oakley-village-hall/2026/05/05/wi-or-yoga/",
+                "description": "",
+                "content": "Link lists WI or yoga on this slot — confirm with the hall (781229).\n",
+                "date": "2026-05-05",
+                "eventDates": [{"end":"2026-05-05T21:00:00","start":"2026-05-05T19:30:00"},{"end":"2026-05-12T21:00:00","start":"2026-05-12T19:30:00"},{"end":"2026-05-19T21:00:00","start":"2026-05-19T19:30:00"},{"end":"2026-05-26T21:00:00","start":"2026-05-26T19:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/05/wi-or-yoga"
+            },
+            {
+                "title": "Badminton",
+                "permalink": "/events/oakley-village-hall/2026/05/04/badminton/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-04",
+                "eventDates": [{"end":"2026-05-04T15:45:00","start":"2026-05-04T14:15:00"},{"end":"2026-05-11T15:45:00","start":"2026-05-11T14:15:00"},{"end":"2026-05-18T15:45:00","start":"2026-05-18T14:15:00"},{"end":"2026-05-25T15:45:00","start":"2026-05-25T14:15:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/04/badminton"
+            },
+            {
                 "title": "Oakley Stitchers — Community stitch evening",
                 "permalink": "/events/oakley-stitchers-cic/2026/05/04/oakley-stitchers-community-stitch-evening/",
                 "description": "",
@@ -239,6 +359,78 @@
                 "organisers": ["Oakley Stitchers CIC"],
                 "section": "events",
                 "subsection": "events/oakley-stitchers-cic/2026/05/04/oakley-stitchers-community-stitch-evening"
+            },
+            {
+                "title": "Pilates",
+                "permalink": "/events/oakley-village-hall/2026/05/04/pilates/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-04",
+                "eventDates": [{"end":"2026-05-04T10:30:00","start":"2026-05-04T09:30:00"},{"end":"2026-05-11T10:30:00","start":"2026-05-11T09:30:00"},{"end":"2026-05-18T10:30:00","start":"2026-05-18T09:30:00"},{"end":"2026-05-25T10:30:00","start":"2026-05-25T09:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/04/pilates"
+            },
+            {
+                "title": "Table tennis",
+                "permalink": "/events/oakley-village-hall/2026/05/04/table-tennis/",
+                "description": "",
+                "content": "Link notes this session may not run in summer; confirm with the hall (781229).\n",
+                "date": "2026-05-04",
+                "eventDates": [{"end":"2026-05-04T21:00:00","start":"2026-05-04T19:30:00"},{"end":"2026-05-11T21:00:00","start":"2026-05-11T19:30:00"},{"end":"2026-05-18T21:00:00","start":"2026-05-18T19:30:00"},{"end":"2026-05-25T21:00:00","start":"2026-05-25T19:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/04/table-tennis"
+            },
+            {
+                "title": "Workout to music",
+                "permalink": "/events/oakley-village-hall/2026/05/04/workout-to-music/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-04",
+                "eventDates": [{"end":"2026-05-04T12:30:00","start":"2026-05-04T11:30:00"},{"end":"2026-05-11T12:30:00","start":"2026-05-11T11:30:00"},{"end":"2026-05-18T12:30:00","start":"2026-05-18T11:30:00"},{"end":"2026-05-25T12:30:00","start":"2026-05-25T11:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/04/workout-to-music"
+            },
+            {
+                "title": "Chair yoga",
+                "permalink": "/events/east-oakley-village-hall/2026/05/01/chair-yoga/",
+                "description": "",
+                "content": "See oakleygreenhut.co.uk for bookings and up-to-date hall information.\n",
+                "date": "2026-05-01",
+                "eventDates": [{"end":"2026-05-01T10:30:00","start":"2026-05-01T09:30:00"},{"end":"2026-05-08T10:30:00","start":"2026-05-08T09:30:00"},{"end":"2026-05-15T10:30:00","start":"2026-05-15T09:30:00"},{"end":"2026-05-22T10:30:00","start":"2026-05-22T09:30:00"},{"end":"2026-05-29T10:30:00","start":"2026-05-29T09:30:00"}],
+                "venues": ["East Oakley Village Hall"],
+                "organisers": ["East Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/east-oakley-village-hall/2026/05/01/chair-yoga"
+            },
+            {
+                "title": "Trinity baby class",
+                "permalink": "/events/oakley-village-hall/2026/05/01/trinity-baby-class/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-01",
+                "eventDates": [{"end":"2026-05-01T10:30:00","start":"2026-05-01T09:30:00"},{"end":"2026-05-08T10:30:00","start":"2026-05-08T09:30:00"},{"end":"2026-05-15T10:30:00","start":"2026-05-15T09:30:00"},{"end":"2026-05-22T10:30:00","start":"2026-05-22T09:30:00"},{"end":"2026-05-29T10:30:00","start":"2026-05-29T09:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/01/trinity-baby-class"
+            },
+            {
+                "title": "Yoga",
+                "permalink": "/events/oakley-village-hall/2026/05/01/yoga/",
+                "description": "",
+                "content": "",
+                "date": "2026-05-01",
+                "eventDates": [{"end":"2026-05-01T19:30:00","start":"2026-05-01T18:30:00"},{"end":"2026-05-08T19:30:00","start":"2026-05-08T18:30:00"},{"end":"2026-05-15T19:30:00","start":"2026-05-15T18:30:00"},{"end":"2026-05-22T19:30:00","start":"2026-05-22T18:30:00"},{"end":"2026-05-29T19:30:00","start":"2026-05-29T18:30:00"}],
+                "venues": ["Oakley Village Hall"],
+                "organisers": ["Oakley Village Hall"],
+                "section": "events",
+                "subsection": "events/oakley-village-hall/2026/05/01/yoga"
             },
             {
                 "title": "Oakley Village Show Container Collection",
@@ -275,6 +467,18 @@
                 "organisers": ["Ramblers Wellbeing Walks Basingstoke"],
                 "section": "events",
                 "subsection": "events/ramblers-wellbeing-walks-basingstoke/2026/04/28/woodland-wellbeing-walk"
+            },
+            {
+                "title": "Oakley Ramblers Walk",
+                "permalink": "/events/oakley-ramblers/2026/04/26/oakley-ramblers-walk/",
+                "description": "",
+                "content": "Check the Oakley Ramblers website about a week before each walk for meeting point, route, and other details.\n",
+                "date": "2026-04-26",
+                "eventDates": [{"start":"2025-10-08T10:00:00+01:00"},{"end":"2026-04-08T00:00:00","start":"2026-04-08T00:00:00"},{"end":"2026-04-26T00:00:00","start":"2026-04-26T00:00:00"}],
+                "venues": ["TBC"],
+                "organisers": ["Oakley Ramblers"],
+                "section": "events",
+                "subsection": "events/oakley-ramblers/2026/04/26/oakley-ramblers-walk"
             },
             {
                 "title": "Oakley Village Show Container Collection",
@@ -1019,18 +1223,6 @@
                 "organisers": ["The Barley Mow"],
                 "section": "events",
                 "subsection": "events/the-barley-mow/2025/10/30/k-pop-demon-hunters-kids-outdoor-movie-night"
-            },
-            {
-                "title": "Oakley Ramblers Walk",
-                "permalink": "/events/oakley-ramblers/2025/10/08/oakley-ramblers-walk/",
-                "description": "",
-                "content": "This walk will be an 8-mile circular walk from Rooksdown to The Vyne, Sherborne St John and back. This is an easy walk with good paths, 1 field with 2 small horses, and a short section of road. Care to be taken crossing the Tadley to Basingstoke road at the Ambulance Station and on the return.\n",
-                "date": "2025-10-08",
-                "eventDates": [{"start":"2025-10-08T10:00:00+01:00"}],
-                "venues": [],
-                "organisers": ["Oakley Ramblers"],
-                "section": "events",
-                "subsection": "events/oakley-ramblers/2025/10/08/oakley-ramblers-walk"
             },
             {
                 "title": "Bottomless Brunch",
