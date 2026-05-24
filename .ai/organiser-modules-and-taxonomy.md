@@ -51,6 +51,16 @@ These map to `content/events/<slug>/` in [`hugo.yaml`](../hugo.yaml) (plus the *
 
 Optional organiser-specific supplements use **`content/venues-info/`** inside the organiser repo (mounted as `content/venues-info/<slug>/`); see [`link-pdf-ingest-rules.md`](link-pdf-ingest-rules.md) and ODPC’s `venues-info` examples.
 
+## Hugo module pin vs `organisers/` checkout
+
+The Our Oakley Hugo build resolves organiser content from **`go.mod`** / **`hugo mod`** only (there is no `replace` pointing at [`../../organisers/`](../../organisers/)). **Committed** [`go.mod`](../go.mod) uses the branch token **`main`** for each `organiser-*` module (see [`README.md`](../README.md)); running **`hugo`** locally may still rewrite the file to pseudo-versions while fetching—restore the `main` lines before committing, and do not commit those pins.
+
+Files you edit under **`organisers/<repo>/`** appear on **www.ouroakley.uk** only after they are **pushed** to the matching `github.com/ouroakley/organiser-*` repo so that **`main`** on that repo includes them (no separate `go.mod` bump is required when the aggregate repo keeps `main` tokens). If `organisers/` is ahead of what is on GitHub, events can exist locally but not in CI or production builds.
+
+## Git: `public` branch vs `public/` directory
+
+The site output directory is named **`public/`**, which makes **`git log public`** ambiguous (Git treats it as a path). Use explicit refs, e.g. **`git log refs/remotes/origin/public`** for the deployment branch history (typically “Build: … UTC” commits). Local **`refs/heads/public`** may be unrelated or stale if it was never fast-forwarded from **`origin/public`**.
+
 ## See also
 
 - [`organiser-bootstrap-backlog.md`](organiser-bootstrap-backlog.md) — main-only / pending repo slugs (working checklist).
