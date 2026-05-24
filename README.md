@@ -17,7 +17,7 @@ Organiser content is pulled in via Hugo’s module system; dependencies are decl
 
 **Avoid:** running `go get`, `hugo mod get`, or similar and committing the result if it replaces `main` with `v0.0.0-…` pins. If tooling rewrites the file, restore the `main` lines before committing.
 
-**Adding a new organiser:** add the import mounts in `hugo.yaml`, then add one line to the `require (` block in `go.mod` with `…/organiser-<name> main // indirect` (sorted with the other organiser lines). Do not pin versions unless the project explicitly decides otherwise.
+**Adding a new organiser:** add the import mounts in `hugo.yaml`, add the same admin mount slug (the `static/admin/<slug>/` segment) to `params.organiser_cms_slugs` in `hugo.yaml` so the organiser appears on `/admin/`, then add one line to the `require (` block in `go.mod` with `…/organiser-<name> main // indirect` (sorted with the other organiser lines). Do not pin versions unless the project explicitly decides otherwise. The [`scripts/new-organiser.sh`](../scripts/new-organiser.sh) bootstrap script updates both the module block and `organiser_cms_slugs` when run from the expected monorepo layout.
 
 **`go.sum`:** listed in [.gitignore](.gitignore); do not commit it. Tooling may recreate it locally; that file stays untracked.
 
