@@ -56,7 +56,7 @@ collections:
         name: "eventDates"
         widget: "list"
         required: false
-        hint: "Add a single date for a one-day event, or multiple dates for recurring or multi-day events"
+        hint: "For the same activity every week in one calendar month, use one event page with multiple rows here (monthly bundle)—do not create a separate event folder per week. For one-offs or irregular dates, add rows as needed."
         fields:
           - label: "Start Date"
             name: "start"

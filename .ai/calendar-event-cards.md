@@ -9,3 +9,5 @@ If you add organiser-based colours later, prefer a `data-organiser` attribute on
 ## Intra-day order
 
 Within each day cell, events are sorted by a `sortKey` computed in `calendar.html`: entries with prefix `0-` (no clock time for that day — start at `00:00`, end-only day with `00:00` end, or a middle day of a multi-day range) appear first, ordered by `RelPermalink`. Entries with prefix `1-` follow, ordered by local `YYYYMMDDHHmmss` from the start time on the start day or the end time on the last day only, then `RelPermalink` for ties.
+
+**Monthly bundles:** One event page with several `eventDates` in the same month still produces **one calendar chip per affected day** (the template expands ranges); verify ordering after large merges.
