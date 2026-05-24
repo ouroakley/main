@@ -280,11 +280,30 @@
                   {{ $startDateStr := $startDate.Format "2006-01-02" }}
                   {{ $endDateStr := $endDate.Format "2006-01-02" }}
                   {{ if and (ge $thisDayStr $startDateStr) (le $thisDayStr $endDateStr) }}
-                    {{ $events = $events | append (dict "page" $page "start" $startDate "end" $endDate) }}
+                    {{ $tie := $page.RelPermalink }}
+                    {{ $sortKey := "" }}
+                    {{ if eq $thisDayStr $startDateStr }}
+                      {{ if ne (dateFormat "15:04" $startDate) "00:00" }}
+                        {{ $sortKey = printf "1-%s-%s" (dateFormat "20060102150405" $startDate) $tie }}
+                      {{ else }}
+                        {{ $sortKey = printf "0-%s" $tie }}
+                      {{ end }}
+                    {{ else if eq $thisDayStr $endDateStr }}
+                      {{ if ne (dateFormat "15:04" $endDate) "00:00" }}
+                        {{ $sortKey = printf "1-%s-%s" (dateFormat "20060102150405" $endDate) $tie }}
+                      {{ else }}
+                        {{ $sortKey = printf "0-%s" $tie }}
+                      {{ end }}
+                    {{ else }}
+                      {{ $sortKey = printf "0-%s" $tie }}
+                    {{ end }}
+                    {{ $events = $events | append (dict "page" $page "start" $startDate "end" $endDate "sortKey" $sortKey) }}
                   {{ end }}
                 {{ end }}
               {{ end }}
             {{ end }}
+            {{/* Intra-day: untimed (0-) then timed (1-) by local datetime; tiebreak RelPermalink */}}
+            {{ $events = sort $events "sortKey" "asc" }}
 
             <div class="calendar-day has-date{{ if $events }} has-events{{ end }}" style="grid-column: {{ $gridColumn }}">
               <div class="date" data-day="{{ $thisDay.Format "Monday" }}">{{ $dayNum }}</div>
