@@ -28,8 +28,32 @@
         "baseName": "oakley-bc"
     }, 
     {
+        "title": "Oakley Afternoon WI",
+        "baseName": "oakley-afternoon-wi"
+    }, 
+    {
+        "title": "Oakley & Deane Parish Council",
+        "baseName": "odpc"
+    }, 
+    {
+        "title": "Oakley Ramblers",
+        "baseName": "oakley-ramblers"
+    }, 
+    {
+        "title": "Oakley Village Hall",
+        "baseName": "oakley-village-hall"
+    }, 
+    {
         "title": "Coffee & Chat",
         "baseName": "coffee-and-chat"
+    }, 
+    {
+        "title": "East Oakley Village Hall",
+        "baseName": "east-oakley-village-hall"
+    }, 
+    {
+        "title": "Oakley Stitchers CIC",
+        "baseName": "oakley-stitchers-cic"
     }, 
     {
         "title": "Louise Wesley",
@@ -44,16 +68,8 @@
         "baseName": "the-methodist-church"
     }, 
     {
-        "title": "Oakley Ramblers",
-        "baseName": "oakley-ramblers"
-    }, 
-    {
         "title": "Watership Down Health",
         "baseName": "watership-down-health"
-    }, 
-    {
-        "title": "Oakley & Deane Parish Council",
-        "baseName": "odpc"
     }, 
     {
         "title": "Oakley Community Care",
@@ -70,14 +86,6 @@
     {
         "title": "Oakley Woodlands Group",
         "baseName": "oakley-woodlands-group"
-    }, 
-    {
-        "title": "Oakley Afternoon WI",
-        "baseName": "oakley-afternoon-wi"
-    }, 
-    {
-        "title": "Oakley Stitchers CIC",
-        "baseName": "oakley-stitchers-cic"
     }, 
     {
         "title": "Friends of Oakley Infant School",
