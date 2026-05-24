@@ -1,7 +1,17 @@
-#!/bin/bash
-
+#!/usr/bin/env bash
 # Exit immediately if a command exits with a non-zero status
-set -e
+set -euo pipefail
+
+MAIN_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+BIN_DIR="$(cd "$(dirname "$0")" && pwd)"
+cd "$MAIN_ROOT"
+
+cleanup() {
+  "$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" restore || true
+}
+trap cleanup EXIT
+
+"$BIN_DIR/resolve-organiser-requires-to-tip-of-main.sh" apply
 
 # Define variables
 PUBLIC_DIR="public"
@@ -12,7 +22,7 @@ echo "Starting the build process for Our Oakley..."
 # Clean up the public directory if it exists
 if [ -d "$PUBLIC_DIR" ]; then
   echo "Cleaning up existing public directory..."
-  rm -rf $PUBLIC_DIR
+  rm -rf "$PUBLIC_DIR"
 fi
 
 
@@ -40,7 +50,7 @@ hugo list future
 echo "--------------------------------"
 
 echo "Output of ls -rla $PUBLIC_DIR:"
-ls -rla $PUBLIC_DIR
+ls -rla "$PUBLIC_DIR"
 
 echo "--------------------------------"
 

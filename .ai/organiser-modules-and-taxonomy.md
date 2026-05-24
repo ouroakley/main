@@ -53,9 +53,9 @@ Optional organiser-specific supplements use **`content/venues-info/`** inside th
 
 ## Hugo module pin vs `organisers/` checkout
 
-The Our Oakley Hugo build resolves organiser content from **`go.mod`** / **`hugo mod`** only (there is no `replace` pointing at [`../../organisers/`](../../organisers/)). **Committed** [`go.mod`](../go.mod) uses the branch token **`main`** for each `organiser-*` module (see [`README.md`](../README.md)); running **`hugo`** locally may still rewrite the file to pseudo-versions while fetching—restore the `main` lines before committing, and do not commit those pins.
+The Our Oakley Hugo build resolves organiser content from **`go.mod`** / **`hugo mod`** only (there is no `replace` pointing at [`../../organisers/`](../../organisers/)). **Committed** [`go.mod`](../go.mod) keeps each organiser on version **`main`** (`… main // indirect`). **[`bin/resolve-organiser-requires-to-tip-of-main.sh`](../bin/resolve-organiser-requires-to-tip-of-main.sh)** expands those lines to pseudo-versions for the current tip of each repo’s **`main`** only while **`hugo`** runs (see **[`bin/build.sh`](../bin/build.sh)** and **[`bin/hugo-with-local-workspace.sh`](../bin/hugo-with-local-workspace.sh)**). Running plain **`hugo`** without that wrapper can still rewrite `go.mod` when fetching; in the full monorepo layout use a gitignored **`go.work`**, **[`bin/go-work-local.sh`](../bin/go-work-local.sh)** to refresh it, and **[`bin/hugo-with-local-workspace.sh`](../bin/hugo-with-local-workspace.sh)** (or **`HUGO_MODULE_WORKSPACE`**) so local dev does not keep churning the committed file. See [README — Local monorepo dev](../README.md#local-monorepo-dev-main--organisers). [`scripts/new-organiser.sh`](../../scripts/new-organiser.sh) runs `go-work-local.sh` after updating `hugo.yaml` when `../organisers` exists.
 
-Files you edit under **`organisers/<repo>/`** appear on **www.ouroakley.uk** only after they are **pushed** to the matching `github.com/ouroakley/organiser-*` repo so that **`main`** on that repo includes them (no separate `go.mod` bump is required when the aggregate repo keeps `main` tokens). If `organisers/` is ahead of what is on GitHub, events can exist locally but not in CI or production builds.
+Files you edit under **`organisers/<repo>/`** appear on **www.ouroakley.uk** only after they are **pushed** to the matching `github.com/ouroakley/organiser-*` repo so that **`main`** on that repo includes them (no separate `go.mod` bump is required for routine content pushes when the aggregate repo keeps **`main`** tokens). If `organisers/` is ahead of what is on GitHub, events can exist locally but not in CI or production builds.
 
 ## Git: `public` branch vs `public/` directory
 
@@ -63,7 +63,7 @@ The site output directory is named **`public/`**, which makes **`git log public`
 
 ## `go.mod` organiser `require` lines
 
-In the committed [`go.mod`](../go.mod), every `github.com/ouroakley/organiser-*` dependency must stay on version **`main`** (the branch), not `v0.0.0-…` pseudo-versions. **`go mod tidy`**, **`go mod download`**, and Hugo module commands often rewrite those lines locally; restore the `main` tokens before committing. Convention and rationale: [README — Hugo modules and go.mod](../README.md#hugo-modules-and-gomod).
+In the committed [`go.mod`](../go.mod), every `github.com/ouroakley/organiser-*` dependency uses version **`main`** (`… main // indirect`). **`go mod tidy`**, **`go mod download`**, and plain **`hugo`** may still rewrite those lines locally to pseudo-versions; restore the **`main`** lines before committing, or use **[`bin/hugo-with-local-workspace.sh`](../bin/hugo-with-local-workspace.sh)** (which runs **[`bin/resolve-organiser-requires-to-tip-of-main.sh`](../bin/resolve-organiser-requires-to-tip-of-main.sh)** around Hugo) in the monorepo layout. Convention and rationale: [README — Hugo modules and go.mod](../README.md#hugo-modules-and-gomod).
 
 ## See also
 

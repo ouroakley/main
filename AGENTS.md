@@ -9,8 +9,9 @@ At the workspace root, `AGENTS.md` is a symlink to this file (`main/AGENTS.md`).
 - `main/`
   - Primary Our Oakley website.
   - Hugo static site project (main production content/site code).
-  - In `go.mod`, Hugo organiser modules (`github.com/ouroakley/organiser-*`) must use the branch name `main` as the version, not pseudo-version pins (e.g. `v0.0.0-20…`). See [README.md](README.md#hugo-modules-and-gomod).
-  - `go.sum` is gitignored in [.gitignore](.gitignore); do not commit it. Branch-based `go.mod` only, matching the pre–`30c1d35` pattern.
+  - In `go.mod`, Hugo organiser modules (`github.com/ouroakley/organiser-*`) must use the branch name **`main`** as the version (`… main // indirect`), not committed pseudo-version pins. [`bin/build.sh`](bin/build.sh) and [`bin/hugo-with-local-workspace.sh`](bin/hugo-with-local-workspace.sh) call [`bin/resolve-organiser-requires-to-tip-of-main.sh`](bin/resolve-organiser-requires-to-tip-of-main.sh) to expand those lines to canonical pseudo-versions only while Hugo runs, then restore the committed form. See [README.md](README.md#hugo-modules-and-gomod).
+  - Local full-tree dev: gitignored `go.work` via [`bin/go-work-local.sh`](bin/go-work-local.sh) + [`bin/hugo-with-local-workspace.sh`](bin/hugo-with-local-workspace.sh); see [README — Local monorepo dev](README.md#local-monorepo-dev-main--organisers).
+  - `go.sum` is gitignored in [.gitignore](.gitignore); do not commit it.
 
 - `organisers/`
   - Per-organiser repositories and content.

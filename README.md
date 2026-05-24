@@ -13,15 +13,27 @@ Hugo provide a quick start guide: https://gohugo.io/getting-started/quick-start/
 
 Organiser content is pulled in via Hugo’s module system; dependencies are declared in [go.mod](go.mod).
 
-**Convention:** every `require` for `github.com/ouroakley/organiser-*` must use the version token **`main`** (the branch), not a resolved pseudo-version. This matches revert commit `fc60918` and keeps builds tracking the latest `main` on each organiser repo.
+**Convention:** every `require` for `github.com/ouroakley/organiser-*` must **track the `main` branch** on that repo. The **committed** [`go.mod`](go.mod) keeps the version column as the branch token **`main`** (`… main // indirect`). Go and Hugo still need a concrete pseudo-version at build time; **[`bin/resolve-organiser-requires-to-tip-of-main.sh`](bin/resolve-organiser-requires-to-tip-of-main.sh)** rewrites those lines to the current tip of each repo’s `main` before **`hugo`** runs, and restores the committed form afterward (used from **[`bin/build.sh`](bin/build.sh)** and **[`bin/hugo-with-local-workspace.sh`](bin/hugo-with-local-workspace.sh)**).
 
-**Avoid:** running `go get`, `hugo mod get`, or similar and committing the result if it replaces `main` with `v0.0.0-…` pins. If tooling rewrites the file, restore the `main` lines before committing.
+**Avoid:** committing pseudo-version churn from ad-hoc `go get` / `hugo mod get`. If plain **`hugo`** rewrites `go.mod` on your machine, restore the `main` lines before committing, or use **`./bin/hugo-with-local-workspace.sh`** in the monorepo layout so `go.mod` stays stable.
 
-**Note:** `hugo` itself may also rewrite `go.mod` to pseudo-versions while downloading modules. Treat that as a local side effect only—restore the `main` lines before you commit (same as after `hugo mod get`).
+**Note:** In the **local monorepo** layout (`main/` next to `organisers/`), prefer **`./bin/hugo-with-local-workspace.sh`** (gitignored **`go.work`** via **`./bin/go-work-local.sh`**) so Hugo does not keep pinning modules in the committed file; see [Local monorepo dev](#local-monorepo-dev-main--organisers) below.
 
-**Adding a new organiser:** add the import mounts in `hugo.yaml`, add the same admin mount slug (the `static/admin/<slug>/` segment) to `params.organiser_cms_slugs` in `hugo.yaml` so the organiser appears on `/admin/`, then add one line to the `require (` block in `go.mod` with `…/organiser-<name> main // indirect` (sorted with the other organiser lines). Do not pin versions unless the project explicitly decides otherwise. The [`scripts/new-organiser.sh`](../scripts/new-organiser.sh) bootstrap script updates both the module block and `organiser_cms_slugs` when run from the expected monorepo layout.
+**Adding a new organiser:** add the import mounts in `hugo.yaml`, add the same admin mount slug (the `static/admin/<slug>/` segment) to `params.organiser_cms_slugs` in `hugo.yaml` so the organiser appears on `/admin/`, then add a sorted line `github.com/ouroakley/organiser-<name> main // indirect` in the `require` block in `go.mod`. Do not pin to arbitrary commits unless the project explicitly decides otherwise. The [`scripts/new-organiser.sh`](../scripts/new-organiser.sh) bootstrap script updates `hugo.yaml`, `organiser_cms_slugs`, and refreshes `go.work` when run from the expected monorepo layout.
 
 **`go.sum`:** listed in [.gitignore](.gitignore); do not commit it. Tooling may recreate it locally; that file stays untracked.
+
+#### Local monorepo dev (`main` + `organisers/`)
+
+When **`main/`** sits next to sibling **`organisers/*`** checkouts, maintain a **gitignored** `go.work` under `main/` so Go resolves `github.com/ouroakley/organiser-*` from those directories instead of the module proxy (avoids Hugo rewriting every `require` to `v0.0.0-…` locally).
+
+1. **Refresh `go.work`:** `./bin/go-work-local.sh` (no-op if `../organisers` is missing, e.g. a `main`-only clone).
+2. **Run Hugo (recommended):** `./bin/hugo-with-local-workspace.sh` with normal Hugo arguments, for example **`./bin/hugo-with-local-workspace.sh server`**. The script runs `go-work-local.sh`, then sets **`HUGO_MODULE_WORKSPACE`** to the absolute path of `main/go.work` when that file exists.
+3. **Alternative:** from `main`, `export HUGO_MODULE_WORKSPACE=go.work` then run **`hugo`** as usual.
+
+**Verify:** stop any running dev server, start again with **`./bin/hugo-with-local-workspace.sh server`**, then check **`git diff go.mod`** — organiser lines should stay on **`main`**.
+
+**CI / production:** [bin/build.sh](bin/build.sh) runs **`resolve-organiser-requires-to-tip-of-main.sh apply`**, then plain **`hugo`**, then restores committed **`main`** `require` lines on exit. Do not set `module.workspace` in `hugo.yaml` to a path that only exists on developer machines. **`go.work`** and **`go.work.sum`** are gitignored; do not commit them.
 
 ## How this repo was created
 

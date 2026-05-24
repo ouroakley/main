@@ -1,3 +1,6 @@
 public/
 resources/_gen
 go.sum
+go.work
+go.work.sum
+.go.mod.branch-main.backup
