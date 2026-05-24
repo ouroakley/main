@@ -65,6 +65,8 @@ The site output directory is named **`public/`**, which makes **`git log public`
 
 In the committed [`go.mod`](../go.mod), every `github.com/ouroakley/organiser-*` dependency uses version **`main`** (`… main // indirect`). **`go mod tidy`**, **`go mod download`**, and plain **`hugo`** may still rewrite those lines locally to pseudo-versions; restore the **`main`** lines before committing, or use **[`bin/hugo-with-local-workspace.sh`](../bin/hugo-with-local-workspace.sh)** (which runs **[`bin/resolve-organiser-requires-to-tip-of-main.sh`](../bin/resolve-organiser-requires-to-tip-of-main.sh)** around Hugo) in the monorepo layout. Convention and rationale: [README — Hugo modules and go.mod](../README.md#hugo-modules-and-gomod).
 
+If a **git pre-commit hook** reformats `go.mod` and drops the **`main`** version field (invalid `require` lines), fix and amend or follow up with a small commit before pushing; **`git show HEAD:go.mod`** should show **`main // indirect`** on every organiser line.
+
 ## See also
 
 - [`organiser-bootstrap-backlog.md`](organiser-bootstrap-backlog.md) — main-only / pending repo slugs (working checklist).
