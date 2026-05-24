@@ -24,8 +24,6 @@ These have a page under [`main/content/organisers/`](../content/organisers/) but
 
 | Slug | Notes |
 |------|--------|
-| `east-oakley-village-hall` | Hall timetable slots often stay on `main`; see ingest rules. |
-| `oakley-village-hall` | Same as above. |
 | `tops` | |
 | `oakley-community-care` | |
 | `watership-down-health` | Often intentionally **main-only** (e.g. PPG clinics); see [`link-may-2026-ingest-appendix.md`](link-may-2026-ingest-appendix.md). |
@@ -42,7 +40,7 @@ These have a page under [`main/content/organisers/`](../content/organisers/) but
 
 These map to `content/events/<slug>/` in [`hugo.yaml`](../hugo.yaml) (plus the **`example`** mount for the template organiser, which uses mount slug `example`):
 
-`oakley-fc`, `oakley-stitchers-cic`, `oakley-wellbeing-forum`, `oca`, `odpc`, `oww`, `ramblers-wellbeing-walks-basingstoke`, `oakley-cc`, `the-barley-mow`, `ojsa`, `friends-ois`, `the-methodist-church`, `oakley-deane-wi`, `oakley-bc`, `oakley-ramblers`, `oakley-gardening-club`, `jolly-ollys`, `oakley-afternoon-wi`, `oakley-woodlands-group`, `oakley-mens-shed`, `example`.
+`oakley-fc`, `oakley-stitchers-cic`, `oakley-wellbeing-forum`, `oca`, `odpc`, `oww`, `ramblers-wellbeing-walks-basingstoke`, `oakley-cc`, `the-barley-mow`, `ojsa`, `friends-ois`, `the-methodist-church`, `oakley-deane-wi`, `oakley-bc`, `oakley-ramblers`, `oakley-gardening-club`, `jolly-ollys`, `oakley-afternoon-wi`, `oakley-woodlands-group`, `oakley-mens-shed`, `east-oakley-village-hall`, `oakley-village-hall`, `example`.
 
 ## What always stays on `main` regardless of modules
 

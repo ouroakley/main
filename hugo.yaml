@@ -31,7 +31,8 @@ params:
     - oakley-afternoon-wi
     - oakley-woodlands-group
     - oakley-mens-shed
-
+    - east-oakley-village-hall
+    - oakley-village-hall
 taxonomies:
   venue: venues
   organiser: organisers
@@ -81,6 +82,18 @@ module:
           target: content/venues-info/example
         - source: static/admin
           target: static/admin/example
+
+# East Oakley Village Hall
+    - path: github.com/ouroakley/organiser-east-oakley-village-hall
+      mounts:
+        - source: content/events
+          target: content/events/east-oakley-village-hall
+        - source: content/organisers-info
+          target: content/organisers-info/east-oakley-village-hall
+        - source: content/venues-info
+          target: content/venues-info/east-oakley-village-hall
+        - source: static/admin
+          target: static/admin/east-oakley-village-hall
 
 # Oakley Football Club
     - path: github.com/ouroakley/organiser-oakley-football-club
@@ -328,3 +341,16 @@ module:
           target: content/venues-info/oakley-mens-shed
         - source: static/admin
           target: static/admin/oakley-mens-shed
+
+
+# Oakley Village Hall
+    - path: github.com/ouroakley/organiser-oakley-village-hall
+      mounts:
+        - source: content/events
+          target: content/events/oakley-village-hall
+        - source: content/organisers-info
+          target: content/organisers-info/oakley-village-hall
+        - source: content/venues-info
+          target: content/venues-info/oakley-village-hall
+        - source: static/admin
+          target: static/admin/oakley-village-hall

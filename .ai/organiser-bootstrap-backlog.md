@@ -6,8 +6,6 @@ Canonical slug list and rules: [`organiser-modules-and-taxonomy.md`](organiser-m
 
 | Slug | Status |
 |------|--------|
-| `east-oakley-village-hall` | **Main-only** until a dedicated organiser exists (hall timetable pattern). |
-| `oakley-village-hall` | **Main-only** (same). |
 | `tops` | Pending new `organiser-*` repo + mounts if desired. |
 | `oakley-community-care` | Pending. |
 | `watership-down-health` | **Intentionally main-only** (e.g. PPG clinics); see [`link-may-2026-ingest-appendix.md`](link-may-2026-ingest-appendix.md). |
