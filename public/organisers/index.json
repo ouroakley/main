@@ -1,130 +1,162 @@
 [
     {
         "title": "Craft Kits N Bits",
-        "baseName": "craft-kits-n-bits"
+        "baseName": "craft-kits-n-bits",
+        "slug": "craft-kits-n-bits"
     }, 
     {
         "title": "Oakley Neighbourhood Watch",
-        "baseName": "oakley-neighbourhood-watch"
+        "baseName": "oakley-neighbourhood-watch",
+        "slug": "oakley-neighbourhood-watch"
     }, 
     {
         "title": "The Barley Mow",
-        "baseName": "the-barley-mow"
+        "baseName": "the-barley-mow",
+        "slug": "the-barley-mow"
     }, 
     {
         "title": "OCA",
-        "baseName": "oca"
+        "baseName": "oca",
+        "slug": "oca"
     }, 
     {
         "title": "Oakley Wellbeing Forum",
-        "baseName": "oakley-wellbeing-forum"
+        "baseName": "oakley-wellbeing-forum",
+        "slug": "oakley-wellbeing-forum"
     }, 
     {
         "title": "TOPS – The Oakley Pantomime Society",
-        "baseName": "tops"
+        "baseName": "tops",
+        "slug": "tops"
     }, 
     {
         "title": "Watership Down Health",
-        "baseName": "watership-down-health"
+        "baseName": "watership-down-health",
+        "slug": "watership-down-health"
     }, 
     {
         "title": "Oakley Bowling Club",
-        "baseName": "oakley-bc"
+        "baseName": "oakley-bc",
+        "slug": "oakley-bc"
     }, 
     {
         "title": "Oakley Afternoon WI",
-        "baseName": "oakley-afternoon-wi"
+        "baseName": "oakley-afternoon-wi",
+        "slug": "oakley-afternoon-wi"
     }, 
     {
         "title": "Oakley & Deane Parish Council",
-        "baseName": "odpc"
+        "baseName": "odpc",
+        "slug": "odpc"
     }, 
     {
         "title": "Oakley Ramblers",
-        "baseName": "oakley-ramblers"
+        "baseName": "oakley-ramblers",
+        "slug": "oakley-ramblers"
     }, 
     {
         "title": "Oakley Village Hall",
-        "baseName": "oakley-village-hall"
+        "baseName": "oakley-village-hall",
+        "slug": "oakley-village-hall"
     }, 
     {
         "title": "Coffee & Chat",
-        "baseName": "coffee-and-chat"
+        "baseName": "coffee-and-chat",
+        "slug": "coffee-and-chat"
     }, 
     {
         "title": "East Oakley Village Hall",
-        "baseName": "east-oakley-village-hall"
+        "baseName": "east-oakley-village-hall",
+        "slug": "east-oakley-village-hall"
     }, 
     {
         "title": "Oakley Stitchers CIC",
-        "baseName": "oakley-stitchers-cic"
+        "baseName": "oakley-stitchers-cic",
+        "slug": "oakley-stitchers-cic"
     }, 
     {
         "title": "Ramblers Wellbeing Walks Basingstoke",
-        "baseName": "ramblers-wellbeing-walks-basingstoke"
+        "baseName": "ramblers-wellbeing-walks-basingstoke",
+        "slug": "ramblers-wellbeing-walks-basingstoke"
     }, 
     {
         "title": "The Methodist Church",
-        "baseName": "the-methodist-church"
+        "baseName": "the-methodist-church",
+        "slug": "the-methodist-church"
     }, 
     {
         "title": "Oakley Community Care",
-        "baseName": "oakley-community-care"
+        "baseName": "oakley-community-care",
+        "slug": "oakley-community-care"
     }, 
     {
         "title": "Oakley & Deane WI",
-        "baseName": "oakley-deane-wi"
+        "baseName": "oakley-deane-wi",
+        "slug": "oakley-deane-wi"
     }, 
     {
         "title": "Oakley with Wootton",
-        "baseName": "oww"
+        "baseName": "oww",
+        "slug": "oww"
     }, 
     {
         "title": "Oakley Woodlands Group",
-        "baseName": "oakley-woodlands-group"
+        "baseName": "oakley-woodlands-group",
+        "slug": "oakley-woodlands-group"
     }, 
     {
         "title": "Louise Wesley",
-        "baseName": "louise-wesley"
+        "baseName": "louise-wesley",
+        "slug": "louise-wesley"
     }, 
     {
         "title": "Friends of Oakley Infant School",
-        "baseName": "friends-ois"
+        "baseName": "friends-ois",
+        "slug": "friends-ois"
     }, 
     {
         "title": "Oakley Junior School Association",
-        "baseName": "ojsa"
+        "baseName": "ojsa",
+        "slug": "ojsa"
     }, 
     {
         "title": "Oakley Cricket Club",
-        "baseName": "oakley-cc"
+        "baseName": "oakley-cc",
+        "slug": "oakley-cc"
     }, 
     {
         "title": "Oakley Football Club",
-        "baseName": "oakley-fc"
+        "baseName": "oakley-fc",
+        "slug": "oakley-fc"
     }, 
     {
         "title": "Alex Rowley",
-        "baseName": "alex-rowley"
+        "baseName": "alex-rowley",
+        "slug": "alex-rowley"
     }, 
     {
         "title": "Jolly Olly's",
-        "baseName": "jolly-ollys"
+        "baseName": "jolly-ollys",
+        "slug": "jolly-ollys"
     }, 
     {
         "title": "Oakley Gardening Club",
-        "baseName": "oakley-gardening-club"
+        "baseName": "oakley-gardening-club",
+        "slug": "oakley-gardening-club"
     }, 
     {
         "title": "Oakley Men's Shed",
-        "baseName": "oakley-mens-shed"
+        "baseName": "oakley-mens-shed",
+        "slug": "oakley-mens-shed"
     }, 
     {
         "title": "The Beach Arms",
-        "baseName": "the-beach-arms"
+        "baseName": "the-beach-arms",
+        "slug": "the-beach-arms"
     }, 
     {
         "title": "The Fox Inn",
-        "baseName": "the-fox-inn"
+        "baseName": "the-fox-inn",
+        "slug": "the-fox-inn"
     }
 ]

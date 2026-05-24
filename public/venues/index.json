@@ -1,106 +1,137 @@
 [
     {
         "title": "The Barley Mow",
-        "address": "19 Oakley Ln, Oakley, Basingstoke RG23 7JZ"
+        "address": "19 Oakley Ln, Oakley, Basingstoke RG23 7JZ",
+        "slug": "the-barley-mow"
     }, 
     {
         "title": "Oakley Infant School",
-        "address": "Oakley Lane, Oakley"
+        "address": "Oakley Lane, Oakley",
+        "slug": "oakley-infant-school"
     }, 
     {
         "title": "St Leonard's Centre",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-leonards-centre"
     }, 
     {
         "title": "Oakley Village Hall",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "oakley-village-hall"
     }, 
     {
         "title": "Newfound Recreation Ground",
-        "address": "Newfound, Oakley"
+        "address": "Newfound, Oakley",
+        "slug": "newfound-recreation-ground"
     }, 
     {
-        "title": "Overton Surgery",
-        "address": "<no value>"
+        "title": "Oakley Surgery",
+        "address": "<no value>",
+        "slug": "oakley-surgery"
     }, 
     {
         "title": "Oakley Bowling Club",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "oakley-bowling-club"
     }, 
     {
         "title": "East Oakley Village Hall",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "east-oakley-village-hall"
     }, 
     {
         "title": "TBC",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "tbc"
     }, 
     {
         "title": "Jolly Olly's",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "jolly-ollys"
     }, 
     {
         "title": "The Methodist Church",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "the-methodist-church"
     }, 
     {
         "title": "Oakley C.E. Junior School",
-        "address": "Oakley Lane, Oakley"
+        "address": "Oakley Lane, Oakley",
+        "slug": "oakley-ce-junior-school"
+    }, 
+    {
+        "title": "Overton Surgery",
+        "address": "<no value>",
+        "slug": "overton-surgery"
     }, 
     {
         "title": "St John's Road Lay-by",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-johns-road-layby"
     }, 
     {
         "title": "Village Pond",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "village-pond"
     }, 
     {
         "title": "St John's Garden of Remembrance",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-johns-garden-of-remembrance"
     }, 
     {
         "title": "St Leonard's Church",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-leonards-church"
     }, 
     {
         "title": "St John's Copse",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-johns-copse"
     }, 
     {
         "title": "Outside Oakley",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "outside-oakley"
     }, 
     {
         "title": "St John's Field",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "st-johns-field"
     }, 
     {
         "title": "Station-Rd",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "station-rd"
     }, 
     {
         "title": "Oakley Cricket Club",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "oakley-cricket-club"
     }, 
     {
         "title": "Across Oakley",
-        "address": "Various locations across Oakley"
+        "address": "Various locations across Oakley",
+        "slug": "across-oakley"
     }, 
     {
         "title": "Peter Houseman Recreation Ground",
-        "address": "Rectory Road, Oakley"
+        "address": "Rectory Road, Oakley",
+        "slug": "peter-houseman-recreation-ground"
     }, 
     {
         "title": "Cowdown Copse",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "cowdown-copse"
     }, 
     {
         "title": "The Beach Arms",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "the-beach-arms"
     }, 
     {
         "title": "The Fox Inn",
-        "address": "<no value>"
+        "address": "<no value>",
+        "slug": "the-fox-inn"
     }
 ]
