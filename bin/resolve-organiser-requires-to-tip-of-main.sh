@@ -21,7 +21,7 @@ resolve_one() {
   (
     cd "$tmp"
     printf 'module pinlookup\ngo %s\n' "$go_ver" > go.mod
-    GOTOOLCHAIN=go"${go_ver#go}" GOPRIVATE='github.com/ouroakley/*' GONOSUMDB='github.com/ouroakley/*' \
+    GOTOOLCHAIN="go${go_ver}" GOPRIVATE='github.com/ouroakley/*' GONOSUMDB='github.com/ouroakley/*' \
       go get "$mod@main"
     go list -m -f '{{.Version}}' "$mod"
   )
