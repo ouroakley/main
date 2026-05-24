@@ -6,7 +6,7 @@ eventDates:
   - start: 2026-05-26T09:00:00
     end: 2026-05-26T11:00:00
 venues:
-  - overton-surgery
+  - oakley-surgery
 organisers:
   - watership-down-health
 params:
