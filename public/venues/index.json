@@ -15,9 +15,9 @@
         "slug": "st-leonards-centre"
     }, 
     {
-        "title": "Oakley Village Hall",
-        "address": "<no value>",
-        "slug": "oakley-village-hall"
+        "title": "Across Oakley",
+        "address": "Various locations across Oakley",
+        "slug": "across-oakley"
     }, 
     {
         "title": "Newfound Recreation Ground",
@@ -25,29 +25,19 @@
         "slug": "newfound-recreation-ground"
     }, 
     {
-        "title": "Oakley Surgery",
-        "address": "<no value>",
-        "slug": "oakley-surgery"
-    }, 
-    {
-        "title": "Oakley Bowling Club",
-        "address": "<no value>",
-        "slug": "oakley-bowling-club"
-    }, 
-    {
         "title": "East Oakley Village Hall",
         "address": "<no value>",
         "slug": "east-oakley-village-hall"
     }, 
     {
-        "title": "TBC",
+        "title": "Oakley Scout & Guide Premises",
         "address": "<no value>",
-        "slug": "tbc"
+        "slug": "oakley-scout-guide-premises"
     }, 
     {
-        "title": "Jolly Olly's",
+        "title": "Oakley Surgery",
         "address": "<no value>",
-        "slug": "jolly-ollys"
+        "slug": "oakley-surgery"
     }, 
     {
         "title": "The Methodist Church",
@@ -55,14 +45,29 @@
         "slug": "the-methodist-church"
     }, 
     {
-        "title": "Oakley C.E. Junior School",
-        "address": "Oakley Lane, Oakley",
-        "slug": "oakley-ce-junior-school"
+        "title": "Jolly Olly's",
+        "address": "<no value>",
+        "slug": "jolly-ollys"
     }, 
     {
-        "title": "Overton Surgery",
+        "title": "Oakley Village Hall",
         "address": "<no value>",
-        "slug": "overton-surgery"
+        "slug": "oakley-village-hall"
+    }, 
+    {
+        "title": "TBC",
+        "address": "<no value>",
+        "slug": "tbc"
+    }, 
+    {
+        "title": "Oakley Bowling Club",
+        "address": "<no value>",
+        "slug": "oakley-bowling-club"
+    }, 
+    {
+        "title": "Peter Houseman Recreation Ground",
+        "address": "Rectory Road, Oakley",
+        "slug": "peter-houseman-recreation-ground"
     }, 
     {
         "title": "St John's Road Lay-by",
@@ -73,6 +78,16 @@
         "title": "Village Pond",
         "address": "<no value>",
         "slug": "village-pond"
+    }, 
+    {
+        "title": "Oakley C.E. Junior School",
+        "address": "Oakley Lane, Oakley",
+        "slug": "oakley-ce-junior-school"
+    }, 
+    {
+        "title": "Overton Surgery",
+        "address": "<no value>",
+        "slug": "overton-surgery"
     }, 
     {
         "title": "St John's Garden of Remembrance",
@@ -88,6 +103,11 @@
         "title": "St John's Copse",
         "address": "<no value>",
         "slug": "st-johns-copse"
+    }, 
+    {
+        "title": "Cowdown Copse",
+        "address": "<no value>",
+        "slug": "cowdown-copse"
     }, 
     {
         "title": "Outside Oakley",
@@ -108,21 +128,6 @@
         "title": "Oakley Cricket Club",
         "address": "<no value>",
         "slug": "oakley-cricket-club"
-    }, 
-    {
-        "title": "Across Oakley",
-        "address": "Various locations across Oakley",
-        "slug": "across-oakley"
-    }, 
-    {
-        "title": "Peter Houseman Recreation Ground",
-        "address": "Rectory Road, Oakley",
-        "slug": "peter-houseman-recreation-ground"
-    }, 
-    {
-        "title": "Cowdown Copse",
-        "address": "<no value>",
-        "slug": "cowdown-copse"
     }, 
     {
         "title": "The Beach Arms",

@@ -25,24 +25,14 @@
         "slug": "oakley-wellbeing-forum"
     }, 
     {
-        "title": "TOPS – The Oakley Pantomime Society",
-        "baseName": "tops",
-        "slug": "tops"
-    }, 
-    {
-        "title": "Watership Down Health",
-        "baseName": "watership-down-health",
-        "slug": "watership-down-health"
-    }, 
-    {
-        "title": "Oakley Bowling Club",
-        "baseName": "oakley-bc",
-        "slug": "oakley-bc"
-    }, 
-    {
         "title": "Oakley Afternoon WI",
         "baseName": "oakley-afternoon-wi",
         "slug": "oakley-afternoon-wi"
+    }, 
+    {
+        "title": "Oakley & Deane WI",
+        "baseName": "oakley-deane-wi",
+        "slug": "oakley-deane-wi"
     }, 
     {
         "title": "Oakley & Deane Parish Council",
@@ -50,9 +40,39 @@
         "slug": "odpc"
     }, 
     {
+        "title": "Oakley Scout & Guide Premises Committee",
+        "baseName": "oakley-scout-guide-premises-committee",
+        "slug": "oakley-scout-guide-premises-committee"
+    }, 
+    {
+        "title": "Watership Down Health",
+        "baseName": "watership-down-health",
+        "slug": "watership-down-health"
+    }, 
+    {
+        "title": "The Methodist Church",
+        "baseName": "the-methodist-church",
+        "slug": "the-methodist-church"
+    }, 
+    {
         "title": "Oakley Ramblers",
         "baseName": "oakley-ramblers",
         "slug": "oakley-ramblers"
+    }, 
+    {
+        "title": "Ramblers Wellbeing Walks Basingstoke",
+        "baseName": "ramblers-wellbeing-walks-basingstoke",
+        "slug": "ramblers-wellbeing-walks-basingstoke"
+    }, 
+    {
+        "title": "TOPS – The Oakley Pantomime Society",
+        "baseName": "tops",
+        "slug": "tops"
+    }, 
+    {
+        "title": "East Oakley Village Hall",
+        "baseName": "east-oakley-village-hall",
+        "slug": "east-oakley-village-hall"
     }, 
     {
         "title": "Oakley Village Hall",
@@ -65,9 +85,19 @@
         "slug": "coffee-and-chat"
     }, 
     {
-        "title": "East Oakley Village Hall",
-        "baseName": "east-oakley-village-hall",
-        "slug": "east-oakley-village-hall"
+        "title": "Oakley with Wootton",
+        "baseName": "oww",
+        "slug": "oww"
+    }, 
+    {
+        "title": "Jolly Olly's",
+        "baseName": "jolly-ollys",
+        "slug": "jolly-ollys"
+    }, 
+    {
+        "title": "Oakley Gardening Club",
+        "baseName": "oakley-gardening-club",
+        "slug": "oakley-gardening-club"
     }, 
     {
         "title": "Oakley Stitchers CIC",
@@ -75,29 +105,19 @@
         "slug": "oakley-stitchers-cic"
     }, 
     {
-        "title": "Ramblers Wellbeing Walks Basingstoke",
-        "baseName": "ramblers-wellbeing-walks-basingstoke",
-        "slug": "ramblers-wellbeing-walks-basingstoke"
+        "title": "Oakley Bowling Club",
+        "baseName": "oakley-bc",
+        "slug": "oakley-bc"
     }, 
     {
-        "title": "The Methodist Church",
-        "baseName": "the-methodist-church",
-        "slug": "the-methodist-church"
+        "title": "Oakley Football Club",
+        "baseName": "oakley-fc",
+        "slug": "oakley-fc"
     }, 
     {
         "title": "Oakley Community Care",
         "baseName": "oakley-community-care",
         "slug": "oakley-community-care"
-    }, 
-    {
-        "title": "Oakley & Deane WI",
-        "baseName": "oakley-deane-wi",
-        "slug": "oakley-deane-wi"
-    }, 
-    {
-        "title": "Oakley with Wootton",
-        "baseName": "oww",
-        "slug": "oww"
     }, 
     {
         "title": "Oakley Woodlands Group",
@@ -125,24 +145,9 @@
         "slug": "oakley-cc"
     }, 
     {
-        "title": "Oakley Football Club",
-        "baseName": "oakley-fc",
-        "slug": "oakley-fc"
-    }, 
-    {
         "title": "Alex Rowley",
         "baseName": "alex-rowley",
         "slug": "alex-rowley"
-    }, 
-    {
-        "title": "Jolly Olly's",
-        "baseName": "jolly-ollys",
-        "slug": "jolly-ollys"
-    }, 
-    {
-        "title": "Oakley Gardening Club",
-        "baseName": "oakley-gardening-club",
-        "slug": "oakley-gardening-club"
     }, 
     {
         "title": "Oakley Men's Shed",
