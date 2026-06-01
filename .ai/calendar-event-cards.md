@@ -11,3 +11,7 @@ If you add organiser-based colours later, prefer a `data-organiser` attribute on
 Within each day cell, events are sorted by a `sortKey` computed in `calendar.html`: entries with prefix `0-` (no clock time for that day — start at `00:00`, end-only day with `00:00` end, or a middle day of a multi-day range) appear first, ordered by `RelPermalink`. Entries with prefix `1-` follow, ordered by local `YYYYMMDDHHmmss` from the start time on the start day or the end time on the last day only, then `RelPermalink` for ties.
 
 **Monthly bundles:** One event page with several `eventDates` in the same month still produces **one calendar chip per affected day** (the template expands ranges); verify ordering after large merges.
+
+## Date-only events (no clock time on chip)
+
+When `eventDates` use **`start: YYYY-MM-DDT00:00:00`** with no meaningful end time, the calendar chip shows **title only** (no second-line time). Use this for hall timetable rows where *Link* gives weekday + period (morning / afternoon / evening) but not a reliable clock time — put the period in the event **body** instead. See [link-pdf-ingest-rules.md § Recurring village hall bookings](link-pdf-ingest-rules.md#recurring-village-hall-bookings-link-timetables).
