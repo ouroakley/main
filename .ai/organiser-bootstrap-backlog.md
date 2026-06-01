@@ -16,6 +16,7 @@ Canonical slug list and rules: [`organiser-modules-and-taxonomy.md`](organiser-m
 | `oakley-neighbourhood-watch` | Pending (e.g. co-listed on **Community Market** events, which are kept on **`main/content/events/commmunity-market/`** alongside `the-barley-mow` and `craft-kits-n-bits`). |
 | `craft-kits-n-bits` | Pending. |
 | `alex-rowley` | Pending. |
+| `oakley-scout-guide-premises-committee` | **Intentionally main-only** (e.g. Scout AGM); see Link June 2026 ingest. |
 | `example-organiser` | Demo taxonomy; template module uses mount slug `example`, not `example-organiser`. |
 
 When adding a module: follow [`README.md`](../README.md) (Hugo modules), [`organiser-cms-slugs.md`](organiser-cms-slugs.md) for `/admin/`, and optionally [`../../scripts/new-organiser.sh`](../../scripts/new-organiser.sh) from the monorepo layout.
