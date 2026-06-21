@@ -10,9 +10,19 @@
         "slug": "oakley-infant-school"
     }, 
     {
+        "title": "TBC",
+        "address": "<no value>",
+        "slug": "tbc"
+    }, 
+    {
         "title": "St Leonard's Centre",
         "address": "<no value>",
         "slug": "st-leonards-centre"
+    }, 
+    {
+        "title": "Oakley Cricket Club",
+        "address": "<no value>",
+        "slug": "oakley-cricket-club"
     }, 
     {
         "title": "Across Oakley",
@@ -53,11 +63,6 @@
         "title": "Oakley Village Hall",
         "address": "<no value>",
         "slug": "oakley-village-hall"
-    }, 
-    {
-        "title": "TBC",
-        "address": "<no value>",
-        "slug": "tbc"
     }, 
     {
         "title": "Oakley Bowling Club",
@@ -123,11 +128,6 @@
         "title": "Station-Rd",
         "address": "<no value>",
         "slug": "station-rd"
-    }, 
-    {
-        "title": "Oakley Cricket Club",
-        "address": "<no value>",
-        "slug": "oakley-cricket-club"
     }, 
     {
         "title": "The Beach Arms",
